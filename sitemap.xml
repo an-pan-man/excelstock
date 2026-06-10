@@ -16,9 +16,63 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://excelkospi.pages.dev/patch-notes</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://excelkospi.pages.dev/policy</loc>
     <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://excelkospi.pages.dev/news</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://excelkospi.pages.dev/krboard</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://excelkospi.pages.dev/usboard</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://excelkospi.pages.dev/coinboard</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://excelkospi.pages.dev/freeboard</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://excelkospi.pages.dev/opsboard</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://excelkospi.pages.dev/forecast</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://excelkospi.pages.dev/etf</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
