@@ -27,6 +27,7 @@
     "/coinboard",
     "/freeboard",
     "/opsboard",
+    "/paper",
     "/forecast",
     "/etf",
     "/blank",
@@ -45,6 +46,7 @@
   "exclude": [
     "/og.png",
     "/og-forecast.png",
+    "/og-paper.png",
     "/favicon.ico",
     "/manifest.webmanifest",
     "/sw.js",
