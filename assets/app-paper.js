@@ -68,15 +68,15 @@ const PAPER_REFRESH_MS=6e4,PAPER_LB_CLIENT_TTL_MS=6e4,PAPER_SHARE_PATH="/paper",
       <button class="pp-btn" type="button" data-pp-act="link-close" ${paperBusy?"disabled":""}>닫기</button>
     </div>
   </div>`}function paperSummaryHtml(){const account=paperData.account,equity=paperEquity(),seed=Number(paperData?.policy?.seedCash)||5e7,returnPct=Number.isFinite(equity)?(equity/seed-1)*100:null,dir=paperDirClass(returnPct),invested=Math.max(0,equity-(Number(account.cash)||0)),me=paperLeaderboard?.me,rankText=me?.rank?`${me.rank}위 / ${paperLeaderboard.total}명`:account.ordersCount>0?"순위 집계 중":"첫 주문하면 랭킹 진입";return`<div class="pp-summary pp-${dir}">
-    <div class="pp-summary-main">
-      <span class="pp-cap">내 평가자산</span>
-      <strong class="pp-summary-num">${paperWon(equity)}</strong>
-      <em class="pp-summary-ret ${dir}">${paperSignedPct(returnPct)} <small>(시드 5,000만원)</small></em>
-    </div>
     <div class="pp-summary-side">
       <span><em>현금</em><b>${paperWon(account.cash)}</b></span>
       <span><em>투자중</em><b>${paperWon(invested)}</b></span>
       <span><em>주문</em><b>${Number(account.ordersCount)||0}건</b></span>
+    </div>
+    <div class="pp-summary-main">
+      <span class="pp-cap">내 평가자산</span>
+      <strong class="pp-summary-num">${paperWon(equity)}</strong>
+      <em class="pp-summary-ret ${dir}">${paperSignedPct(returnPct)} <small>(시드 5,000만원)</small></em>
     </div>
     <div class="pp-summary-rank">
       <span class="pp-cap">랭킹</span>
