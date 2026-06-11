@@ -91,7 +91,7 @@ const PAPER_REFRESH_MS=6e4,PAPER_LB_CLIENT_TTL_MS=6e4,PAPER_SHARE_PATH="/paper",
       <span class="pp-ticket-est">${estimate!==null?`${t.side==="buy"?"예상 매수금액":"예상 매도금액"} <b>${paperWon(estimate)}</b> <small>(${t.side==="sell"&&t.market==="KR"?"수수료+거래세":"수수료"} ${paperWon(Math.round(fee))}${t.market==="US"?" · 환율 반영":""})</small>`:idleText}</span>
       <button class="pp-btn pp-btn-primary pp-btn-${t.side}" type="button" data-pp-act="submit-order" ${disabled?"disabled":""}>${esc(buttonText)}</button>
     </div>`}function paperUpdateTicketFoot(){const foot=document.querySelector(".pp-ticket .pp-ticket-foot");foot&&(foot.outerHTML=paperTicketFootHtml())}function paperSessionLabel(state){const st=String(state||"").toUpperCase();return st==="PRE"?"프리장":st==="POST"?"애프터장":st==="REGULAR"?"정규장":st==="CLOSED"?"장 닫힘":""}function paperTicketHtml(){const t=paperTicket,hasQuote=t.code&&Number.isFinite(Number(t.price)),quote=t.code?paperQuoteMap[`${t.code}:${t.market}`]:null,livePrice=Number(quote?.price??t.price),krwPrice=paperTicketKrwPrice(),marketName=t.market==="COIN"?"코인 · 24시간":t.market==="US"?"해외주식":"국내주식",session=t.market==="COIN"?"":paperSessionLabel(t.session)||(paperTicketMarketClosed()?"장 닫힘":"거래 가능"),marketTag=[marketName,session].filter(Boolean).join(" · "),priceText=t.market==="US"?`$${livePrice.toLocaleString("en-US",{maximumFractionDigits:2})}${krwPrice?` ≈ ${Math.round(krwPrice).toLocaleString("ko-KR")}원`:""}`:`${livePrice.toLocaleString("ko-KR")}원`,cash=Number(paperData?.account?.cash)||0,held=paperHeldQty();return`<div class="pp-card pp-ticket">
-    <div class="pp-card-head"><span class="pp-cap">주문</span>
+    <div class="pp-card-head"><span class="pp-cap pp-ticket-title">주문하기</span>
       <span class="pp-ticket-cash">${t.side==="sell"&&t.code?`보유 <b>${paperQtyText(t.market,held)}${t.market==="COIN"?"":"주"}</b>`:`주문 가능 <b>${paperWon(cash)}</b>`}</span>
       <span class="pp-side-toggle">
         <button type="button" class="pp-side-btn buy ${t.side==="buy"?"on":""}" data-pp-act="side-buy" ${paperBusy?"disabled":""}>매수</button>
@@ -99,7 +99,7 @@ const PAPER_REFRESH_MS=6e4,PAPER_LB_CLIENT_TTL_MS=6e4,PAPER_SHARE_PATH="/paper",
       </span>
     </div>
     <div class="pp-ticket-row">
-      <input id="ppSymbolInput" type="text" placeholder="종목명·코드 (예: 삼성전자, 005930, BTC)" value="${esc(t.code||"")}" autocomplete="off" ${paperBusy?"disabled":""}>
+      <input id="ppSymbolInput" type="text" placeholder="종목명·코드" value="${esc(t.code||"")}" autocomplete="off" ${paperBusy?"disabled":""}>
       <button class="pp-btn" type="button" data-pp-act="lookup" ${paperBusy?"disabled":""}>${paperBusyText==="시세 확인 중..."?"확인 중...":"시세 확인"}</button>
     </div>
     <small class="pp-ticket-hint">자동완성 목록에 없는 종목도 검색돼요 — 종목명이나 코드를 적고 ‘시세 확인’을 일단 눌러보세요.</small>
