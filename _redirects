@@ -7,8 +7,10 @@
 /freeboard / 200
 /opsboard / 200
 /paper / 200
+/paper/* / 200
 /sports / 200
 /forecast / 200
+/forecast/* / 200
 /etf / 200
 /blank / 200
 /sheet / 200
