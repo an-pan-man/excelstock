@@ -2,7 +2,7 @@
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Content-Security-Policy: object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://*.tradingview.com https://s3.tradingview.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; media-src 'self'; worker-src 'self' blob:; connect-src 'self' https://excelkospi-api.alaala3.workers.dev https://*.google-analytics.com https://www.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googletagmanager.com https://*.g.doubleclick.net https://stats.g.doubleclick.net https://pagead2.googlesyndication.com https://www.google.com https://docs.google.com https://*.googleusercontent.com https://*.tradingview.com https://api.imgur.com wss://api.upbit.com wss://stream.binance.com wss://fstream.binance.com wss://api.hyperliquid.xyz; frame-src 'self' https://*.tradingview.com https://s3.tradingview.com https://challenges.cloudflare.com https://td.doubleclick.net https://*.naver.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests
   Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
 
