@@ -29,6 +29,8 @@
     "/opsboard",
     "/login",
     "/login/index.html",
+    "/profile",
+    "/profile/index.html",
     "/status",
     "/status/*",
     "/paper",
