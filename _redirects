@@ -8,6 +8,7 @@
 /opsboard / 200
 /paper / 200
 /paper/* / 200
+/login / 200
 /sports / 200
 /forecast / 200
 /forecast/* / 200
