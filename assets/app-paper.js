@@ -58,17 +58,23 @@ ${def.desc} — 이 뱃지를 받았어요`:""}window.paperBadgeTipByEmoji=paper
     </div>
     ${paperMarketPulseHtml()}
     <div class="pp-onboard-choices">
+      <button class="pp-onboard-choice pp-onboard-choice-primary" type="button" data-pp-act="member-new" ${paperBusy?"disabled":""}>
+        <strong>새로 계좌 만들기</strong>
+        <span>이 계정에 새로 계좌를 만듭니다.</span>
+      </button>
       <button class="pp-onboard-choice" type="button" data-pp-act="member-import" ${paperBusy?"disabled":""}>
         <strong>로그인 없이 쓰던 계좌 불러오기</strong>
         <span>이 계정으로 이 브라우저의 계좌를 가져옵니다.</span>
       </button>
-      <button class="pp-onboard-choice" type="button" data-pp-act="member-new" ${paperBusy?"disabled":""}>
-        <strong>새로 계좌 만들기</strong>
-        <span>이 계정에 새로 계좌를 만듭니다.</span>
-      </button>
     </div>
     ${paperMemberStage==="recover"?paperMemberRecoverBlock():""}
     ${paperNoticeHtml()}
+  </div>`}function paperMemberLockedHtml(){return`<div class="pp-card pp-member-locked" role="status">
+    <div class="pp-card-head"><span class="pp-card-title">로그인이 필요해요</span></div>
+    <p>이 모의투자 계좌는 로그인 계정에 연결되어 있어요. 계정 보호를 위해 로그인한 뒤에 이어서 이용할 수 있어요.</p>
+    <div class="pp-onboard-start-actions">
+      <a class="pp-btn pp-btn-primary pp-onboard-primary" href="/login">로그인하기</a>
+    </div>
   </div>`}function paperOnboardingHtml(){if(paperIsLoggedIn())return paperMemberOnboardingHtml();const guestForm=paperGuestOnboardStarted?`<div class="pp-onboard-form pp-onboard-guest-form">
       <label class="pp-field"><span>닉네임 (최대 12자)</span>
         <input id="ppNickInput" type="text" maxlength="12" placeholder="예: 단타의신" autocomplete="nickname" autocapitalize="off" spellcheck="false" value="${esc(paperOnboardDraft.nickname)}" ${paperBusy?"disabled":""}>
@@ -297,7 +303,7 @@ ${def.desc} — 이 뱃지를 받았어요`:""}window.paperBadgeTipByEmoji=paper
     <button class="pp-btn" type="button" data-pp-act="qr" ${paperBusy?"disabled":""}>QR/공유로 기기 연결</button>
     <button class="pp-btn" type="button" data-pp-act="reissue" ${paperBusy?"disabled":""}>복구코드 재발급</button>`}
     <button class="pp-btn" type="button" data-pp-act="refresh" ${paperLoadInFlight||paperBusy?"disabled":""}>${paperLoadingText?"새로고침 중...":"새로고침"}</button>
-  </div>${paperNoticeHtml()}`}function paperTableHtml(){return paperError&&!paperData?paperDashWrap('<div class="pp pp-state">모의투자 정보를 불러오지 못했어요. 잠시 후 자동으로 다시 시도해요.<button class="pp-btn" type="button" data-pp-act="refresh">다시 불러오기</button></div>'):paperData?paperData.account?paperDashWrap(`<div class="pp">
+  </div>${paperNoticeHtml()}`}function paperTableHtml(){return paperError&&!paperData?paperDashWrap('<div class="pp pp-state">모의투자 정보를 불러오지 못했어요. 잠시 후 자동으로 다시 시도해요.<button class="pp-btn" type="button" data-pp-act="refresh">다시 불러오기</button></div>'):paperData?!paperData.account&&paperData.memberLocked&&!paperIsLoggedIn()?paperDashWrap(`<div class="pp">${paperPageHeaderHtml()}${paperMemberLockedHtml()}${paperLeagueDeckHtml({tradesCompact:!1})}</div>`):paperData.account?paperDashWrap(`<div class="pp">
     ${paperPageHeaderHtml()}
     ${paperModNoticeHtml()}
     ${paperProgressHtml()}
