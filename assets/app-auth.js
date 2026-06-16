@@ -41,7 +41,7 @@ const AUTH_SESSION_KEY="kg_auth_session_v1",AUTH_PENDING_WIZARD_KEY="kg_auth_pen
   </div>`}function authProfileDialogHtml(kind,data={}){if(kind!=="profile"&&kind!=="security")return"";const loginId=data.loginId||"",nickname=data.nickname||"",email=data.email||"";return kind==="profile"?`<div class="auth-panel auth-sheet auth-profile auth-profile-edit" data-auth-modal-kind="profile">
       <div class="auth-profile-edit-head"><strong>회원 정보 변경</strong></div>
       <div class="auth-form-grid auth-profile-grid">
-        <label class="auth-field"><span>아이디 <small>(변경 불가)</small></span>
+        <label class="auth-field"><span>아이디</span>
           <input class="auth-input" data-auth-profile-field="loginId" type="text" autocomplete="username" maxlength="190" value="${esc(loginId)}" readonly />
         </label>
         <label class="auth-field"><span>닉네임</span>
@@ -160,7 +160,7 @@ const AUTH_SESSION_KEY="kg_auth_session_v1",AUTH_PENDING_WIZARD_KEY="kg_auth_pen
       <div class="auth-sync-card"><span><em>동기화</em><b>자동</b><small>${esc(authSyncStatusText())}</small></span><button type="button" class="auth-altlink" data-auth-act="sync-now">지금 동기화</button></div>
     </div>
     <div class="auth-profile-actions">
-      <button class="auth-profile-action" type="button" data-auth-act="profile-modal" data-auth-modal="profile"><strong>회원 정보 변경</strong><span>닉네임·이메일 (아이디는 변경 불가)</span></button>
+      <button class="auth-profile-action" type="button" data-auth-act="profile-modal" data-auth-modal="profile"><strong>회원 정보 변경</strong><span>닉네임·이메일</span></button>
       <button class="auth-profile-action" type="button" data-auth-act="profile-modal" data-auth-modal="security"><strong>보안 · 로그아웃</strong><span>비밀번호·복구코드·세션</span></button>
     </div>
     <div class="auth-msg" data-auth-msg aria-live="polite"></div>
