@@ -7,7 +7,7 @@
   <meta name="description" content="엑셀코스피 공개 서비스의 응답 상태와 지연 시간을 확인합니다." />
   <meta name="theme-color" content="#f5f5f7" />
   <link rel="icon" href="/favicon.ico?v=20260615-2717" sizes="any" />
-  <link rel="stylesheet" href="/assets/status.css?v=20260616-2746" />
+  <link rel="stylesheet" href="/assets/status.css?v=20260616-2758" />
 </head>
 <body>
   <header class="status-topbar">
@@ -22,50 +22,20 @@
       <h1 id="statusTitle">시스템 상태</h1>
       <p id="statusSummary">공개 서비스 응답을 확인하고 있습니다.</p>
     </section>
-    <section class="status-activity" aria-labelledby="statusActivityTitle">
-      <div class="status-activity-head">
-        <div>
-          <h2 id="statusActivityTitle">실시간 활동</h2>
-        </div>
-        <div class="status-activity-controls">
-          <span id="statusActivityTimer" class="status-activity-timer">남은 시간 01:00</span>
-          <button id="statusActivityResume" class="status-activity-resume" type="button" aria-label="활동 차트 다시 1분 보기" hidden>재개</button>
-        </div>
-      </div>
-      <div class="status-activity-chart" id="statusActivityChart" role="img" aria-labelledby="statusActivityTitle">
-        <div class="status-activity-chart-head" aria-hidden="true">
-          <span>현재 접속</span>
-          <strong id="activityNowUsers">-</strong>
-        </div>
-        <div class="status-activity-chart-legend" aria-hidden="true">
-          <span class="is-online">접속</span>
-          <span class="is-visits">방문</span>
-          <span class="is-chat">채팅</span>
-          <span class="is-trades">지난 10분 체결</span>
-        </div>
-        <svg id="statusActivitySvg" viewBox="0 0 720 190" preserveAspectRatio="none" aria-hidden="true"></svg>
-        <span id="statusActivityProgress" class="status-activity-progress" aria-hidden="true"></span>
-        <div id="statusActivityEmpty" class="status-activity-empty">확인 중</div>
-      </div>
-      <div class="status-activity-metrics">
-        <span><em>접속</em><strong id="activityOnline">-</strong></span>
-        <span><em>오늘 방문</em><strong id="activityVisits">-</strong></span>
-        <span><em>최근 채팅</em><strong id="activityMessages">-</strong></span>
-        <span><em>지난 10분 체결</em><strong id="activityTrades">-</strong></span>
-      </div>
-    </section>
     <section class="status-overview" aria-live="polite">
       <div class="status-overview-main">
         <div class="status-overview-line" id="statusOverall">
           <span class="status-dot is-loading" aria-hidden="true"></span>
           <strong>확인 중</strong>
         </div>
-        <button class="status-details-toggle" id="statusDetailsToggle" type="button" aria-controls="statusDetails" aria-expanded="true" aria-label="서비스 세부 상태 접기" hidden></button>
       </div>
       <div class="status-time" id="statusCheckedAt">최근 확인: -</div>
     </section>
+    <button class="status-details-toggle" id="statusDetailsToggle" type="button" aria-controls="statusDetails" aria-expanded="true">
+      <span id="statusServicesTitle">서비스</span>
+      <span class="status-details-caret" aria-hidden="true">▾</span>
+    </button>
     <section class="status-list-wrap" id="statusDetails" aria-labelledby="statusServicesTitle">
-      <h2 id="statusServicesTitle">서비스</h2>
       <div class="status-groups" id="statusServices"></div>
     </section>
     <section class="status-note" aria-label="안내">
@@ -73,6 +43,6 @@
       <p>글쓰기·계좌 생성처럼 사용자별 상태가 필요한 기능은 공개 점검 항목에 포함하지 않습니다.</p>
     </section>
   </main>
-  <script src="/assets/status.js?v=20260616-2746" defer></script>
+  <script src="/assets/status.js?v=20260616-2758" defer></script>
 </body>
 </html>
