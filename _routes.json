@@ -35,6 +35,8 @@
     "/status/*",
     "/paper",
     "/paper/*",
+    "/lupang",
+    "/lupang/*",
     "/sports",
     "/forecast",
     "/forecast/*",

@@ -7,7 +7,9 @@
 /freeboard / 200
 /opsboard / 200
 /paper / 200
+/lupang / 200
 /paper/* / 200
+/lupang/* / 200
 /sports / 200
 /forecast / 200
 /forecast/* / 200
