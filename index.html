@@ -51,8 +51,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="excelkospi" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="build-id" content="20260618-2868" />
-  <meta name="build-time" content="2026-06-18 21:46" />
+  <meta name="build-id" content="20260619-2870" />
+  <meta name="build-time" content="2026-06-19 09:10" />
   <meta name="cache-reset-id" content="20260618-2868-main-merge" />
   <script>(()=>{try{const resetId=document.querySelector('meta[name="cache-reset-id"]')?.getAttribute("content")||"";if(!resetId||/\b(?:bot|crawler|spider|crawling|yeti|google-inspectiontool|chrome-lighthouse|lighthouse|pagespeed)\b/i.test(navigator.userAgent||""))return;const markerKey="kg_resource_cache_reset_v1",readMarker=()=>{try{return localStorage.getItem(markerKey)||sessionStorage.getItem(markerKey)||""}catch{try{return sessionStorage.getItem(markerKey)||""}catch{return""}}},writeMarker=()=>{try{localStorage.setItem(markerKey,resetId)}catch{}try{sessionStorage.setItem(markerKey,resetId)}catch{}},url=new URL(location.href);if(url.searchParams.get("kg_cache_reset")===resetId){writeMarker();try{url.searchParams.delete("kg_cache_reset"),url.searchParams.delete("kg_cache_reset_at"),history.replaceState(history.state,"",url.toString())}catch{}return}if(readMarker()===resetId)return;writeMarker();const tasks=[];"caches"in window&&tasks.push(caches.keys().then(keys=>Promise.all(keys.filter(key=>/^excelkospi-(?:static|api)-/.test(String(key))).map(key=>caches.delete(key))))),navigator.serviceWorker?.getRegistrations&&tasks.push(navigator.serviceWorker.getRegistrations().then(regs=>Promise.all(regs.map(reg=>{try{reg.active?.postMessage?.({type:"excelkospi:clear-runtime-caches",resetId})}catch{}try{return reg.unregister?.().catch(()=>{})||Promise.resolve()}catch{return Promise.resolve()}})))),Promise.allSettled(tasks).finally(()=>{try{const next=new URL(location.href);next.searchParams.set("kg_cache_reset",resetId),next.searchParams.set("kg_cache_reset_at",String(Date.now())),location.replace(next.toString())}catch{location.reload()}})}catch{}})();
 </script>
@@ -62,7 +62,7 @@
 </script>
   <style>.quick svg,.window svg,.search svg,.ic svg,.tool svg,.split svg,.btn-memo svg,.btn-share svg,.watchlist-phone svg,.watchlist-more-menu svg,.chat-head-btn svg{width:16px;height:16px;display:block;flex:0 0 auto}.chat-rank-pill svg{width:14.5px;height:14.5px;display:block;flex:0 0 auto}.quick .save-btn svg{width:15px;height:15px}.search svg{width:13px;height:13px}.split .ic{width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}.tool.big .ic{width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center}.tool.big .ic svg{width:26px;height:26px}.seo-heading{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
-  <link rel="stylesheet" href="/assets/app.css.20260618-2868.css" />
+  <link rel="stylesheet" href="/assets/app.css.20260619-2870.css" />
 </head>
 <body>
 <script>(function(){try{var t=localStorage.getItem("kg_excel_theme_v1");["classic","silver","graphite","deep"].indexOf(t)<0&&(t="classic");var d=localStorage.getItem("kg_excel_dark_mode_v1")==="1",fs=localStorage.getItem("excelkospi:ribbonFontSize"),tone=localStorage.getItem("kg_color_tone_v1");["standard","readability","lupang","mono"].indexOf(tone)<0&&(tone=localStorage.getItem("kg_readability_v1")==="1"?"readability":localStorage.getItem("kg_sheet_monochrome_v1")==="1"?"mono":"standard");var c=document.body.classList;c.add("excel-theme-"+t),d&&c.add("excel-dark-mode"),tone==="readability"&&c.add("readability-mode"),tone==="mono"&&c.add("sheet-monochrome-mode"),tone==="lupang"&&c.add("lupang-tone-mode"),["12","13","14","15","16","17","18","19","20"].indexOf(fs)>=0&&c.add("xk-r-fs-"+fs);var m=document.querySelector('meta[name="theme-color"]');m&&m.setAttribute("content",d?"#101418":t==="silver"?"#ffffff":t==="graphite"?"#333333":t==="deep"?"#1e1e1e":"#185c37")}catch{}})();
@@ -886,28 +886,28 @@
         <div class="settings-profile-slot" data-auth-panel="settings"></div>
       </div>
       <div class="settings-group">
-        <div class="settings-group-title">위장 · 보안</div>
+        <div class="settings-group-title">위장 모드</div>
         <label class="settings-row" data-setting="outlook">
           <span class="settings-row-text">
             <strong>Ootlook 위장 (베타)</strong>
-            <em>시세창을 메일함처럼 둔갑시킵니다. 상사가 흘끗 봐도 '쟤 일하네'. (켜면 새로고침)</em>
+            <em>시세 화면을 메일함처럼 바꿔 보여 드립니다. 곁눈질로는 업무 중으로 보입니다. (켜면 새로고침됩니다)</em>
           </span>
           <span class="settings-toggle"><input type="checkbox" id="settingOutlook" /><span class="settings-toggle-slider"></span></span>
         </label>
         <label class="settings-row" data-setting="bossKey">
           <span class="settings-row-text">
             <strong>보스 긴급키</strong>
-            <em>Esc를 빠르게 두 번 → 채팅을 숨기고 업무용 검토표로 위장. 다시 두 번이면 원상복구.</em>
+            <em>Esc를 빠르게 두 번 누르면 채팅이 사라지고 업무용 검토표로 바뀝니다. 다시 두 번 누르면 원래대로 돌아옵니다.</em>
           </span>
           <span class="settings-toggle"><input type="checkbox" id="settingBossKey" /><span class="settings-toggle-slider"></span></span>
         </label>
       </div>
       <div class="settings-group">
-        <div class="settings-group-title">화면 테마</div>
+        <div class="settings-group-title">화면 표시</div>
         <label class="settings-row" data-setting="excelTheme">
           <span class="settings-row-text">
             <strong>Office 테마</strong>
-            <em>실제 엑셀의 'Office 테마' 4종과 같은 구성. 시트 본문까지 어둡게는 아래 다크모드.</em>
+            <em>실제 엑셀의 'Office 테마' 네 가지와 같은 구성입니다. 시트 본문까지 어둡게 하려면 아래 다크모드를 함께 켜 주세요.</em>
           </span>
           <select class="settings-select" id="settingExcelTheme" aria-label="Office 테마">
             <option value="classic">다채로운 색</option>
@@ -919,14 +919,14 @@
         <label class="settings-row" data-setting="darkMode">
           <span class="settings-row-text">
             <strong>다크모드</strong>
-            <em>밤에도 몰래 보는 분들을 위한 어둠.</em>
+            <em>화면 전체를 어둡게 바꿉니다. 늦은 밤이나 어두운 사무실에서 눈이 한결 편안합니다.</em>
           </span>
           <span class="settings-toggle"><input type="checkbox" id="settingDarkMode" /><span class="settings-toggle-slider"></span></span>
         </label>
         <div class="settings-row settings-row-action" data-setting="fontSize">
           <span class="settings-row-text">
             <strong>글씨 크기</strong>
-            <em>리본의 글꼴 크기와 같은 설정입니다. 어느 쪽에서 바꿔도 같이 바뀝니다.</em>
+            <em>리본의 글꼴 크기와 연동됩니다. 어느 쪽에서 바꿔도 함께 조정됩니다.</em>
           </span>
           <span class="settings-range-control settings-font-size-control">
             <button class="settings-step-btn" type="button" data-setting-action="font-size-step" data-step="-1" aria-label="글씨 작게">−</button>
@@ -938,7 +938,7 @@
         <div class="settings-row settings-row-action settings-row-tone" data-setting="colorTone">
           <span class="settings-row-text">
             <strong>색 톤</strong>
-            <em>표준은 기본값, 노안은 기존 노안 모드, 루팡은 전체 색을 살짝 흐리게, 흑백은 기존 흑백 모드입니다.</em>
+            <em>표준은 기본, 노안 모드는 글자를 더 또렷하게, 루팡 모드는 화면 전체를 살짝 흐리게, 흑백은 색을 모두 뺀 화면입니다.</em>
           </span>
           <span class="settings-tone-options" role="group" aria-label="색 톤">
             <button type="button" data-setting-tone="readability" aria-pressed="false">노안 모드</button>
@@ -947,27 +947,34 @@
             <button type="button" data-setting-tone="mono" aria-pressed="false">흑백</button>
           </span>
         </div>
+        <label class="settings-row" data-setting="wakelock">
+          <span class="settings-row-text">
+            <strong>모바일 화면 자동으로 안 꺼지게</strong>
+            <em>창을 열어 둔 동안 화면이 꺼지지 않습니다. 점심시간 내내 시세를 켜 두기 좋습니다. (모바일 전용)</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingWakeLock" /><span class="settings-toggle-slider"></span></span>
+        </label>
       </div>
       <div class="settings-group">
-        <div class="settings-group-title">시세 · 시장</div>
+        <div class="settings-group-title">시세 보기</div>
         <label class="settings-row" data-setting="usKrwDisplay">
           <span class="settings-row-text">
             <strong>미장 현재가를 원화로</strong>
-            <em>미장 달러 종목 현재가를 환율로 환산해 표시. (얼마 물렸는지 원화로 확인)</em>
+            <em>미국 종목의 현재가를 환율로 환산해 원화로 함께 보여 드립니다. 손익을 원화로 가늠하기 좋습니다.</em>
           </span>
           <span class="settings-toggle"><input type="checkbox" id="settingUsKrwDisplay" /><span class="settings-toggle-slider"></span></span>
         </label>
         <label class="settings-row" data-setting="quoteFlash">
           <span class="settings-row-text">
             <strong>현재가 변동 깜빡임</strong>
-            <em>값이 바뀐 현재가 칸만 잠깐 옅게 물듭니다. 오르면 빨강, 내리면 파랑.</em>
+            <em>값이 바뀐 현재가 칸이 잠깐 옅게 물듭니다. 오르면 빨강, 내리면 파랑입니다.</em>
           </span>
           <span class="settings-toggle"><input type="checkbox" id="settingQuoteFlash" /><span class="settings-toggle-slider"></span></span>
         </label>
         <label class="settings-row" data-setting="hlProxy">
           <span class="settings-row-text">
             <strong>코스피 24시간 야간 종목 표시</strong>
-            <em>장마감 후부터 08:30까지 국장·미장·자동·주식전체 시트 상단에 HL 24h 참고 시세를 보여줍니다.</em>
+            <em>장 마감 후부터 오전 8시 30분까지, 국내·미국·자동·전체 시트 위에 HL 24시간 참고 시세를 함께 보여 드립니다.</em>
             <span class="settings-runtime-status" id="settingHlProxyStatus" data-state="idle">현재 연결: 대기</span>
           </span>
           <span class="settings-toggle"><input type="checkbox" id="settingHlProxy" /><span class="settings-toggle-slider"></span></span>
@@ -975,14 +982,14 @@
         <label class="settings-row" data-setting="hoverChart">
           <span class="settings-row-text">
             <strong>종목 미니차트</strong>
-            <em>종목명에 올리면(모바일은 탭) 작은 차트가 뜹니다. 끄면 안 떠요 — 옆자리 시선이 부담될 때.</em>
+            <em>종목명에 마우스를 올리면(모바일은 탭) 작은 차트가 나타납니다. 주변이 신경 쓰일 때는 꺼 두세요.</em>
           </span>
           <span class="settings-toggle"><input type="checkbox" id="settingHoverChart" /><span class="settings-toggle-slider"></span></span>
         </label>
         <label class="settings-row" data-setting="stockDetailTarget">
           <span class="settings-row-text">
             <strong>국내 종목 상세 페이지</strong>
-            <em>국내 종목명을 눌렀을 때 열리는 사이트를 고릅니다. (미장·코인 링크는 그대로)</em>
+            <em>국내 종목명을 눌렀을 때 열리는 사이트를 고릅니다. (미국·코인 링크는 그대로입니다)</em>
           </span>
           <select class="settings-select" id="settingStockDetailTarget" aria-label="국내 종목 상세 페이지">
             <option value="google">구글 금융</option>
@@ -994,7 +1001,7 @@
         <label class="settings-row" data-setting="rememberMarket">
           <span class="settings-row-text">
             <strong>마지막에 보던 시장 기억</strong>
-            <em>다음에 켜면 직전에 보던 시장(국장·미장·코인)부터 시작합니다.</em>
+            <em>다음에 열면 직전에 보던 시장(국내·미국·코인)부터 시작합니다.</em>
           </span>
           <span class="settings-toggle"><input type="checkbox" id="settingRememberMarket" /><span class="settings-toggle-slider"></span></span>
         </label>
@@ -1004,7 +1011,7 @@
         <label class="settings-row" data-setting="coinQuoteSource">
           <span class="settings-row-text">
             <strong>코인 시세 출처</strong>
-            <em>표시 기준만 고릅니다. 김프 계산엔 업비트·바이낸스를 그대로 함께 써요.</em>
+            <em>화면에 표시할 기준만 고릅니다. 김치프리미엄 계산에는 업비트와 바이낸스를 그대로 함께 사용합니다.</em>
           </span>
           <select class="settings-select" id="settingCoinQuoteSource" aria-label="코인 시세 출처">
             <option value="binance">바이낸스</option>
@@ -1014,7 +1021,7 @@
         <label class="settings-row" data-setting="coinFeedMode">
           <span class="settings-row-text">
             <strong>코인 시세 받는 방식</strong>
-            <em>'고속 실시간'은 거래소에 직접 연결해 즉시 반영. 회사에서 막히면 '안전 모드'로 바꾸세요.</em>
+            <em>'고속 실시간'은 거래소에 직접 연결해 즉시 반영합니다. 회사망에서 막히면 '안전 모드'로 바꿔 주세요.</em>
           </span>
           <select class="settings-select" id="settingCoinFeedMode" aria-label="코인 시세 받는 방식">
             <option value="realtime">고속 실시간</option>
@@ -1027,7 +1034,7 @@
         <div class="settings-row settings-row-chat-realtime" data-setting="chatRealtime">
           <span class="settings-row-text">
             <strong>채팅 받는 방식</strong>
-            <em>'고속 실시간'은 새 채팅이 바로 올라옵니다. 막히면 자동으로 일반 조회를 씁니다.</em>
+            <em>'고속 실시간'은 새 채팅이 곧바로 올라옵니다. 연결이 막히면 자동으로 일반 조회로 전환됩니다.</em>
             <span class="settings-runtime-status" id="settingChatRealtimeStatus" data-state="idle">채팅을 열면 웹소켓으로 연결합니다.</span>
           </span>
           <span class="settings-chat-realtime-control">
@@ -1038,17 +1045,10 @@
             <button class="settings-mini-action" id="settingChatWsRetry" type="button" data-setting-action="chat-ws-retry" hidden>다시 연결</button>
           </span>
         </div>
-        <label class="settings-row" data-setting="floatingChat">
-          <span class="settings-row-text">
-            <strong>떠다니는 채팅 버튼</strong>
-            <em>어디서든 슬쩍 불러내는 채팅 바로가기.</em>
-          </span>
-          <span class="settings-toggle"><input type="checkbox" id="settingFloatingChat" /><span class="settings-toggle-slider"></span></span>
-        </label>
         <label class="settings-row" data-setting="chatOpacity">
           <span class="settings-row-text">
             <strong>채팅창 투명도</strong>
-            <em>뒤통수가 좀 따가우면 채팅을 흐릿하게. 슬쩍 올려보세요.</em>
+            <em>채팅창을 흐리게 조절합니다. 주변 시선이 신경 쓰일 때 낮춰 보세요.</em>
           </span>
           <span class="settings-range-control">
             <input class="settings-range" type="range" id="settingChatOpacity" min="50" max="100" step="5" aria-label="채팅창 투명도" />
@@ -1058,14 +1058,14 @@
         <label class="settings-row" data-setting="chatImagePreview">
           <span class="settings-row-text">
             <strong>채팅 이미지 자동으로 보이기</strong>
-            <em>끄면 게시판처럼 눌러서 펼치기. (옆자리 시선이 부담되면 끄세요)</em>
+            <em>끄면 게시판처럼 눌러서 펼쳐 봅니다. 주변이 신경 쓰일 때 꺼 두세요.</em>
           </span>
           <span class="settings-toggle"><input type="checkbox" id="settingChatImagePreview" /><span class="settings-toggle-slider"></span></span>
         </label>
         <label class="settings-row" data-setting="chatAnim">
           <span class="settings-row-text">
             <strong>채팅 올라올 때 애니메이션</strong>
-            <em>새 채팅이 부드럽게 스윽. 끄면 즉시 툭 표시됩니다.</em>
+            <em>새 채팅이 부드럽게 올라옵니다. 끄면 곧바로 표시됩니다.</em>
           </span>
           <span class="settings-toggle"><input type="checkbox" id="settingChatAnim" /><span class="settings-toggle-slider"></span></span>
         </label>
@@ -1078,129 +1078,116 @@
         </div>
       </div>
       <div class="settings-group">
+        <div class="settings-group-title">떠다니는 버튼</div>
+        <label class="settings-row" data-setting="floatingChat">
+          <span class="settings-row-text">
+            <strong>떠다니는 채팅 버튼</strong>
+            <em>화면 어디서나 채팅을 바로 여는 버튼을 띄워 둡니다.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingFloatingChat" /><span class="settings-toggle-slider"></span></span>
+        </label>
+        <label class="settings-row" data-setting="floatingTelegram">
+          <span class="settings-row-text">
+            <strong>떠다니는 시세알림 버튼</strong>
+            <em>시세 알림(텔레그램) 바로가기 버튼을 화면에 띄워 둡니다.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingFloatingTelegram" /><span class="settings-toggle-slider"></span></span>
+        </label>
+      </div>
+      <div class="settings-group settings-group-notify">
         <div class="settings-group-title">알림</div>
         <label class="settings-row" data-setting="notifyPaperPerformance">
           <span class="settings-row-text">
             <strong>모의투자 알림</strong>
-            <em>수익률 변동, TOP3 진입, 1위 달성 같은 주요 변동만 알려줍니다.</em>
+            <em>수익률 변동, TOP3 진입, 1위 달성처럼 중요한 변화만 알려 드립니다.</em>
           </span>
           <span class="settings-toggle"><input type="checkbox" id="settingNotifyPaperPerformance" /><span class="settings-toggle-slider"></span></span>
         </label>
         <label class="settings-row" data-setting="notifyChatMentions">
           <span class="settings-row-text">
             <strong>채팅 멘션 알림</strong>
-            <em>닉네임을 클릭해 멘션한 경우에만 알려줍니다. 직접 입력한 @닉네임은 일단 제외합니다.</em>
+            <em>닉네임을 눌러 멘션한 경우에만 알려 드립니다. 직접 입력한 @닉네임은 제외합니다.</em>
           </span>
           <span class="settings-toggle"><input type="checkbox" id="settingNotifyChatMentions" /><span class="settings-toggle-slider"></span></span>
         </label>
         <label class="settings-row" data-setting="notifyMyPostReplies">
           <span class="settings-row-text">
             <strong>내 글 댓글 알림</strong>
-            <em>내가 쓴 종토방 글에 새 댓글이 달리면 알려줍니다.</em>
+            <em>내가 쓴 종목토론 글에 새 댓글이 달리면 알려 드립니다.</em>
           </span>
           <span class="settings-toggle"><input type="checkbox" id="settingNotifyMyPostReplies" /><span class="settings-toggle-slider"></span></span>
         </label>
-        <label class="settings-row" data-setting="notifyCommunityKr">
-          <span class="settings-row-text">
-            <strong>국내주식토론 모든 글</strong>
-            <em>국내주식토론에 새 글이 올라오면 알려줍니다.</em>
-          </span>
-          <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityKr" /><span class="settings-toggle-slider"></span></span>
-        </label>
-        <label class="settings-row" data-setting="notifyCommunityKrRecommended">
-          <span class="settings-row-text">
-            <strong>국내주식토론 추천글</strong>
-            <em>국내주식토론 글이 추천글로 올라오면 알려줍니다.</em>
-          </span>
-          <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityKrRecommended" /><span class="settings-toggle-slider"></span></span>
-        </label>
-        <label class="settings-row" data-setting="notifyCommunityUs">
-          <span class="settings-row-text">
-            <strong>해외주식토론 모든 글</strong>
-            <em>해외주식토론에 새 글이 올라오면 알려줍니다.</em>
-          </span>
-          <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityUs" /><span class="settings-toggle-slider"></span></span>
-        </label>
-        <label class="settings-row" data-setting="notifyCommunityUsRecommended">
-          <span class="settings-row-text">
-            <strong>해외주식토론 추천글</strong>
-            <em>해외주식토론 글이 추천글로 올라오면 알려줍니다.</em>
-          </span>
-          <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityUsRecommended" /><span class="settings-toggle-slider"></span></span>
-        </label>
-        <label class="settings-row" data-setting="notifyCommunityCoin">
-          <span class="settings-row-text">
-            <strong>코인토론 모든 글</strong>
-            <em>코인토론에 새 글이 올라오면 알려줍니다.</em>
-          </span>
-          <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityCoin" /><span class="settings-toggle-slider"></span></span>
-        </label>
-        <label class="settings-row" data-setting="notifyCommunityCoinRecommended">
-          <span class="settings-row-text">
-            <strong>코인토론 추천글</strong>
-            <em>코인토론 글이 추천글로 올라오면 알려줍니다.</em>
-          </span>
-          <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityCoinRecommended" /><span class="settings-toggle-slider"></span></span>
-        </label>
-        <label class="settings-row" data-setting="notifyCommunityFree">
-          <span class="settings-row-text">
-            <strong>탕비실 모든 글</strong>
-            <em>탕비실에 새 글이 올라오면 알려줍니다.</em>
-          </span>
-          <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityFree" /><span class="settings-toggle-slider"></span></span>
-        </label>
-        <label class="settings-row" data-setting="notifyCommunityFreeRecommended">
-          <span class="settings-row-text">
-            <strong>탕비실 추천글</strong>
-            <em>탕비실 글이 추천글로 올라오면 알려줍니다.</em>
-          </span>
-          <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityFreeRecommended" /><span class="settings-toggle-slider"></span></span>
-        </label>
-        <label class="settings-row" data-setting="notifyCommunityOps">
-          <span class="settings-row-text">
-            <strong>운영게시판 모든 글</strong>
-            <em>운영게시판에 새 글이 올라오면 알려줍니다.</em>
-          </span>
-          <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityOps" /><span class="settings-toggle-slider"></span></span>
-        </label>
-        <label class="settings-row" data-setting="notifyCommunityOpsRecommended">
-          <span class="settings-row-text">
-            <strong>운영게시판 추천글</strong>
-            <em>운영게시판 글이 추천글로 올라오면 알려줍니다.</em>
-          </span>
-          <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityOpsRecommended" /><span class="settings-toggle-slider"></span></span>
-        </label>
-      </div>
-      <div class="settings-group">
-        <div class="settings-group-title">기타</div>
-        <label class="settings-row" data-setting="floatingTelegram">
-          <span class="settings-row-text">
-            <strong>떠다니는 시세알림 버튼</strong>
-            <em>화면에 띄워두는 시세알림(텔레그램) 바로가기.</em>
-          </span>
-          <span class="settings-toggle"><input type="checkbox" id="settingFloatingTelegram" /><span class="settings-toggle-slider"></span></span>
-        </label>
-        <label class="settings-row" data-setting="wakelock">
-          <span class="settings-row-text">
-            <strong>모바일 화면 자동으로 안 꺼지게</strong>
-            <em>창을 띄워둔 동안 화면이 잠들지 않습니다. 점심시간 내내 시세가 살아있게. (모바일)</em>
-          </span>
-          <span class="settings-toggle"><input type="checkbox" id="settingWakeLock" /><span class="settings-toggle-slider"></span></span>
-        </label>
+        <div class="settings-subhead">게시판별 새 글 알림</div>
+        <p class="settings-note">각 게시판에 새 글이 올라오면 알려 드립니다. 전체 글과 추천글을 따로 켤 수 있습니다.</p>
+        <div class="settings-board">
+          <div class="settings-board-name">국내주식토론</div>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityKr">
+            <span class="settings-row-text"><strong>전체 글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityKr" /><span class="settings-toggle-slider"></span></span>
+          </label>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityKrRecommended">
+            <span class="settings-row-text"><strong>추천글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityKrRecommended" /><span class="settings-toggle-slider"></span></span>
+          </label>
+        </div>
+        <div class="settings-board">
+          <div class="settings-board-name">해외주식토론</div>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityUs">
+            <span class="settings-row-text"><strong>전체 글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityUs" /><span class="settings-toggle-slider"></span></span>
+          </label>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityUsRecommended">
+            <span class="settings-row-text"><strong>추천글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityUsRecommended" /><span class="settings-toggle-slider"></span></span>
+          </label>
+        </div>
+        <div class="settings-board">
+          <div class="settings-board-name">코인토론</div>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityCoin">
+            <span class="settings-row-text"><strong>전체 글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityCoin" /><span class="settings-toggle-slider"></span></span>
+          </label>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityCoinRecommended">
+            <span class="settings-row-text"><strong>추천글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityCoinRecommended" /><span class="settings-toggle-slider"></span></span>
+          </label>
+        </div>
+        <div class="settings-board">
+          <div class="settings-board-name">탕비실</div>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityFree">
+            <span class="settings-row-text"><strong>전체 글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityFree" /><span class="settings-toggle-slider"></span></span>
+          </label>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityFreeRecommended">
+            <span class="settings-row-text"><strong>추천글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityFreeRecommended" /><span class="settings-toggle-slider"></span></span>
+          </label>
+        </div>
+        <div class="settings-board">
+          <div class="settings-board-name">운영게시판</div>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityOps">
+            <span class="settings-row-text"><strong>전체 글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityOps" /><span class="settings-toggle-slider"></span></span>
+          </label>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityOpsRecommended">
+            <span class="settings-row-text"><strong>추천글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityOpsRecommended" /><span class="settings-toggle-slider"></span></span>
+          </label>
+        </div>
       </div>
       <div class="settings-group">
         <div class="settings-group-title">데이터 관리</div>
         <div class="settings-row settings-row-action">
           <span class="settings-row-text">
             <strong>이 브라우저 데이터 초기화</strong>
-            <em>관심 종목·보유 메모·캐시·설정을 모두 지웁니다. 되돌릴 수 없어요.</em>
+            <em>관심 종목, 보유 메모, 캐시, 설정을 모두 지웁니다. 되돌릴 수 없습니다.</em>
           </span>
           <button class="settings-danger" type="button" data-setting-action="reset">초기화</button>
         </div>
       </div>
       <div class="settings-foot">
-        설정은 이 브라우저에만 저장됩니다. 다른 기기에는 따로 적용해 주세요.<br>
-        <a href="/policy" target="_blank" rel="noopener">이용약관 · 개인정보 · 면책</a> — 로그인 없이도 쓸 수 있게, 개인정보를 최소로 받는 것을 원칙으로 합니다.
+        설정은 이 브라우저에만 저장됩니다. 다른 기기에서는 따로 설정해 주세요.<br>
+        <a href="/policy" target="_blank" rel="noopener">이용약관 · 개인정보 · 면책</a> — 로그인 없이도 쓸 수 있도록, 개인정보는 최소한으로만 받는 것을 원칙으로 합니다.
       </div>
     </div>
   </section>
@@ -1236,7 +1223,7 @@
   <script src="/assets/app-mention-autocomplete.js?v=20260618-2860" defer></script>
   <script src="/assets/app-link-preview.js?v=20260618-2860" defer></script>
   <script src="/assets/app-paper.js?v=20260618-2860" defer></script>
-  <script src="/assets/app-market-forecast.js?v=20260618-2866" defer></script>
+  <script src="/assets/app-market-forecast.js?v=20260619-2870" defer></script>
   <script src="/assets/app-hl-proxy.js?v=20260618-2860" defer></script>
   <script src="/assets/app-settings.js?v=20260618-2860" defer></script>
   <script src="/assets/app-auth.js?v=20260618-2867" defer></script>
