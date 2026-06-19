@@ -13,6 +13,7 @@
 /sports / 200
 /forecast / 200
 /forecast/* / 200
+/attendance / 200
 /etf / 200
 /blank / 200
 /sheet / 200
