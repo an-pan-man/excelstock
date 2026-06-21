@@ -81,7 +81,7 @@ ${def.desc} — 이 뱃지를 받았어요`:""}window.paperBadgeTipByEmoji=paper
     <span>${esc(copy[1])}</span>
   </div>`}function paperMemberOnboardingHtml(){const u=typeof currentAuthUser=="function"?currentAuthUser():null,name=esc(String(u?.nickname||u?.loginId||"회원").slice(0,24));return`<div class="pp-card pp-onboard">
     <div class="pp-onboard-head">
-      <strong>모의투자에 처음 오신 것을 환영합니다. <em class="pp-beta-chip">BETA</em></strong>
+      <strong>모의투자에 처음 오신 것을 환영합니다. <em class="tab-new">N</em></strong>
       ${paperMemberScenarioHtml()}
       <span class="pp-onboard-hero"><b>${name}</b>님 어서오세요.</span>
     </div>
@@ -114,7 +114,7 @@ ${def.desc} — 이 뱃지를 받았어요`:""}window.paperBadgeTipByEmoji=paper
       <button class="pp-btn pp-onboard-secondary" type="button" data-pp-act="guest-start" ${paperBusy?"disabled":""}>로그인없이 모의투자 시작하기</button>
     </div>`;return invite+`<div class="pp-card pp-onboard">
     <div class="pp-onboard-head">
-      <strong>모의투자 시작하기 <em class="pp-beta-chip">BETA</em></strong>
+      <strong>모의투자 시작하기 <em class="tab-new">N</em></strong>
       <span class="pp-onboard-hero">가상 자금 <b>5,000만원</b>으로 국내주식·해외주식·코인을 연습해요.</span>
       <span>계정으로 시작하면 모의투자 계좌와 관심종목이 기기 간 이어집니다. 로그인 없이도 이 브라우저에서 바로 시작할 수 있어요.</span>
     </div>
