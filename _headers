@@ -47,6 +47,12 @@
 /og-paper.png
   Cache-Control: public, max-age=3600
 
+# 종목 목록 JSON(kr/us/coin, 합 ~316KB)은 ?v= 버전스탬프가 붙는데도 max-age=0 must-revalidate 라
+# 매 페이지 로드마다 조건부 재검증 왕복(304)이 3회 발생했다. 목록은 거의 안 바뀌고(가격은 /api/quote 라이브)
+# 버전스탬프로 신선도가 보장되므로 1일 캐시로 왕복 제거(초기 로딩 단축). 데이터 변경 시 ?v= 가 바뀌어 즉시 신선.
+/data/*
+  Cache-Control: public, max-age=86400
+
 /assets/app.css
   Cache-Control: public, max-age=31536000, immutable
 
