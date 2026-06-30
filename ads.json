@@ -9,7 +9,7 @@
       "texts": ["이곳에 한줄 광고를 넣어주실 광고주를 모십니다."],
       "href": "mailto:excelkospi@outlook.com",
       "weight": 1,
-      "placements": ["chat", "community", "summary"]
+      "placements": ["chat", "community", "summary", "papercard", "forecast", "chatflow"]
     },
     {
       "id": "example-disabled",
