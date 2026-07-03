@@ -15,9 +15,12 @@ function renderHoldingEditRow(card,rowNo,current={}){const id=holdingId(card),lo
       <td class="rownum">${rowNo}</td>
       <td class="left holding-cell holding-meta-cell">
         ${holdingLotMetaHtml(calc,index,total,card)}
-        <button class="holding-row-add holding-row-edit" data-action="edit-holding-lot" data-holding-id="${esc(id)}" data-lot-id="${esc(lot.lotId)}" data-key="${esc(card.key)}" title="${esc(card.key)} 보유 정보 수정" aria-label="보유 정보 수정">수정</button>
-        <button class="holding-row-add" data-action="add-holding-lot" data-holding-id="${esc(id)}" data-lot-id="${esc(lot.lotId)}" data-key="${esc(card.key)}" title="${esc(card.key)} 보유 행 추가" aria-label="보유 행 추가">추가</button>
-        <button class="row-x holding-row-x" data-action="clear-holding" data-holding-id="${esc(id)}" data-lot-id="${esc(lot.lotId)}" data-key="${esc(card.key)}" title="${esc(card.key)} 보유 정보 삭제" aria-label="보유 정보 삭제">×</button>
+        <span class="holding-row-actions">
+          <button class="holding-row-add holding-row-edit" data-action="edit-holding-lot" data-holding-id="${esc(id)}" data-lot-id="${esc(lot.lotId)}" data-key="${esc(card.key)}" title="${esc(card.key)} 보유 정보 수정" aria-label="보유 정보 수정">수정</button>
+          <button class="holding-row-add" data-action="add-holding-lot" data-holding-id="${esc(id)}" data-lot-id="${esc(lot.lotId)}" data-key="${esc(card.key)}" title="${esc(card.key)} 보유 행 추가" aria-label="보유 행 추가">추가</button>
+          ${typeof featureEnabled=="function"&&featureEnabled("averagingDownCalc")?`<button class="holding-row-add holding-row-mulmul" data-action="mulmul-holding" data-holding-id="${esc(id)}" data-lot-id="${esc(lot.lotId)}" data-key="${esc(card.key)}" title="${esc(card.key)} 물타기 계산기" aria-label="물타기 계산기">물타기</button>`:""}
+          <button class="holding-row-add holding-row-del" data-action="clear-holding" data-holding-id="${esc(id)}" data-lot-id="${esc(lot.lotId)}" data-key="${esc(card.key)}" title="${esc(card.key)} 보유 정보 삭제" aria-label="보유 정보 삭제">삭제</button>
+        </span>
       </td>
       <td class="right holding-value-cell ${valueClass}">${esc(pnlText)}</td>
       <td class="right holding-return-cell ${returnClass}">${esc(pctText)}</td>
