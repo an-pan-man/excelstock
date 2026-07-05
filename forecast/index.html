@@ -1,0 +1,1378 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+  <script>try{new URLSearchParams(location.search).get("xkscreen")&&document.documentElement.classList.add("xk-screen-only")}catch{}
+</script>
+  <title>excelkospi 시장 예측 - 코스피 예상 등락</title>
+  <link rel="canonical" href="https://excelkospi.pages.dev/forecast" />
+  <link rel="alternate" hreflang="ko-KR" href="https://excelkospi.pages.dev/forecast" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="google-site-verification" content="vS9ppbdmrIaBfAGWJH8Oy0hiDMGkwhHajpVD04Aup7Q" />
+  <meta name="google-site-verification" content="WR_OuWTRj1TarXDGPhbdhZF0kpZ7u1pO2POrWWfjHic" />
+  <meta name="naver-site-verification" content="38643faae47d16d780e0ca693199526b1bd0060f" />
+  <!-- Public search and brief summaries are welcome. Automated cloning, source reconstruction, and training ingestion are not licensed. See /robots.txt and /llms.txt. -->
+  <meta name="theme-color" content="#146c3c" />
+  <meta name="application-name" content="excelkospi" />
+  <meta name="title" content="excelkospi 시장 예측 - 코스피 예상 등락" />
+  <meta name="description" content="excelkospi 시장 예측 탭에서 다음 거래일 코스피 예상 등락, 계산 근거, 관련 헤드라인을 시세 흐름과 함께 한 화면에서 확인하세요." />
+  <meta name="keywords" content="엑셀코스피, excelkospi, 엑셀 코스피, 엑셀 보는 척 주식 보기, 회사에서 주식 보기, 자동 갱신 시세, 국장 시세, 미장 시세, 코스피, 코스닥, 나스닥, 비트코인, 김프, ETF, 종목토론방, 주식 뉴스, TradingView 차트" />
+  <meta name="author" content="excelkospi" />
+  <meta name="publisher" content="excelkospi" />
+  <meta name="language" content="ko-KR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="엑셀코스피" />
+  <meta property="og:title" content="excelkospi 시장 예측" />
+  <meta property="og:description" content="excelkospi 시장 예측 탭에서 다음 거래일 코스피 예상 등락, 계산 근거, 관련 헤드라인을 시세 흐름과 함께 한 화면에서 확인하세요." />
+  <meta property="og:url" content="https://excelkospi.pages.dev/forecast" />
+  <meta property="og:image" content="https://excelkospi.pages.dev/og-forecast.png?v=20260611-2455" />
+  <meta property="og:image:secure_url" content="https://excelkospi.pages.dev/og-forecast.png?v=20260611-2455" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="excelkospi 시장 예측" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:updated_time" content="2026-05-23T00:00:00+09:00" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="excelkospi 시장 예측" />
+  <meta name="twitter:description" content="excelkospi 시장 예측 탭에서 다음 거래일 코스피 예상 등락, 계산 근거, 관련 헤드라인을 시세 흐름과 함께 한 화면에서 확인하세요." />
+  <meta name="twitter:image" content="https://excelkospi.pages.dev/og-forecast.png?v=20260611-2455" />
+  <meta name="twitter:image:alt" content="excelkospi 시장 예측" />
+  <link rel="icon" href="/favicon.ico?v=20260704-3308" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=20260704-3308" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260704-3308" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260704-3308" />
+  <link rel="manifest" href="/manifest.webmanifest?v=20260704-3308" />
+  <link rel="preconnect" href="https://s3.tradingview.com" crossorigin />
+  <link rel="dns-prefetch" href="https://s3.tradingview.com" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="excelkospi" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="build-id" content="20260705-3338" />
+  <meta name="build-time" content="2026-07-05 10:19" />
+  <meta name="cache-reset-id" content="20260705-3338-mirror-image-upload" />
+  <script>(()=>{try{const resetId=document.querySelector('meta[name="cache-reset-id"]')?.getAttribute("content")||"";if(!resetId||/\b(?:bot|crawler|spider|crawling|yeti|google-inspectiontool|chrome-lighthouse|lighthouse|pagespeed)\b/i.test(navigator.userAgent||""))return;const markerKey="kg_resource_cache_reset_v1",readMarker=()=>{try{return localStorage.getItem(markerKey)||sessionStorage.getItem(markerKey)||""}catch{try{return sessionStorage.getItem(markerKey)||""}catch{return""}}},writeMarker=()=>{try{localStorage.setItem(markerKey,resetId)}catch{}try{sessionStorage.setItem(markerKey,resetId)}catch{}},url=new URL(location.href);if(url.searchParams.get("kg_cache_reset")===resetId){writeMarker();try{url.searchParams.delete("kg_cache_reset"),url.searchParams.delete("kg_cache_reset_at"),history.replaceState(history.state,"",url.toString())}catch{}return}if(readMarker()===resetId)return;writeMarker();const tasks=[];"caches"in window&&tasks.push(caches.keys().then(keys=>Promise.all(keys.filter(key=>/^excelkospi-(?:static|api)-/.test(String(key))).map(key=>caches.delete(key))))),navigator.serviceWorker?.getRegistrations&&tasks.push(navigator.serviceWorker.getRegistrations().then(regs=>Promise.all(regs.map(reg=>{try{reg.active?.postMessage?.({type:"excelkospi:clear-runtime-caches",resetId})}catch{}try{return reg.unregister?.().catch(()=>{})||Promise.resolve()}catch{return Promise.resolve()}})))),Promise.allSettled(tasks).finally(()=>{try{const next=new URL(location.href);next.searchParams.set("kg_cache_reset",resetId),next.searchParams.set("kg_cache_reset_at",String(Date.now())),location.replace(next.toString())}catch{location.reload()}})}catch{}})();
+</script>
+  <script>(()=>{try{if(/\b(?:bot|crawler|spider|crawling|yeti|google-inspectiontool|chrome-lighthouse|lighthouse|pagespeed)\b/i.test(navigator.userAgent||""))return;const resetId=document.querySelector('meta[name="cache-reset-id"]')?.getAttribute("content")||"__none__",guardKey="kg_skew_autorepair_v1",alreadyTried=()=>{try{return sessionStorage.getItem(guardKey)===resetId}catch{return!1}},markTried=()=>{try{sessionStorage.setItem(guardKey,resetId)}catch{}},SKEW=/(is not defined|before initialization|can't find variable)/i;let done=!1;window.addEventListener("error",ev=>{try{if(done||alreadyTried())return;const msg=String(ev&&(ev.message||ev.error&&ev.error.message)||"");if(!SKEW.test(msg))return;const src=String(ev&&ev.filename||"");if(src&&!/\/assets\/[^?]*\.js/.test(src))return;done=!0,markTried();try{const buildId=document.querySelector('meta[name="build-id"]')?.getAttribute("content")||"",payload=JSON.stringify({kind:"selfheal",surface:"frontend",action:"skew_autorepair",code:"version_skew",message:msg.slice(0,180),url:src.slice(0,200),buildId,sampleRate:1});navigator.sendBeacon?navigator.sendBeacon("/api/client-errors",payload):fetch("/api/client-errors",{method:"POST",body:payload,keepalive:!0}).catch(()=>{})}catch{}const tasks=[];"caches"in window&&tasks.push(caches.keys().then(keys=>Promise.all(keys.filter(key=>/^excelkospi-(?:static|api)-/.test(String(key))).map(key=>caches.delete(key))))),navigator.serviceWorker?.getRegistrations&&tasks.push(navigator.serviceWorker.getRegistrations().then(regs=>Promise.all(regs.map(reg=>{try{reg.active?.postMessage?.({type:"excelkospi:clear-runtime-caches",resetId})}catch{}try{return reg.unregister?.().catch(()=>{})||Promise.resolve()}catch{return Promise.resolve()}})))),Promise.allSettled(tasks).finally(()=>{try{location.reload()}catch{}})}catch{}},!0)}catch{}})();
+</script>
+  <link rel="preconnect" href="https://challenges.cloudflare.com" />
+  <meta name="turnstile-sitekey" content="0x4AAAAAADjd3BRey0GsKo88" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://excelkospi.pages.dev/#organization","name":"excelkospi","alternateName":["엑셀코스피","Excel Kospi","엑셀 코스피","엑셀코스피 excelkospi"],"url":"https://excelkospi.pages.dev/","logo":{"@type":"ImageObject","url":"https://excelkospi.pages.dev/assets/icon-512.png?v=20260704-3308","width":512,"height":512},"email":"excelkospi@outlook.com"},{"@type":"WebSite","@id":"https://excelkospi.pages.dev/#website","url":"https://excelkospi.pages.dev/","name":"excelkospi","alternateName":["엑셀코스피","Excel Kospi","엑셀 보는 척 주식 보기","회사에서 주식 보기","market brief workbook"],"inLanguage":"ko-KR","description":"회사에서 엑셀 보는 척 국장·미장·코인 시세, 뉴스, 종목토론방, ETF 탐색기, TradingView 차트, 보유 손익을 확인하는 한국어 주식 대시보드입니다.","publisher":{"@id":"https://excelkospi.pages.dev/#organization"}},{"@type":"WebPage","@id":"https://excelkospi.pages.dev/forecast#webpage","url":"https://excelkospi.pages.dev/forecast","name":"excelkospi 시장 예측 - 코스피 예상 등락","description":"excelkospi 시장 예측 탭에서 다음 거래일 코스피 예상 등락, 계산 근거, 관련 헤드라인을 시세 흐름과 함께 한 화면에서 확인하세요.","inLanguage":"ko-KR","isPartOf":{"@id":"https://excelkospi.pages.dev/#website"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://excelkospi.pages.dev/og.png?v=20260704-3308","width":1200,"height":630},"dateModified":"2026-05-23","breadcrumb":{"@id":"https://excelkospi.pages.dev/forecast#breadcrumb"}},{"@type":["WebApplication","SoftwareApplication"],"@id":"https://excelkospi.pages.dev/#app","name":"엑셀코스피 - 엑셀 보는 척 주식 보기","alternateName":["excelkospi","엑셀 보는 척 주식 보기"],"url":"https://excelkospi.pages.dev/","applicationCategory":"FinanceApplication","operatingSystem":"Web","browserRequirements":"Requires JavaScript. Works on desktop and mobile browsers.","inLanguage":"ko-KR","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"description":"회사에서 엑셀 보는 척 볼 수 있는 자동 갱신 주식 대시보드입니다. 코스피, 코스닥, 나스닥, 미국주식, 비트코인, 김프, 뉴스, 종목토론방, ETF, TradingView 차트, 보유 손익을 지원합니다.","featureList":["국장·미장·코인 자동 갱신 시세","프리장·애프터장 시세 표시","15분·30분 단기 변동률 전환","국내주식토론·해외주식토론·코인토론·운영게시판","ETF 탐색기와 구성 종목 확인","TradingView 차트 펼치기","관심종목 공유 URL과 빈 행 메모","평단가·수량 기반 보유 손익과 평가액 합계","아웃룩 위장 모드와 모바일 화면 지원"],"image":"https://excelkospi.pages.dev/og.png?v=20260704-3308","screenshot":["https://excelkospi.pages.dev/assets/guide/desktop-wide-overview.png?v=20260704-3308","https://excelkospi.pages.dev/assets/guide/desktop-tradingview-chart.png?v=20260704-3308"],"softwareVersion":"2026.05.23","dateModified":"2026-05-23","publisher":{"@id":"https://excelkospi.pages.dev/#organization"}},{"@type":"BreadcrumbList","@id":"https://excelkospi.pages.dev/forecast#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"excelkospi","item":"https://excelkospi.pages.dev/"},{"@type":"ListItem","position":2,"name":"시장 예측","item":"https://excelkospi.pages.dev/forecast"}]}]}</script>
+  <script>(()=>{try{const p=navigator.userAgentData&&navigator.userAgentData.platform||navigator.platform||navigator.userAgent||"";/Win/i.test(p)&&document.documentElement.classList.add("platform-windows")}catch{}})(),(()=>{try{new URLSearchParams(location.search).get("view")==="chat"&&document.documentElement.classList.add("chat-popup-window")}catch{}})();
+</script>
+  <style>.quick svg,.window svg,.search svg,.ic svg,.tool svg,.split svg,.btn-memo svg,.btn-share svg,.watchlist-phone svg,.watchlist-more-menu svg,.chat-head-btn svg{width:16px;height:16px;display:block;flex:0 0 auto}.chat-rank-pill svg{width:14.5px;height:14.5px;display:block;flex:0 0 auto}.quick .save-btn svg{width:15px;height:15px}.search svg{width:13px;height:13px}.split .ic{width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}.tool.big .ic{width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center}.tool.big .ic svg{width:26px;height:26px}.seo-heading{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+  <link rel="stylesheet" href="/assets/app.css.20260705-3338.css" />
+</head>
+<body>
+<script>(function(){try{var t=localStorage.getItem("kg_excel_theme_v1");["classic","silver","graphite","deep","m365"].indexOf(t)<0&&(t="classic");var d=localStorage.getItem("kg_excel_dark_mode_v1")==="1",fs=localStorage.getItem("excelkospi:ribbonFontSize"),tone=localStorage.getItem("kg_color_tone_v1");["standard","readability","lupang","mono"].indexOf(tone)<0&&(tone=localStorage.getItem("kg_readability_v1")==="1"?"readability":localStorage.getItem("kg_sheet_monochrome_v1")==="1"?"mono":"standard");var c=document.body.classList;c.add("excel-theme-"+t),d&&c.add("excel-dark-mode"),tone==="readability"&&c.add("readability-mode"),tone==="mono"&&c.add("sheet-monochrome-mode"),tone==="lupang"&&c.add("lupang-tone-mode"),["12","13","14","15","16","17","18","19","20"].indexOf(fs)>=0&&c.add("xk-r-fs-"+fs);var m=document.querySelector('meta[name="theme-color"]');m&&m.setAttribute("content",d?"#101418":t==="m365"?"#f3f2f1":t==="silver"?"#ffffff":t==="graphite"?"#333333":t==="deep"?"#1e1e1e":"#146c3c")}catch{}})();
+</script>
+<script>(function(){try{var nav=String(window.__nativeNav||"").toLowerCase(),host=location.hostname,proto=location.protocol,native=nav==="ios"||nav==="android"||!!window.__APP_KEY&&(host==="localhost"||host==="excelkospi.pages.dev"||proto==="capacitor:"||proto==="ionic:");if(!native)return;var b=document.body,c=b.classList;c.add("is-native","native-shell","native-single-surface"),nav==="ios"?c.add("native-ios"):nav==="android"&&c.add("native-android"),b.getAttribute("data-native-nav")||b.setAttribute("data-native-nav","quote"),c.add("xk-native-booting"),setTimeout(function(){try{c.remove("xk-native-booting")}catch{}},1600)}catch{}})();
+</script>
+<h1 class="seo-heading">excelkospi - 엑셀 보는 척 주식 보기</h1>
+<noscript>
+  <main>
+    <h2>excelkospi</h2>
+    <p>회사에서 엑셀 보는 척 국장·미장·코인 시세, 뉴스, 종목토론방, ETF 탐색기, TradingView 차트, 보유 손익을 확인하는 한국어 주식 대시보드입니다.</p>
+    <p><a href="/guide">excelkospi 사용 가이드 보기</a></p>
+  </main>
+</noscript>
+<div class="app">
+  <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="cp-a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a8cf7"/><stop offset="1" stop-color="#21c0ee"/></linearGradient>
+      <linearGradient id="cp-b" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#f8546c"/><stop offset="1" stop-color="#b14bf4"/></linearGradient>
+      <symbol id="xk-i0" viewBox="0 0 24 24"><rect x="3.6" y="3.4" width="12.8" height="17.6" rx="1.5" fill="var(--ic-clip,#dba271)" stroke="var(--ic-clip-edge,#a96a33)" stroke-width="1.1"/><rect x="7" y="1.9" width="6" height="3.4" rx="1" fill="#969a9f" stroke="#70747a" stroke-width=".9"/><rect x="9.4" y="7.6" width="10.8" height="13.8" rx="1" fill="var(--ic-page,#fff)" stroke="var(--ic-page-edge,#8a8886)" stroke-width="1.1"/><path d="M11.6 11h6.4m-6.4 2.7h6.4m-6.4 2.7h4.2" stroke="var(--ic-page-line,#b9b7b5)" stroke-width="1.1" stroke-linecap="round" fill="none"/></symbol>
+      <symbol id="xk-i1" viewBox="0 0 24 24"><g fill="none" stroke="var(--ic-blue,#3567b3)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="6.5" cy="17.5" r="2.5"/><path d="M20 5 9 12l11 7M9 12l3.5-1.5M9 12l3.5 1.5"/></g></symbol>
+      <symbol id="xk-i2" viewBox="0 0 24 24"><rect x="2.6" y="1.6" width="13" height="16" rx="1.2" fill="var(--ic-page-back,#dce8f6)" stroke="var(--ic-blue,#3567b3)" stroke-width="1.2"/><rect x="7.4" y="6.4" width="13" height="16" rx="1.2" fill="var(--ic-page,#fff)" stroke="var(--ic-blue,#3567b3)" stroke-width="1.2"/><path d="M10 10.5h7.8m-7.8 3h7.8m-7.8 3h5.2" stroke="var(--ic-page-line,#b3c7de)" stroke-width="1.1" stroke-linecap="round" fill="none"/></symbol>
+      <symbol id="xk-i3" viewBox="0 0 24 24"><path fill="currentColor" d="M4 3h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm6 8h4v3h1a1 1 0 0 1 1 1v3a2 2 0 0 1-2 2v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a2 2 0 0 1-2-2v-3a1 1 0 0 1 1-1h1v-3z"/></symbol>
+      <symbol id="xk-i4" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4h7a4 4 0 0 1 2.5 7.1A4.5 4.5 0 0 1 14 20H7V4zm3 3v4h4a2 2 0 1 0 0-4h-4zm0 7v4h4a2 2 0 1 0 0-4h-4z"/></symbol>
+      <symbol id="xk-i5" viewBox="0 0 24 24"><path fill="currentColor" d="M10 4h8v2h-2.7L12 18h2v2H6v-2h2.7L12 6H10V4z"/></symbol>
+      <symbol id="xk-i6" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4v8a5 5 0 0 0 10 0V4h-2v8a3 3 0 1 1-6 0V4H7zm-1 16h12v2H6v-2z"/></symbol>
+      <symbol id="xk-i7" viewBox="0 0 24 24"><g stroke="currentColor" fill="none" opacity=".5" stroke-width="1.3" stroke-dasharray="1.6 2"><path d="M4 4h16v12H4zM12 4v12M4 10h16"/></g><path stroke="currentColor" stroke-width="2.2" d="M3 20.6h18" fill="none"/></symbol>
+      <symbol id="xk-i8" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M11 2.6v3.8M5 11.6l6-6 7 7-5.6 5.6a2 2 0 0 1-2.8 0L5 14.4a2 2 0 0 1 0-2.8z"/><path d="M5.4 11.6h12.2" stroke-linecap="round"/><path d="M20.6 12.6s1.6 2 1.6 3.1a1.6 1.6 0 0 1-3.2 0c0-1.1 1.6-3.1 1.6-3.1z" fill="currentColor" stroke="none" opacity=".75"/></g><rect x="3" y="19.4" width="18" height="3" rx=".6" fill="var(--ic-fillbar,#ffd43b)"/></symbol>
+      <symbol id="xk-i9" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16h2.2l1-2.8h4l1 2.8H19L14 4h-2L9 16zm3.9-4.6L14 7.7l1.4 3.7h-2.5z"/><rect x="5" y="19" width="14" height="2.6" fill="var(--ic-red,#c00000)"/></symbol>
+      <symbol id="xk-ia" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5h18v2H3V5zm0 4h12v2H3V9zm0 4h18v2H3v-2zm0 4h12v2H3v-2z"/></symbol>
+      <symbol id="xk-ib" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5h18v2H3V5zm3 4h12v2H6V9zm-3 4h18v2H3v-2zm3 4h12v2H6v-2z"/></symbol>
+      <symbol id="xk-ic" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5h18v2H3V5zm6 4h12v2H9V9zm-6 4h18v2H3v-2zm6 4h12v2H9v-2z"/></symbol>
+      <symbol id="xk-id" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16v2H4V4zm4 4h8v12h-8V8z"/></symbol>
+      <symbol id="xk-ie" viewBox="0 0 24 24"><path fill="currentColor" d="M4 11h16v2H4v-2zm4-7h8v6h-8V4zm0 14h8v-6h-8v6z"/></symbol>
+      <symbol id="xk-if" viewBox="0 0 24 24"><path fill="currentColor" d="M4 18h16v2H4v-2zm4-14h8v12h-8V4z"/></symbol>
+      <symbol id="xk-ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 6h18M3 12h13a4 4 0 1 1 0 8h-3l3-3m-3 3 3 3M3 18h6"/></symbol>
+      <symbol id="xk-ih" viewBox="0 0 24 24"><path fill="currentColor" d="M5.2 13.2 8.8 5h1.6l3.6 8.2h-2l-.7-1.8H7.9l-.7 1.8h-2zm3.3-3.3h2.1L9.5 7.3l-1 2.6z" opacity=".85"/><path fill="none" stroke="var(--ic-blue,#3567b3)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M5 20.5 19 6.5m0 0v5.2M19 6.5h-5.2"/></symbol>
+      <symbol id="xk-ii" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4.5h10v2H11v-2zm0 6.5h10v2H11v-2zm0 6.5h10v2H11v-2z"/><path fill="var(--ic-blue,#3567b3)" d="M8.5 8v8L3 12l5.5-4z"/></symbol>
+      <symbol id="xk-ij" viewBox="0 0 24 24"><path fill="currentColor" d="M11 4.5h10v2H11v-2zm0 6.5h10v2H11v-2zm0 6.5h10v2H11v-2z"/><path fill="var(--ic-blue,#3567b3)" d="M3 8v8l5.5-4L3 8z"/></symbol>
+      <symbol id="xk-ik" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="3" y="4" width="8" height="6"/><rect x="13" y="4" width="8" height="6"/><rect x="3" y="14" width="18" height="6"/><path d="M8 7h8m-1.5-1.5L16 7l-1.5 1.5M9.5 8.5 8 7l1.5-1.5" stroke-linecap="round"/></g></symbol>
+      <symbol id="xk-il" viewBox="0 0 24 24"><rect x="2" y="5.5" width="16.5" height="10" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.4"/><path fill="currentColor" d="M5.6 8.2h1.5l.8 4.1.9-4.1h1.3l.9 4.1.8-4.1h1.5l-1.5 5.6h-1.4l-.9-3.8-.9 3.8H7.1L5.6 8.2zm-.7 2h10v.9h-10v-.9zm0 1.7h10v.9h-10v-.9z" opacity=".9"/><circle cx="17.6" cy="16.6" r="3.6" fill="var(--ic-coin,#e8c25a)" stroke="var(--ic-coin-edge,#b08a28)" stroke-width="1.1"/><path d="M17.6 14.7v3.8M16 16.6h3.2" stroke="var(--ic-coin-edge,#b08a28)" stroke-width="1" fill="none"/></symbol>
+      <symbol id="xk-im" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="7.5" cy="7.5" r="2.6"/><circle cx="16.5" cy="16.5" r="2.6"/><path d="m19 5-14 14"/></g></symbol>
+      <symbol id="xk-in" viewBox="0 0 24 24"><path fill="currentColor" d="M8 15h2.8l-1 5H8l.6-3H7v-2h1zm5-11h2.4v16H13V4zm5 0h2.4v16H18V4z"/></symbol>
+      <symbol id="xk-io" viewBox="0 0 24 24"><path fill="currentColor" d="M3 16h3v2H3v-2zm5 0h3v2H8v-2z"/><path fill="var(--ic-blue,#3567b3)" d="M14 16h3l4-4-1.5-1.5L16.5 13.4V8h-3v8z"/></symbol>
+      <symbol id="xk-ip" viewBox="0 0 24 24"><path fill="currentColor" d="M21 16h-3v2h3v-2zm-5 0h-3v2h3v-2z"/><path fill="var(--ic-blue,#3567b3)" d="M10 16H7l-4-4 1.5-1.5L7.5 13.4V8h3v8z"/></symbol>
+      <symbol id="xk-iq" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="5" fill="#21a366" opacity=".88"/><rect x="3" y="10" width="18" height="5" fill="#dba514" opacity=".88"/><rect x="3" y="16" width="18" height="5" fill="#c00000" opacity=".88"/></symbol>
+      <symbol id="xk-ir" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16"/><path d="M3 9h18M3 14h18M9 4v16M15 4v16"/></g><rect x="3" y="4" width="18" height="3" fill="#1f6feb" opacity=".75"/></symbol>
+      <symbol id="xk-is" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" fill="#21a366" opacity=".7"/><rect x="13" y="3" width="8" height="8" fill="#dba514" opacity=".7"/><rect x="3" y="13" width="8" height="8" fill="#1f6feb" opacity=".7"/><rect x="13" y="13" width="8" height="8" fill="#c00000" opacity=".7"/></symbol>
+      <symbol id="xk-it" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" opacity=".55"><rect x="3" y="7" width="18" height="14"/><path d="M3 14h18M12 7v14"/></g><path fill="var(--ic-green,#107c41)" d="M16 1.5h2.6V5H22v2.6h-3.4V11H16V7.6h-3.4V5H16V1.5z" stroke="#fff" stroke-width=".9"/></symbol>
+      <symbol id="xk-iu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.3" opacity=".55"><rect x="3" y="7" width="18" height="14"/><path d="M3 14h18M12 7v14"/></g><path fill="var(--ic-red,#c43e3e)" d="m14.4 1.6 2.6 2.6 2.6-2.6L21.4 3l-2.6 2.6L21.4 8.2 19.6 10 17 7.4 14.4 10l-1.8-1.8 2.6-2.6L12.6 3l1.8-1.4z" stroke="#fff" stroke-width=".8"/></symbol>
+      <symbol id="xk-iv" viewBox="0 0 24 24"><path fill="currentColor" d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 5.5a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm9.4-3.5-1.7-.3-.6-1.4 1-1.4-1.7-1.7-1.4 1-1.4-.6-.3-1.7H12.7l-.3 1.7-1.4.6-1.4-1L7.9 7.4l1 1.4-.6 1.4-1.7.3v2.6l1.7.3.6 1.4-1 1.4 1.7 1.7 1.4-1 1.4.6.3 1.7h2.6l.3-1.7 1.4-.6 1.4 1 1.7-1.7-1-1.4.6-1.4 1.7-.3z"/></symbol>
+      <symbol id="xk-iw" viewBox="0 0 24 24"><path fill="currentColor" d="M5 4h13v3l-2-1H8.5l5 6-5 6H16l2-1v3H5l7-8L5 4z"/></symbol>
+      <symbol id="xk-ix" viewBox="0 0 24 24"><path fill="var(--ic-blue,#3567b3)" d="M11 4h2v11l4-4 1.5 1.5L12 19l-6.5-6.5L7 11l4 4V4z"/></symbol>
+      <symbol id="xk-iy" viewBox="0 0 24 24"><g stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M4 17 11 4l9 5-7 13H8z" fill="var(--ic-eraser,#f3c9d3)"/><path d="M9 22h13" stroke-linecap="round" fill="none"/><path d="m6.5 14 8.5 4.5" stroke-linecap="round" fill="none"/></g></symbol>
+      <symbol id="xk-iz" viewBox="0 0 24 24"><path fill="currentColor" d="M3.2 10.5 6.1 3h1.8l2.9 7.5H8.9l-.6-1.7H5.7l-.6 1.7H3.2zm3-3h1.6L7 5.2l-.8 2.3zM3.4 13.5h7l-4.6 5.2h4.6V20.5h-7l4.6-5.2H3.4v-1.8z"/><path fill="var(--ic-blue,#3567b3)" d="M16 4h2v12.2l2.6-2.6L22 15l-5 5-5-5 1.4-1.4 2.6 2.6V4z"/></symbol>
+      <symbol id="xk-j0" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M10 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12zm5 11 5 5"/></symbol>
+      <symbol id="xk-j1" viewBox="0 0 24 24"><path fill="none" stroke="var(--ic-green,#107c41)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M21 4v6h-6M3 20v-6h6M3 10A9 9 0 0 1 18.7 7M21 14a9 9 0 0 1-15.7 3"/></symbol>
+      <symbol id="xk-j2" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1.7 1.7M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1.7-1.7"/></symbol>
+      <symbol id="xk-j3" viewBox="0 0 24 24"><path fill="currentColor" d="M3 4h18v2H3V4zm0 5h12v2H3V9zm0 5h18v2H3v-2zm0 5h12v2H3v-2z"/></symbol>
+      <symbol id="i-comment" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></symbol>
+      <symbol id="i-share" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M18 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm12 7a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8.6 13.5l6.8 3.9m0-10.8-6.8 3.9"/></symbol>
+      <symbol id="i-ios-share" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14.5V3.75"/><path d="m7.7 8.1 4.3-4.35 4.3 4.35"/><path d="M7 10.75H5.8A2.8 2.8 0 0 0 3 13.55v4.65A2.8 2.8 0 0 0 5.8 21h12.4a2.8 2.8 0 0 0 2.8-2.8v-4.65a2.8 2.8 0 0 0-2.8-2.8H17"/></g></symbol>
+      <symbol id="i-import" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.75v10.75"/><path d="m7.7 10.15 4.3 4.35 4.3-4.35"/><path d="M7 13.25H5.8A2.8 2.8 0 0 0 3 16.05v2.15A2.8 2.8 0 0 0 5.8 21h12.4a2.8 2.8 0 0 0 2.8-2.8v-2.15a2.8 2.8 0 0 0-2.8-2.8H17"/></g></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><rect x="7.25" y="2.75" width="9.5" height="18.5" rx="2.35"/><path d="M10.25 5.75h3.5M11.25 18.15h1.5"/></g></symbol>
+      <symbol id="xk-j4" viewBox="0 0 10 10"><g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"><path d="M1.2 3.6V1.2h2.4"/><path d="m3.4 3.4 5 5M8.6 4.6v4h-4"/></g></symbol>
+      <symbol id="xk-j5" viewBox="0 0 24 24"><path fill="var(--ic-addin,#5b8dd9)" stroke="var(--ic-addin-edge,#3c6cb4)" stroke-width="1.1" stroke-linejoin="round" d="M9.4 3.6a2 2 0 0 1 4 0v1.6h3.4a1.4 1.4 0 0 1 1.4 1.4V10h1.6a2 2 0 0 1 0 4h-1.6v4.4a1.4 1.4 0 0 1-1.4 1.4H13v-1.9a1.9 1.9 0 1 0-3.6 0v1.9H5.6a1.4 1.4 0 0 1-1.4-1.4V14H6a2 2 0 0 0 0-4H4.2V6.6a1.4 1.4 0 0 1 1.4-1.4h3.8V3.6z"/></symbol>
+      <symbol id="xk-j6" viewBox="0 0 24 24"><path fill="url(#cp-a)" d="M6.2 4.4A3.4 3.4 0 0 1 9.4 2h6.1c1.5 0 2.8 1 3.3 2.4l2.3 7.1c.1.4.2.8.2 1.2h-6.5c-.9 0-1.7-.6-2-1.5L10.7 5c-.3-.9-1.1-1.5-2-1.5h-3c.2 0 .4.4.5.9z" opacity=".96"/><path fill="url(#cp-b)" d="M17.8 19.6a3.4 3.4 0 0 1-3.2 2.4H8.5a3.5 3.5 0 0 1-3.3-2.4l-2.3-7.1c-.1-.4-.2-.8-.2-1.2h6.5c.9 0 1.7.6 2 1.5L13.3 19c.3.9 1.1 1.5 2 1.5h3c-.2 0-.4-.4-.5-.9z" opacity=".96"/></symbol>
+      <symbol id="xk-j7" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m6 14.5 6-5 6 5"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8.8a6 6 0 0 0-12 0c0 6-2.2 7.1-2.2 7.1h16.4S18 14.8 18 8.8"/><path d="M9.7 19.2a2.6 2.6 0 0 0 4.6 0"/></g></symbol>
+      <symbol id="i-appbar-bell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5a2 2 0 1 1 4 0 7 7 0 0 1 4 6v3a4 4 0 0 0 2 3H4a4 4 0 0 0 2-3v-3a7 7 0 0 1 4-6"/><path d="M9 17v1a3 3 0 0 0 6 0v-1"/></g></symbol>
+      <symbol id="i-appbar-notice" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a3 3 0 0 1 0 6"/><path d="M10 8v11a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-5"/><path d="M12 8 16.52 4.23A.9.9 0 0 1 18 4.92v12.16a.9.9 0 0 1-1.48.69L12 14H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h8"/></g></symbol>
+      <symbol id="i-appbar-settings" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M10.33 4.32c.42-1.76 2.92-1.76 3.34 0a1.72 1.72 0 0 0 2.58 1.06c1.54-.94 3.31.83 2.37 2.37a1.72 1.72 0 0 0 1.06 2.58c1.76.42 1.76 2.92 0 3.34a1.72 1.72 0 0 0-1.06 2.58c.94 1.54-.83 3.31-2.37 2.37a1.72 1.72 0 0 0-2.58 1.06c-.42 1.76-2.92 1.76-3.34 0a1.72 1.72 0 0 0-2.58-1.06c-1.54.94-3.31-.83-2.37-2.37a1.72 1.72 0 0 0-1.06-2.58c-1.76-.42-1.76-2.92 0-3.34a1.72 1.72 0 0 0 1.06-2.58c-.94-1.54.83-3.31 2.37-2.37 1 .61 2.3.07 2.58-1.06Z"/><path d="M9 12a3 3 0 1 0 6 0 3 3 0 0 0-6 0"/></g></symbol>
+      <symbol id="i-person" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="3.6"/><path d="M4.8 20a7.5 7.5 0 0 1 14.4 0"/></g></symbol>
+    </defs>
+  </svg>
+  <div class="app-header">
+  <div class="titlebar">
+    <div class="quick">
+      <span class="app-icon" aria-label="market brief workbook" title="market brief workbook">
+        <img src="/assets/icon-sm.png?v=20260704-3308" alt="" width="23" height="23" />
+      </span>
+      <button class="autosave" id="autosaveToggle" type="button" role="switch" aria-checked="false" title="자동 저장">
+        <span class="autosave-lbl">자동 저장</span>
+        <span class="autosave-track" aria-hidden="true"><span class="autosave-knob"></span><span class="autosave-state" data-autosave-state>끔</span></span>
+      </button>
+      <button class="save-btn" title="저장 (⌘S)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 3h11.4L20 6.6V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
+          <path d="M7.4 3v4.8h7.8V3M7.4 21v-6.6h9.2V21"/>
+        </svg>
+      </button>
+      <button class="qa-undo" title="실행 취소 (⌘Z)" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 14l-4-4 4-4"/>
+          <path d="M5 10h9a5 5 0 1 1 0 10h-3"/>
+        </svg>
+        <svg class="qa-caret" viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l3 3 3-3"/></svg>
+      </button>
+      <button class="qa-redo" title="다시 실행 (⌘Y)" disabled>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M15 14l4-4-4-4"/>
+          <path d="M19 10h-9a5 5 0 1 0 0 10h3"/>
+        </svg>
+        <svg class="qa-caret" viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l3 3 3-3"/></svg>
+      </button>
+      <button title="빠른 실행 도구 모음 사용자 지정">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 8h10M7 13l5 5 5-5"/>
+        </svg>
+      </button>
+    </div>
+    <div class="book-title">
+      <span data-stealth-document-title>market_brief.xlsx</span>
+      <span class="app-suffix" aria-hidden="true"><span class="dash">-</span> Excol</span>
+    </div>
+    <div class="window">
+      <div class="search" title="검색">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.75" cy="6.75" r="4.25"/><path d="m9.9 9.9 3.35 3.35"/></svg>
+        <input placeholder="검색" aria-label="검색" autocomplete="off" name="titlebarSearch" />
+      </div>
+      <button class="notification-btn" id="notificationOpen" type="button" title="알림" aria-label="알림" aria-haspopup="dialog" aria-expanded="false">
+        <svg aria-hidden="true"><use href="#i-bell"/></svg>
+        <span class="notification-badge" id="notificationBadge" hidden>0</span>
+      </button>
+      <div class="avatar" id="accountAvatar" title="계정" role="button" tabindex="0" aria-label="계정">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5.5 19c1.1-4 3.8-6 6.5-6s5.4 2 6.5 6"/></svg>
+      </div>
+      <button class="win-btn" title="최소화"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M1 6h10"/></svg></button>
+      <button class="win-btn" title="최대화"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><rect x="1.5" y="1.5" width="9" height="9" rx="1"/></svg></button>
+      <button class="win-btn" title="닫기"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M1.5 1.5l9 9m0-9-9 9"/></svg></button>
+    </div>
+  </div>
+  <div class="xk-r1">
+    <span class="xk-r2">파일</span>
+    <span class="active">홈</span>
+    <span>삽입</span>
+    <span>페이지 레이아웃</span>
+    <span>수식</span>
+    <span>데이터</span>
+    <span>검토</span>
+    <span>보기</span>
+    <span>자동화</span>
+    <span>도움말</span>
+    <div class="xk-r3">
+      <button class="btn-memo" type="button" id="jumpTimeline" title="실시간 채팅 열기/닫기">
+        <svg aria-hidden="true"><use href="#i-comment"/></svg>
+        <span class="lbl">메모</span>
+      </button>
+      <button class="btn-share" type="button" id="shareWatchlist" title="시세창 내보내기 / 공유">
+        <svg aria-hidden="true"><use href="#i-person"/></svg>
+        <span class="lbl">공유</span>
+        <svg class="share-caret" viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l3 3 3-3"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="xk-r0">
+    <div class="group clipboard">
+      <div class="tools">
+        <button class="tool big" title="붙여넣기"><span class="ic"><svg><use href="#xk-i0"/></svg></span><span class="lbl">붙여넣기</span><span class="caret"></span></button>
+        <div class="xk-rg">
+          <button class="split" title="잘라내기"><span class="ic"><svg><use href="#xk-i1"/></svg></span><span>잘라내기</span></button>
+          <button class="split" title="복사"><span class="ic"><svg><use href="#xk-i2"/></svg></span><span>복사</span><span class="caret"></span></button>
+          <button class="split" title="서식 복사" disabled><span class="ic"><svg><use href="#xk-i3"/></svg></span><span>서식 복사</span></button>
+        </div>
+      </div>
+      <button class="xk-rf" type="button" title="클립보드" aria-label="클립보드 작업창 표시" tabindex="-1"><svg aria-hidden="true"><use href="#xk-j4"/></svg></button>
+      <div class="xk-r8">클립보드</div>
+    </div>
+    <div class="group font">
+      <div>
+        <div class="xk-rh">
+          <select id="xk-r-sel0" class="combo xk-r9" title="문서 글꼴 선택" aria-label="문서 글꼴 선택">
+            <option value="default">맑은 고딕</option>
+            <option value="malgun">맑은 고딕 (고정)</option>
+            <option value="gulim">굴림체</option>
+            <option value="dotum">돋움체</option>
+            <option value="batang">바탕체</option>
+            <option value="gungsuh">궁서체</option>
+            <option value="aptos">Aptos</option>
+            <option value="segoe">Segoe UI</option>
+            <option value="system">시스템 기본</option>
+            <option value="mono">코딩체</option>
+            <option value="notosanskr">본고딕 (웹)</option>
+            <option value="gowundodum">고운돋움 (웹)</option>
+            <option value="jua">주아 (웹)</option>
+            <option value="dohyeon">도현 (웹)</option>
+            <option value="blackhansans">검은고딕 (웹)</option>
+            <option value="nanumpen">나눔손글씨 펜 (웹)</option>
+            <option value="gamjaflower">감자꽃 (웹)</option>
+          </select>
+          <select id="xk-r-sel1" class="combo small xk-ra" title="문서 글꼴 크기" aria-label="문서 글꼴 크기">
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+          </select>
+          <button class="tool xk-rb" type="button" data-xk-rfs="1" title="글꼴 크기 크게" aria-label="글꼴 크기 크게">가<svg class="xk-rc" viewBox="0 0 8 5" fill="none" stroke="var(--ic-blue,#3567b3)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4l3-3 3 3"/></svg></button>
+          <button class="tool xk-rb" type="button" data-xk-rfs="-1" title="글꼴 크기 작게" aria-label="글꼴 크기 작게">가<svg class="xk-rc" viewBox="0 0 8 5" fill="none" stroke="var(--ic-blue,#3567b3)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l3 3 3-3"/></svg></button>
+        </div>
+        <div class="stack xk-ri">
+          <button class="tool" title="굵게"><b>가</b></button>
+          <button class="tool" title="기울임꼴"><i>가</i></button>
+          <button class="tool xk-rd" title="밑줄"><u>가</u><span class="caret"></span></button>
+          <span class="xk-re" aria-hidden="true"></span>
+          <button class="tool xk-rd" title="아래쪽 테두리"><svg><use href="#xk-i7"/></svg><span class="caret"></span></button>
+          <span class="xk-re" aria-hidden="true"></span>
+          <button class="tool xk-rd" title="채우기 색"><svg><use href="#xk-i8"/></svg><span class="caret"></span></button>
+          <button class="tool xk-rd" title="글꼴 색"><span class="xk-rn">가</span><span class="caret"></span></button>
+          <span class="xk-re" aria-hidden="true"></span>
+          <button class="tool xk-rd xk-ro" title="윗주 필드 표시/편집" disabled><span class="xk-rp">내천<small>川</small></span><span class="caret"></span></button>
+        </div>
+      </div>
+      <button class="xk-rf" type="button" title="글꼴 설정" aria-label="셀 서식: 글꼴" tabindex="-1"><svg aria-hidden="true"><use href="#xk-j4"/></svg></button>
+      <div class="xk-r8">글꼴</div>
+    </div>
+    <div class="group align">
+      <div>
+        <div class="xk-rj">
+          <button class="tool" title="위쪽 맞춤"><svg><use href="#xk-id"/></svg></button>
+          <button class="tool" title="가운데 맞춤(세로)"><svg><use href="#xk-ie"/></svg></button>
+          <button class="tool" title="아래쪽 맞춤"><svg><use href="#xk-if"/></svg></button>
+          <span class="xk-re" aria-hidden="true"></span>
+          <button class="tool xk-rd" title="방향"><svg><use href="#xk-ih"/></svg><span class="caret"></span></button>
+          <span class="xk-re" aria-hidden="true"></span>
+          <button class="split xk-rl" title="자동 줄 바꿈"><span class="ic"><svg><use href="#xk-ig"/></svg></span><span>자동 줄 바꿈</span></button>
+        </div>
+        <div class="xk-rj">
+          <button class="tool" title="왼쪽 맞춤"><svg><use href="#xk-ia"/></svg></button>
+          <button class="tool" title="가운데 맞춤"><svg><use href="#xk-ib"/></svg></button>
+          <button class="tool" title="오른쪽 맞춤"><svg><use href="#xk-ic"/></svg></button>
+          <span class="xk-re" aria-hidden="true"></span>
+          <button class="tool" title="내어쓰기"><svg><use href="#xk-ii"/></svg></button>
+          <button class="tool" title="들여쓰기"><svg><use href="#xk-ij"/></svg></button>
+          <span class="xk-re" aria-hidden="true"></span>
+          <button class="split xk-rm" title="병합하고 가운데 맞춤"><span class="ic"><svg><use href="#xk-ik"/></svg></span><span>병합하고 가운데 맞춤</span><span class="caret"></span></button>
+        </div>
+      </div>
+      <button class="xk-rf" type="button" title="맞춤 설정" aria-label="셀 서식: 맞춤" tabindex="-1"><svg aria-hidden="true"><use href="#xk-j4"/></svg></button>
+      <div class="xk-r8">맞춤</div>
+    </div>
+    <div class="group number">
+      <div>
+        <div class="xk-rh">
+          <div class="combo" style="min-width:112px"><span>일반</span><span class="caret"></span></div>
+        </div>
+        <div class="stack xk-rk">
+          <button class="tool xk-rd" title="회계 표시 형식"><svg><use href="#xk-il"/></svg><span class="caret"></span></button>
+          <button class="tool" title="백분율 스타일"><svg><use href="#xk-im"/></svg></button>
+          <button class="tool" title="쉼표 스타일"><svg><use href="#xk-in"/></svg></button>
+          <span class="xk-re" aria-hidden="true"></span>
+          <button class="tool" title="자릿수 늘림"><svg><use href="#xk-io"/></svg></button>
+          <button class="tool" title="자릿수 줄임"><svg><use href="#xk-ip"/></svg></button>
+        </div>
+      </div>
+      <button class="xk-rf" type="button" title="표시 형식" aria-label="셀 서식: 표시 형식" tabindex="-1"><svg aria-hidden="true"><use href="#xk-j4"/></svg></button>
+      <div class="xk-r8">표시 형식</div>
+    </div>
+    <div class="group styles">
+      <div class="tools">
+        <button class="tool big" title="조건부 서식"><span class="ic xk-rs"><svg><use href="#xk-iq"/></svg></span><span class="lbl">조건부<br/>서식</span><span class="caret"></span></button>
+        <button class="tool big" title="표 서식"><span class="ic xk-rq"><svg><use href="#xk-ir"/></svg></span><span class="lbl">표 서식</span><span class="caret"></span></button>
+        <a class="tool big" href="https://jstris.jezevec10.com/" target="_blank" rel="noopener" title="셀 스타일" aria-label="셀 스타일"><span class="ic xk-rr"><svg><use href="#xk-is"/></svg></span><span class="lbl">셀 스타일</span><span class="caret"></span></a>
+      </div>
+      <div class="xk-r8">스타일</div>
+    </div>
+    <div class="group cells">
+      <div class="tools">
+        <div class="xk-rg">
+          <button class="split" title="삽입"><span class="ic"><svg><use href="#xk-it"/></svg></span><span>삽입</span><span class="caret"></span></button>
+          <button class="split" title="삭제"><span class="ic"><svg><use href="#xk-iu"/></svg></span><span>삭제</span><span class="caret"></span></button>
+          <button class="split" title="서식"><span class="ic"><svg><use href="#xk-iv"/></svg></span><span>서식</span><span class="caret"></span></button>
+        </div>
+      </div>
+      <div class="xk-r8">셀</div>
+    </div>
+    <div class="group editing">
+      <div class="tools">
+        <div class="xk-rg">
+          <button class="split" title="자동 합계"><span class="ic"><svg><use href="#xk-iw"/></svg></span><span>자동 합계</span><span class="caret"></span></button>
+          <button class="split" title="채우기"><span class="ic"><svg><use href="#xk-ix"/></svg></span><span>채우기</span><span class="caret"></span></button>
+          <button class="split" title="지우기"><span class="ic"><svg><use href="#xk-iy"/></svg></span><span>지우기</span><span class="caret"></span></button>
+        </div>
+        <button class="tool big" title="정렬 및 필터"><span class="ic"><svg><use href="#xk-iz"/></svg></span><span class="lbl">정렬 및<br/>필터</span><span class="caret"></span></button>
+        <button class="tool big" title="찾기 및 선택"><span class="ic"><svg><use href="#xk-j0"/></svg></span><span class="lbl">찾기 및<br/>선택</span><span class="caret"></span></button>
+      </div>
+      <div class="xk-r8">편집</div>
+    </div>
+    <div class="group data">
+      <div class="tools">
+        <button class="tool big" id="xk-r-act0" title="새로 고침"><span class="ic"><svg><use href="#xk-j1"/></svg></span><span class="lbl">새로<br/>고침</span></button>
+        <div class="xk-rg">
+          <button class="split" title="연결"><span class="ic"><svg><use href="#xk-j2"/></svg></span><span>연결</span></button>
+          <button class="split" title="쿼리"><span class="ic"><svg><use href="#xk-j3"/></svg></span><span>쿼리</span></button>
+        </div>
+      </div>
+      <div class="xk-r8">데이터</div>
+    </div>
+    <div class="group ai addins">
+      <div class="tools">
+        <button class="tool big" title="추가 기능"><span class="ic"><svg><use href="#xk-j5"/></svg></span><span class="lbl">추가 기능</span><span class="caret"></span></button>
+      </div>
+      <div class="xk-r8">추가 기능</div>
+    </div>
+    <div class="group ai copilot">
+      <div class="tools">
+        <button class="tool big" type="button" id="xk-r-act1" title="Kospilot — 실시간 채팅 열기"><span class="ic"><svg><use href="#xk-j6"/></svg></span><span class="lbl">Kospilot</span><span class="caret"></span></button>
+      </div>
+      <div class="xk-r8">Kospilot</div>
+    </div>
+    <div class="xk-r4"></div>
+    <button class="xk-r5" type="button" data-xk-rtg title="리본 축소" aria-label="리본 축소" aria-pressed="false">
+      <span data-xk-rtl hidden></span>
+      <svg aria-hidden="true"><use href="#xk-j7"/></svg>
+    </button>
+  </div>
+  <div class="xk-rt">
+    <div class="xk-ru"><span id="xk-r-nm0">A1</span><span class="xk-rv" aria-hidden="true"></span></div>
+    <span class="xk-rw" aria-hidden="true"></span>
+    <div class="xk-rx" aria-hidden="true">
+      <span class="xk-ry"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M2.5 2.5l7 7m0-7-7 7"/></svg></span>
+      <span class="xk-ry"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6.5 5 9.5 10 3"/></svg></span>
+      <span class="xk-ry xk-rz">fx</span>
+    </div>
+    <div class="xk-s0" id="xk-r-fx0">=MARKETBRIEF(AUTO)</div>
+    <div class="xk-s1">
+      <a class="xk-s3" href="https://t.me/kospigazua" target="_blank" rel="noopener" title="Telegram 시세알림">Telegram 시세알림</a>
+      <span class="xk-s4">·</span>
+      <span class="badge" id="session">-</span>
+    </div>
+    <button id="xk-r-tgl0" class="xk-r6" data-xk-rtg type="button" title="리본 접기" aria-label="리본 접기" aria-pressed="false">
+      <span data-xk-rtl hidden></span>
+      <svg class="xk-s2" aria-hidden="true"><use href="#xk-j7"/></svg>
+    </button>
+  </div>
+  </div>
+  <div id="toastStack" class="toast-stack" aria-live="polite"></div>
+  <header class="native-appbar" id="nativeAppBar">
+    <span class="native-appbar-title" id="nativeAppbarTitle">시세</span>
+    <span class="native-appbar-actions">
+      <button type="button" class="native-appbar-btn" data-appbar-act="notif" aria-label="알림">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-appbar-bell"/></svg>
+      </button>
+      <button type="button" class="native-appbar-btn" data-appbar-act="updates" aria-label="공지사항">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-appbar-notice"/></svg>
+      </button>
+      <button type="button" class="native-appbar-btn" data-appbar-act="settings" aria-label="설정·계정">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-appbar-settings"/></svg>
+      </button>
+    </span>
+  </header>
+  <div class="sheets-grid">
+    <section class="col col-summary" data-panel-id="summary">
+      <div class="sheet-title">
+        <span>자동 갱신 시세창</span>
+        <a id="quoteDisclaimerInfo" class="quote-disclaimer-info" href="/policy#quote-disclaimer" target="_blank" rel="noopener" aria-label="시세는 자동 갱신되지만 내가 입력한 종목 계산을 위한 참고용입니다. 투자 판단의 근거로 삼지 마세요. 눌러서 자세히 보기">ⓘ</a>
+        <span class="change-toggle" id="changeWindowToggle" aria-label="변동률 기준">
+          <button type="button" data-change-window="day">일간</button>
+          <button type="button" data-change-window="15">15분</button>
+          <button type="button" data-change-window="30">30분</button>
+        </span>
+        <span class="hint" id="summaryHint"><span class="live-dot" id="summaryLiveDot"></span><span id="summaryHintText">로딩…</span></span>
+      </div>
+      <div class="watchlist-add" id="watchlistPanel">
+        <input id="watchlistInput" type="text" placeholder="종목명·코드·지수 입력 후 Enter해 종목 추가" autocomplete="off" autocapitalize="off" autocorrect="off" inputmode="search" enterkeyhint="search" spellcheck="false" aria-label="종목명·코드·지수 입력" />
+        <select id="watchlistMarket" title="시장 선택" aria-label="종목 추가 시장 선택" name="watchlistMarket">
+          <option value="auto">종목</option>
+          <option value="KR">🇰🇷 국장</option>
+          <option value="US">🇺🇸 미장</option>
+          <option value="COIN">🪙 코인</option>
+        </select>
+        <select id="quoteSortMode" class="quote-sort-select" title="시세창 정렬" aria-label="시세창 정렬">
+          <option value="manual">내 순서</option>
+          <option value="change-desc">수익률</option>
+          <option value="value-desc">평가액</option>
+          <option value="pnl-desc">보유손익</option>
+          <option value="name-asc">종목명</option>
+        </select>
+        <button id="watchlistPhoneShare" class="watchlist-phone" type="button" title="목록 휴대폰으로 보내기" aria-label="목록 휴대폰으로 보내기">
+          <svg aria-hidden="true"><use href="#i-phone"/></svg>
+        </button>
+        <button id="watchlistMore" class="watchlist-more" type="button" title="시세창 보조 기능" aria-label="시세창 보조 기능" aria-haspopup="menu" aria-expanded="false">⋯</button>
+	        <div id="watchlistMoreMenu" class="watchlist-more-menu" role="menu" hidden>
+	          <button type="button" role="menuitem" data-watchlist-action="note">＋ 빈 행 추가</button>
+	          <button type="button" role="menuitem" data-watchlist-action="cash">＋ 현금 추가</button>
+	          <button type="button" role="menuitemradio" data-watchlist-action="holding-pnl-total" data-holding-pnl-menu="total" aria-checked="true">✓ 보유손익 누적 보기</button>
+          <button type="button" role="menuitemradio" data-watchlist-action="holding-pnl-daily" data-holding-pnl-menu="daily" aria-checked="false">　 보유손익 일간 보기</button>
+          <button type="button" role="menuitemradio" data-watchlist-action="quote-live-only-on" data-quote-live-menu="live" aria-checked="false">　 지금 장중인 종목만 보기</button>
+          <button type="button" role="menuitemradio" data-watchlist-action="quote-live-only-off" data-quote-live-menu="all" aria-checked="true">✓ 장 종료 포함해서 보기</button>
+          <button type="button" role="menuitemradio" data-watchlist-action="us-krw-display-on" data-us-krw-menu="krw" aria-checked="false">　 미장 시세 원화(₩)로 보기</button>
+          <button type="button" role="menuitemradio" data-watchlist-action="us-krw-display-off" data-us-krw-menu="usd" aria-checked="true">✓ 미장 시세 달러($)로 보기</button>
+          <button type="button" role="menuitemcheckbox" data-watchlist-action="toggle-qtyavg" data-qtyavg-menu aria-checked="true">✓ 평단·수량 보기</button>
+          <button type="button" role="menuitemcheckbox" data-watchlist-action="toggle-dividend" data-dividend-menu aria-checked="true">✓ 배당주 월배당액 보기</button>
+          <button type="button" role="menuitem" data-watchlist-action="phone">
+            <svg aria-hidden="true"><use href="#i-phone"/></svg>
+            <span>목록 휴대폰으로 보내기</span>
+          </button>
+          <button id="watchlistExport" class="watchlist-export" type="button" role="menuitem" title="현재 종목 목록과 평단가 정보를 URL로 내보내기">
+            <svg aria-hidden="true"><use href="#i-ios-share"/></svg>
+            <span class="watchlist-export-label">내보내기 / 공유</span>
+          </button>
+          <button id="watchlistImport" class="watchlist-import" type="button" role="menuitem" data-watchlist-action="import" title="내보낸 주소로 종목 목록 가져오기">
+            <svg aria-hidden="true"><use href="#i-import"/></svg>
+            <span class="watchlist-import-label">가져오기</span>
+          </button>
+          <button id="hiddenRestore" type="button" role="menuitem" class="hidden-restore" style="display:none">기본 항목 복원하기</button>
+        </div>
+      </div>
+      <div class="sheet summary" style="margin-top:0"><table id="cardsTable">
+        <tr><th class="rownum"></th><th class="colhead">A</th><th class="colhead">B</th><th class="colhead">C</th></tr>
+        <tr><th class="rownum">1</th><th class="subhead">지표</th><th class="subhead">현재가</th><th class="subhead">변동률</th></tr>
+        <tr class="loading-row"><td class="rownum">2</td><td colspan="3">데이터 조회 중...</td></tr>
+        <tr class="loading-row"><td class="rownum">3</td><td colspan="3">데이터 조회 중...</td></tr>
+        <tr class="loading-row"><td class="rownum">4</td><td colspan="3">데이터 조회 중...</td></tr>
+      </table></div>
+      <div class="summary-sheet-note" id="summarySheetNotice" aria-label="시세창 하단 안내" data-xk-area="summary" data-xk-position="summary-bottom" data-xk-id="sponsor-open" data-xk-label="알림" data-xk-variant-index="0" data-xk-variant-text="이곳에 한줄 광고를 넣어주실 광고주를 모십니다.">
+        <span class="notice-badge" data-xk-label>알림</span>
+        <span class="community-text-note"><a class="notice-copy" href="mailto:excelkospi@outlook.com" data-xk-click="1">이곳에 한줄 광고를 넣어주실 광고주를 모십니다.</a></span>
+      </div>
+    </section>
+    <div class="sheet-splitter sheet-splitter-main" id="mainPaneSplitter" role="separator" aria-orientation="vertical" aria-label="시세창과 피드 영역 너비 조절" title="드래그해서 시세창 너비 조절"></div>
+    <section class="col col-timeline" data-panel-id="timeline">
+      <div class="tv-chart-panel" id="tvChartPanel" hidden aria-live="polite">
+        <div class="tv-chart-head">
+          <div class="tv-chart-title">
+            <span class="tv-chart-kicker">TradingView</span>
+            <strong id="tvChartTitle">차트</strong>
+          </div>
+          <button class="tv-chart-close" id="tvChartClose" type="button" aria-label="차트 닫기">×</button>
+        </div>
+        <div class="tv-chart-widget" id="tvChartWidget"></div>
+        <div class="tv-chart-resizer" id="tvChartResizer" role="separator" aria-orientation="horizontal" aria-label="차트 높이 조절" title="드래그해서 차트 높이 조절"></div>
+      </div>
+      <div class="sheet-title timeline-title">
+        <div class="timeline-tabs-wrap" data-timeline-tabs-wrap>
+          <div class="timeline-tabs" role="tablist" aria-label="피드 선택">
+            <span class="timeline-tab-group" role="presentation">
+              <button type="button" role="tab" data-timeline-tab="news" aria-selected="true"><span class="timeline-tab-label-full">뉴스</span><span class="timeline-tab-label-tight">뉴스</span></button>
+              <button type="button" role="tab" data-timeline-tab="community-kr" aria-selected="false"><span class="timeline-tab-label-full">국내주식토론</span><span class="timeline-tab-label-tight">국내주식</span></button>
+              <button type="button" role="tab" data-timeline-tab="community-us" aria-selected="false"><span class="timeline-tab-label-full">해외주식토론</span><span class="timeline-tab-label-tight">해외주식</span></button>
+              <button type="button" role="tab" data-timeline-tab="community-coin" aria-selected="false"><span class="timeline-tab-label-full">코인토론</span><span class="timeline-tab-label-tight">코인토론</span></button>
+              <button type="button" role="tab" data-timeline-tab="community-free" aria-selected="false"><span class="timeline-tab-label-full">탕비실</span><span class="timeline-tab-label-tight">탕비실</span></button>
+              <button type="button" role="tab" data-timeline-tab="community-ops" aria-selected="false"><span class="timeline-tab-label-full">운영게시판</span><span class="timeline-tab-label-tight">운영게시판</span></button>
+              <span class="timeline-tab-sep" role="presentation" aria-hidden="true"></span>
+              <button type="button" role="tab" data-timeline-tab="paper" aria-selected="false"><span class="timeline-tab-label-full">모의투자<em class="tab-new">N</em></span><span class="timeline-tab-label-tight">모의투자<em class="tab-new">N</em></span></button>
+              <button type="button" role="tab" data-timeline-tab="sports" aria-selected="false" hidden><span class="timeline-tab-label-full">스포츠</span><span class="timeline-tab-label-tight">스포츠</span></button>
+              <button type="button" role="tab" data-timeline-tab="forecast" aria-selected="false"><span class="timeline-tab-label-full">시장예측</span><span class="timeline-tab-label-tight">시장예측</span></button>
+              <button type="button" role="tab" data-timeline-tab="attendance" aria-selected="false"><span class="timeline-tab-label-full">근태보고</span><span class="timeline-tab-label-tight">근태보고</span></button>
+              <button type="button" role="tab" data-timeline-tab="etf" aria-selected="false"><span class="timeline-tab-label-full">ETF 탐색기</span><span class="timeline-tab-label-tight">ETF탐색</span></button>
+              <button type="button" role="tab" data-timeline-tab="blank" aria-selected="false" title="빈 시트 (자리 비울 때 위장용)"><span class="timeline-tab-label-full">빈 시트</span><span class="timeline-tab-label-tight">빈</span></button>
+            </span>
+          </div>
+        </div>
+        <span class="hint" id="timelineHint">자동 갱신 헤드라인</span>
+      </div>
+      <div class="sheet timeline news-feed" style="margin-top:0"><table id="timelineTable">
+        <tr><th class="rownum"></th><th class="colhead">A</th><th class="colhead">B</th><th class="colhead">C</th><th class="colhead">D</th><th class="colhead">E</th></tr>
+        <tr><th class="rownum">1</th><th class="subhead">시장</th><th class="subhead">시각</th><th class="subhead">헤드라인</th><th class="subhead">요약</th><th class="subhead">링크</th></tr>
+        <tr class="loading-row"><td class="rownum">2</td><td colspan="5">데이터 조회 중...</td></tr>
+        <tr class="loading-row"><td class="rownum">3</td><td colspan="5">데이터 조회 중...</td></tr>
+        <tr class="loading-row"><td class="rownum">4</td><td colspan="5">데이터 조회 중...</td></tr>
+      </table></div>
+    </section>
+    <div class="sheet-splitter sheet-splitter-chat" id="chatPaneSplitter" role="separator" aria-orientation="vertical" aria-label="피드와 채팅창 너비 조절" title="드래그해서 채팅창 너비 조절"></div>
+    <section class="col col-chat-dock" id="chatDockColumn" data-panel-id="chat" aria-label="통합 채팅창" hidden>
+      <div class="chat-dock-slot" id="chatDockSlot"></div>
+    </section>
+    <section class="boss-sheet-mask" id="bossSheetMask" aria-hidden="true" aria-label="업무용 검토표">
+      <div class="sheet-title">
+        <span>월간 업무 진행 현황</span>
+        <span class="hint"><span class="live-dot stale" aria-hidden="true"></span><span>검토용 시트</span></span>
+      </div>
+      <div class="sheet boss-sheet" style="margin-top:0">
+        <table aria-label="월간 운영 검토표">
+          <colgroup>
+            <col class="boss-col-rownum" />
+            <col class="boss-col-item" />
+            <col class="boss-col-owner" />
+            <col class="boss-col-status" />
+            <col class="boss-col-progress" />
+            <col class="boss-col-date" />
+            <col class="boss-col-check" />
+            <col class="boss-col-action" />
+            <col class="boss-col-note" />
+          </colgroup>
+          <tbody>
+            <tr class="boss-colheads"><th class="boss-rownum"></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th></tr>
+            <tr class="boss-title-row"><th class="boss-rownum">1</th><td class="boss-heading" colspan="8">월간 운영 검토표</td></tr>
+            <tr class="boss-meta-row"><th class="boss-rownum">2</th><td>기준월</td><td>2026-06</td><td>부서</td><td>운영지원</td><td>작성</td><td>김민수</td><td>상태</td><td>검토 중</td></tr>
+            <tr class="boss-header-row"><th class="boss-rownum">3</th><td>항목</td><td>담당</td><td>상태</td><td>진행률</td><td>예정일</td><td>확인</td><td>다음 액션</td><td>메모</td></tr>
+            <tr><th class="boss-rownum">4</th><td>주간 운영 리포트</td><td>전략기획</td><td>진행</td><td>82%</td><td>6/3</td><td>숫자 검산</td><td>요약 1p로 압축</td><td>KPI 기준 재확인</td></tr>
+            <tr><th class="boss-rownum">5</th><td>광고 제안 자료</td><td>마케팅</td><td>진행</td><td>74%</td><td>6/4</td><td>단가표 최신화</td><td>사례 이미지 교체</td><td>외부 공유 전 문구 확인</td></tr>
+            <tr><th class="boss-rownum">6</th><td>고객 문의 정리</td><td>운영</td><td>대기</td><td>56%</td><td>6/5</td><td>중복 질문 묶기</td><td>답변 초안 리뷰</td><td>우선순위 높은 건부터 처리</td></tr>
+            <tr><th class="boss-rownum">7</th><td>정산 자료 확인</td><td>재무</td><td>진행</td><td>68%</td><td>6/5</td><td>증빙 누락 확인</td><td>거래처별 합계 대조</td><td>계정과목만 재검토</td></tr>
+            <tr><th class="boss-rownum">8</th><td>정책 문구 검토</td><td>법무</td><td>확인중</td><td>90%</td><td>6/2</td><td>표현 수위 조정</td><td>최종 승인 요청</td><td>민감 표현 삭제 완료</td></tr>
+            <tr><th class="boss-rownum">9</th><td>품질 체크리스트</td><td>개발</td><td>진행</td><td>70%</td><td>6/4</td><td>화면 캡처</td><td>모바일 확인</td><td>브라우저별 확인 필요</td></tr>
+            <tr><th class="boss-rownum">10</th><td>회의록 정리</td><td>PM</td><td>완료</td><td>100%</td><td>6/1</td><td>참석자 회람</td><td>액션아이템 배정</td><td>다음 회의 안건 반영</td></tr>
+            <tr><th class="boss-rownum">11</th><td>다음주 일정</td><td>총무</td><td>진행</td><td>63%</td><td>6/7</td><td>회의실 예약</td><td>일정 충돌 조정</td><td>임원 일정 확인 대기</td></tr>
+            <tr><th class="boss-rownum">12</th><td>외부 공유본</td><td>디자인</td><td>보류</td><td>48%</td><td>6/6</td><td>표지/목차 정리</td><td>시안 2안 비교</td><td>내부 의견 수렴 중</td></tr>
+            <tr><th class="boss-rownum">13</th><td>리스크 목록</td><td>운영</td><td>확인중</td><td>85%</td><td>6/3</td><td>영향도 분류</td><td>담당자 확인</td><td>상위 3건 별도 보고</td></tr>
+            <tr><th class="boss-rownum">14</th><td>월말 보관 문서</td><td>관리</td><td>진행</td><td>59%</td><td>6/10</td><td>폴더명 통일</td><td>오래된 파일 이동</td><td>권한 정리 필요</td></tr>
+            <tr><th class="boss-rownum">15</th><td>자동화 점검</td><td>개발</td><td>진행</td><td>76%</td><td>6/6</td><td>실패 로그 확인</td><td>알림 조건 정리</td><td>오탐 케이스 2건 확인</td></tr>
+            <tr><th class="boss-rownum">16</th><td>교육 자료</td><td>기획</td><td>대기</td><td>34%</td><td>6/12</td><td>목차 확정</td><td>샘플 슬라이드 작성</td><td>사례 문구 보강</td></tr>
+            <tr class="boss-note-row"><th class="boss-rownum">17</th><td>메모</td><td colspan="7">공유 전 숫자, 담당자 이름, 외부 공개 문구만 다시 확인</td></tr>
+            <tr><th class="boss-rownum">18</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><th class="boss-rownum">19</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><th class="boss-rownum">20</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="outlook-app" id="outlookApp" aria-hidden="true">
+  <svg class="outlook-symbols" aria-hidden="true" style="display:none">
+    <defs>
+      <symbol id="o-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m4 7 8 6 8-6"/></symbol>
+      <symbol id="o-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16M8 14h2M12 14h2M16 14h2M8 17h2M12 17h2"/></symbol>
+      <symbol id="o-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 18.2a4.4 4.4 0 0 1 5-3.9"/></symbol>
+      <symbol id="o-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+      <symbol id="o-apps" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1.2"/><rect x="14" y="4" width="6" height="6" rx="1.2"/><rect x="4" y="14" width="6" height="6" rx="1.2"/><rect x="14" y="14" width="6" height="6" rx="1.2"/></symbol>
+      <symbol id="o-compose" viewBox="0 0 24 24"><path d="M5 19h14"/><path d="M7 15.5 17.8 4.7a2 2 0 0 1 2.8 2.8L9.8 18.3 6 19z"/></symbol>
+      <symbol id="o-speaker-off" viewBox="0 0 24 24"><path d="M4 10v4h4l5 4V6L8 10z"/><path d="m17 9 4 4m0-4-4 4"/></symbol>
+      <symbol id="o-ban-person" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 8.5-4.6"/><circle cx="17" cy="16" r="4.5"/><path d="m14 13 6 6"/></symbol>
+      <symbol id="o-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v6M14 11v6"/></symbol>
+      <symbol id="o-archive" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="4" rx="1"/><path d="M6 9h12v10H6zM9 13h6"/></symbol>
+      <symbol id="o-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6z"/><path d="M12 8v5M12 16h.01"/></symbol>
+      <symbol id="o-reply" viewBox="0 0 24 24"><path d="m10 8-5 5 5 5"/><path d="M5 13h9a6 6 0 0 1 6 6"/></symbol>
+      <symbol id="o-broom" viewBox="0 0 24 24"><path d="m15 3 6 6-8 8-6-6z"/><path d="m7 11-4 4 6 6 4-4"/><path d="M5 17h6"/></symbol>
+      <symbol id="o-move" viewBox="0 0 24 24"><path d="M3 8h7l2 3h9v8H3z"/><path d="m15 6 3-3 3 3M18 3v8"/></symbol>
+      <symbol id="o-rules" viewBox="0 0 24 24"><rect x="3" y="5" width="8" height="6" rx="1.4"/><rect x="13" y="13" width="8" height="6" rx="1.4"/><path d="M11 8h4a3 3 0 0 1 3 3v2M16 11l2 2 2-2"/></symbol>
+      <symbol id="o-envelope" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.2"/><path d="m4 7 8 7 8-7"/></symbol>
+      <symbol id="o-tag" viewBox="0 0 24 24"><path d="M4 12 12 4h7v7l-8 8z"/><circle cx="16" cy="8" r="1"/></symbol>
+      <symbol id="o-flag" viewBox="0 0 24 24"><path d="M6 21V4h12l-2 4 2 4H6"/></symbol>
+      <symbol id="o-pin" viewBox="0 0 24 24"><path d="m14 4 6 6-4 1-4 7-2-2-4 4-2-2 4-4-2-2 7-4z"/></symbol>
+      <symbol id="o-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="o-print" viewBox="0 0 24 24"><path d="M7 8V4h10v4M7 18h10v2H7z"/><rect x="4" y="8" width="16" height="9" rx="2"/><path d="M8 13h8"/></symbol>
+      <symbol id="o-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1.2"/><rect x="14" y="4" width="6" height="6" rx="1.2"/><rect x="4" y="14" width="6" height="6" rx="1.2"/><rect x="14" y="14" width="6" height="6" rx="1.2"/></symbol>
+      <symbol id="o-undo" viewBox="0 0 24 24"><path d="m9 8-5 5 5 5"/><path d="M4 13h10a6 6 0 0 1 6 6"/></symbol>
+      <symbol id="o-refresh" viewBox="0 0 24 24"><path d="M20 5v6h-6M4 19v-6h6M5.5 10A7.5 7.5 0 0 1 18 7M18.5 14A7.5 7.5 0 0 1 6 17"/></symbol>
+      <symbol id="o-comment" viewBox="0 0 24 24"><path d="M20 14.5a7 7 0 0 1-7 4.5H9l-5 3 1.6-4.6A7.5 7.5 0 1 1 20 14.5z"/></symbol>
+      <symbol id="o-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.6-4.6M8.2 13.2l7.6 4.6"/></symbol>
+      <symbol id="o-bell" viewBox="0 0 24 24"><path d="M6 17h12l-1.5-2.2V10a4.5 4.5 0 0 0-9 0v4.8z"/><path d="M10 20h4"/></symbol>
+      <symbol id="o-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 12a7.8 7.8 0 0 0-.1-1l2-1.5-2-3.4-2.4 1a7.3 7.3 0 0 0-1.7-1L14.5 3h-5l-.3 3.1a7.3 7.3 0 0 0-1.7 1l-2.4-1-2 3.4 2 1.5a7.8 7.8 0 0 0 0 2l-2 1.5 2 3.4 2.4-1a7.3 7.3 0 0 0 1.7 1l.3 3.1h5l.3-3.1a7.3 7.3 0 0 0 1.7-1l2.4 1 2-3.4-2-1.5c.1-.3.1-.7.1-1z"/></symbol>
+      <symbol id="o-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+      <symbol id="o-sort" viewBox="0 0 24 24"><path d="M8 4v16M5 7l3-3 3 3M16 20V4M13 17l3 3 3-3"/></symbol>
+      <symbol id="o-folder" viewBox="0 0 24 24"><path d="M3 8h7l2 3h9v8H3z"/></symbol>
+      <symbol id="o-draft" viewBox="0 0 24 24"><path d="M5 19h14"/><path d="M7 15.5 16.5 6l2.5 2.5-9.5 9.5L6 19z"/></symbol>
+      <symbol id="o-sent" viewBox="0 0 24 24"><path d="M3 11 21 3l-7 18-3-8z"/><path d="m11 13 5-5"/></symbol>
+      <symbol id="o-note" viewBox="0 0 24 24"><path d="M6 4h12v16H6z"/><path d="M9 8h6M9 12h6M9 16h3"/></symbol>
+    </defs>
+  </svg>
+  <header class="outlook-topbar">
+    <button class="outlook-waffle" type="button" aria-label="업무 앱">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </button>
+    <div class="outlook-brand">Ootlook</div>
+    <label class="outlook-search" aria-label="검색">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16.6 16.6 4.4 4.4"/></svg>
+      <input type="search" placeholder="검색" />
+    </label>
+    <button class="outlook-exit-excel" type="button" data-outlook-tool="excel" aria-label="엑셀 모드로 나가기" title="엑셀 모드로 나가기">
+      <img src="/assets/icon-sm.png?v=20260704-3308" alt="" aria-hidden="true" />
+      <span>엑셀로</span>
+    </button>
+    <div class="outlook-top-actions">
+      <button class="outlook-top-btn" type="button" aria-label="새 메일"><svg><use href="#o-compose"/></svg></button>
+      <button class="outlook-top-btn" type="button" aria-label="알림"><svg><use href="#o-bell"/></svg></button>
+      <button class="outlook-top-btn" type="button" aria-label="설정"><svg><use href="#o-gear"/></svg></button>
+      <span class="outlook-profile" aria-hidden="true"></span>
+    </div>
+  </header>
+  <nav class="outlook-tabbar" aria-label="Ootlook 메뉴">
+    <button class="outlook-hamburger" type="button" aria-label="탐색 창" aria-controls="outlookFolders" aria-expanded="false">☰</button>
+    <span>파일</span>
+    <span class="active">홈</span>
+    <span>보기</span>
+    <span>도움말</span>
+    <button class="xk-s8" data-xk-rtg type="button" title="리본 접기" aria-label="리본 접기" aria-pressed="false"><span class="xk-s9" aria-hidden="true"></span><span data-xk-rtl>리본 접기</span></button>
+  </nav>
+  <section class="xk-s5" aria-label="Ootlook 리본 메뉴">
+    <div class="xk-s6">
+      <button class="outlook-command outlook-command-big" type="button" data-outlook-action="stock-add"><svg><use href="#o-note"/></svg><em>종목</em><small>추가</small></button>
+      <button class="outlook-command outlook-command-big" type="button" data-outlook-compose><svg><use href="#o-compose"/></svg><em>신규</em><small>게시글</small></button>
+      <strong>신규</strong>
+    </div>
+    <div class="xk-s6">
+      <button class="outlook-command" type="button"><svg><use href="#o-speaker-off"/></svg><em>무시</em></button>
+      <button class="outlook-command" type="button"><svg><use href="#o-ban-person"/></svg><em>차단</em><small>⌄</small></button>
+      <button class="outlook-command" type="button"><svg><use href="#o-trash"/></svg><em>삭제</em></button>
+      <button class="outlook-command" type="button"><svg><use href="#o-archive"/></svg><em>보관</em></button>
+      <strong>삭제</strong>
+    </div>
+    <div class="xk-s6">
+      <button class="outlook-command outlook-command-big" type="button"><svg><use href="#o-shield"/></svg><em>신고</em><small>⌄</small></button>
+      <strong>신고</strong>
+    </div>
+    <div class="xk-s6">
+      <button class="outlook-command" type="button" data-outlook-action="chat"><svg><use href="#o-reply"/></svg><em>회신</em><small>⌄</small></button>
+      <button class="outlook-command" type="button"><svg><use href="#o-people"/></svg><em>전체<br>회신</em></button>
+      <button class="outlook-command" type="button"><svg><use href="#o-share"/></svg><em>전달</em></button>
+      <strong>응답</strong>
+    </div>
+    <div class="xk-s6">
+      <button class="outlook-command" type="button"><svg><use href="#o-broom"/></svg><em>비우기</em></button>
+      <button class="outlook-command" type="button"><svg><use href="#o-move"/></svg><em>이동</em><small>⌄</small></button>
+      <button class="outlook-command" type="button"><svg><use href="#o-rules"/></svg><em>규칙</em><small>⌄</small></button>
+      <strong>이동</strong>
+    </div>
+    <div class="xk-s6">
+      <button class="outlook-command" type="button"><svg><use href="#o-envelope"/></svg><em>읽음/읽지<br>않음</em></button>
+      <button class="outlook-command" type="button"><svg><use href="#o-tag"/></svg><em>범주<br>설정</em><small>⌄</small></button>
+      <button class="outlook-command" type="button"><svg><use href="#o-flag"/></svg><em>플래그</em><small>⌄</small></button>
+      <button class="outlook-command" type="button"><svg><use href="#o-pin"/></svg><em>고정</em></button>
+      <button class="outlook-command" type="button"><svg><use href="#o-clock"/></svg><em>다시<br>알림</em><small>⌄</small></button>
+      <strong>태그</strong>
+    </div>
+    <div class="xk-s6">
+      <button class="outlook-command" type="button"><svg><use href="#o-print"/></svg><em>인쇄</em></button>
+      <button class="outlook-command" type="button"><svg><use href="#o-grid"/></svg><em>앱 더<br>보기</em></button>
+      <button class="outlook-command" type="button"><svg><use href="#o-people"/></svg><em>그룹<br>검색</em></button>
+      <strong>찾기</strong>
+    </div>
+    <div class="xk-s6 xk-s7">
+      <button class="outlook-command" type="button" data-outlook-action="refresh"><svg><use href="#o-refresh"/></svg><em>새로<br>고침</em></button>
+      <button class="outlook-command" type="button"><svg><use href="#o-undo"/></svg><em>실행<br>취소</em></button>
+      <strong>실행 취소</strong>
+    </div>
+  </section>
+  <main class="outlook-main">
+    <aside class="outlook-apprail" aria-label="Ootlook 앱 전환">
+      <span class="active" aria-label="메일"><svg><use href="#o-mail"/></svg></span>
+      <span aria-label="일정"><svg><use href="#o-calendar"/></svg></span>
+      <span aria-label="사용자"><svg><use href="#o-people"/></svg></span>
+      <span aria-label="할 일"><svg><use href="#o-check"/></svg></span>
+      <span class="office-letter word" aria-label="Word">W</span>
+      <span class="office-logo excel" aria-label="Excel"><img src="/assets/icon-sm.png?v=20260704-3308" alt="" /></span>
+      <span class="office-letter ppt" aria-label="PowerPoint">P</span>
+      <span aria-label="더 보기"><svg><use href="#o-apps"/></svg></span>
+    </aside>
+    <aside class="outlook-folders" id="outlookFolders" aria-label="메일함">
+      <div class="outlook-folder-section">
+        <div class="outlook-folder-title">즐겨찾기</div>
+        <button type="button" class="outlook-folder selected" data-outlook-folder="inbox"><svg><use href="#o-mail"/></svg><span>받은 편지함</span><b id="outlookCountInbox">-</b></button>
+        <button type="button" class="outlook-folder" data-outlook-folder="notes"><svg><use href="#o-note"/></svg><span>보유종목 메일함</span><b id="outlookCountNotes">0</b></button>
+        <button type="button" class="outlook-folder" data-outlook-folder="news"><svg><use href="#o-grid"/></svg><span>뉴스</span><b id="outlookCountNews">0</b></button>
+        <button type="button" class="outlook-folder" data-outlook-folder="drafts"><svg><use href="#o-draft"/></svg><span>임시 보관함</span><b id="outlookCountDrafts">0</b></button>
+        <button type="button" class="outlook-folder" data-outlook-folder="sent"><svg><use href="#o-sent"/></svg><span>보낸 편지함</span></button>
+        <button type="button" class="outlook-folder" data-outlook-folder="archive"><svg><use href="#o-archive"/></svg><span>보관</span><b id="outlookCountArchive">0</b></button>
+      </div>
+      <div class="outlook-folder-section">
+        <div class="outlook-folder-title">게시판</div>
+        <button type="button" class="outlook-folder" data-outlook-folder="community" data-outlook-channel="kr"><svg><use href="#o-comment"/></svg><span>국내주식토론</span><b id="outlookCountCommunityKr">-</b></button>
+        <button type="button" class="outlook-folder" data-outlook-folder="community" data-outlook-channel="us"><svg><use href="#o-comment"/></svg><span>해외주식토론</span><b id="outlookCountCommunityUs">-</b></button>
+        <button type="button" class="outlook-folder" data-outlook-folder="community" data-outlook-channel="coin"><svg><use href="#o-comment"/></svg><span>코인토론</span><b id="outlookCountCommunityCoin">-</b></button>
+        <button type="button" class="outlook-folder" data-outlook-folder="community" data-outlook-channel="free"><svg><use href="#o-comment"/></svg><span>탕비실</span><b id="outlookCountCommunityFree">-</b></button>
+        <button type="button" class="outlook-folder" data-outlook-folder="community" data-outlook-channel="ops"><svg><use href="#o-comment"/></svg><span>운영게시판</span><b id="outlookCountCommunityOps">-</b></button>
+      </div>
+      <div class="outlook-account" id="outlookAccount">workbook@mail.kr</div>
+      <div class="outlook-folder-section">
+        <div class="outlook-folder-title">메일 보기</div>
+        <div id="outlookTabsSlot" class="outlook-slot outlook-market-slot"></div>
+      </div>
+      <div class="outlook-folder-section">
+        <div class="outlook-folder-title">개인 폴더</div>
+        <div class="outlook-folder" data-outlook-folder="flagged"><svg><use href="#o-flag"/></svg><span>플래그 지정됨</span><b id="outlookCountFlagged">0</b></div>
+        <div class="outlook-folder" data-outlook-folder="search"><svg><use href="#o-folder"/></svg><span>검색 폴더</span></div>
+      </div>
+      <div class="outlook-folder-section">
+        <div class="outlook-folder-title">도구</div>
+        <button class="outlook-folder outlook-tool" type="button" data-outlook-tool="notices">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 17h12l-1.5-2.2V10a4.5 4.5 0 0 0-9 0v4.8z"/><path d="M10 20h4"/></svg>
+          <span>공지사항</span>
+        </button>
+        <a class="outlook-folder outlook-tool" href="/guide" data-outlook-tool="guide">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .9-1 1.7"/><path d="M12 17h.01"/></svg>
+          <span>사이트 소개</span>
+        </a>
+        <button class="outlook-folder outlook-tool" type="button" data-outlook-tool="settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19 12a7.8 7.8 0 0 0-.1-1l2-1.5-2-3.4-2.4 1a7.3 7.3 0 0 0-1.7-1L14.5 3h-5l-.3 3.1a7.3 7.3 0 0 0-1.7 1l-2.4-1-2 3.4 2 1.5a7.8 7.8 0 0 0 0 2l-2 1.5 2 3.4 2.4-1a7.3 7.3 0 0 0 1.7 1l.3 3.1h5l.3-3.1a7.3 7.3 0 0 0 1.7-1l2.4 1 2-3.4-2-1.5c.1-.3.1-.7.1-1z"/></svg>
+          <span>설정</span>
+        </button>
+        <button class="outlook-folder outlook-tool outlook-tool-excel" type="button" data-outlook-tool="excel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+          <span>엑셀로 돌아가기</span>
+        </button>
+      </div>
+      <div class="outlook-folder-section">
+        <div class="outlook-folder-title">상태</div>
+        <div class="outlook-status-card">
+          <div id="outlookStatusTextSlot"></div>
+          <div class="outlook-status-row">
+            <span id="outlookPresenceSlot"></span>
+            <span id="outlookSessionSlot"></span>
+          </div>
+          <div id="outlookRestoreSlot"></div>
+        </div>
+      </div>
+    </aside>
+    <section class="outlook-list" aria-label="메일 목록">
+      <div class="outlook-list-head">
+        <strong id="outlookListTitle">받은 편지함</strong>
+        <div class="outlook-focused">
+          <span class="active" data-outlook-focused="primary">중요</span>
+          <span data-outlook-focused="other">기타</span>
+        </div>
+        <div class="outlook-list-tools" aria-hidden="true">
+          <svg><use href="#o-grid"/></svg>
+          <svg><use href="#o-down"/></svg>
+          <svg><use href="#o-sort"/></svg>
+        </div>
+      </div>
+      <div id="outlookWatchlistSlot" class="outlook-slot outlook-watchlist-slot" aria-label="Ootlook 종목 관리"></div>
+      <div id="outlookMobileTabsSlot" class="outlook-slot outlook-mobile-market-slot"></div>
+      <div id="outlookMailList" class="outlook-mail-list" role="listbox" aria-label="자동 갱신 메일">
+        <div class="outlook-mail-empty">시세를 불러오는 중...</div>
+      </div>
+    </section>
+    <section class="outlook-reading" aria-label="메일 읽기 창" id="outlookReadingPane">
+      <div class="outlook-reading-empty">
+        <svg viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="14" width="52" height="36" rx="4"/><path d="m8 18 24 18 24-18"/></svg>
+        <strong>메일을 선택하세요</strong>
+        <span>왼쪽 목록에서 항목을 누르면 자세한 내용이 표시됩니다.</span>
+      </div>
+    </section>
+  </main>
+</div>
+<div class="floating-actions" aria-label="빠른 액션">
+  <span class="float-wrap" data-floating-wrap="telegram">
+    <a class="tg-cta" href="https://t.me/kospigazua" target="_blank" rel="noopener" aria-label="시세알림 구독">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.24 3.64 11.94c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71l-4.13-3.05-1.99 1.93c-.23.23-.42.42-.84.42z"/></svg>
+      <span class="lbl">알림</span>
+      <span class="tg-pulse"></span>
+    </a>
+    <button class="float-dismiss" type="button" data-hide-floating-today="telegram" aria-label="오늘 시세알림 버튼 숨기기" title="오늘 숨기기">×</button>
+  </span>
+  <span class="float-wrap" data-floating-wrap="chat">
+    <button class="chat-cta" id="chatToggle" type="button" aria-controls="chatPanel" aria-expanded="false" title="실시간 채팅">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+      <span class="lbl">채팅</span>
+      <span class="chat-new-badge" aria-hidden="true"></span>
+      <span class="chat-dot" aria-hidden="true"></span>
+    </button>
+  </span>
+</div>
+<span id="chatFloatMount" hidden></span>
+<section class="chat-panel" id="chatPanel" aria-label="채팅" aria-live="polite">
+  <header class="chat-head">
+    <div class="chat-title">
+      <span id="chatHeaderTitle">채팅</span>
+      <small id="chatStatus"><span class="chat-live-indicator chat-live-dot" data-chat-transport="polling" aria-hidden="true"></span><span>자동 갱신 준비 중</span></small>
+    </div>
+    <div class="chat-head-actions">
+      <span class="chat-channel-switch" id="chatChannelSwitch" role="group" aria-label="채팅 채널">
+        <button type="button" data-chat-channel="1" aria-pressed="true" title="채널1">채널1</button>
+        <button type="button" data-chat-channel="2" aria-pressed="false" title="채널2">채널2</button>
+      </span>
+      <span class="chat-rank-wrap" id="chatRankWrap" hidden><button id="chatRankPill" class="chat-rank-pill" type="button" aria-haspopup="true" aria-expanded="false" aria-label="현재 순위 보기" title="현재 순위"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19h14"/><path d="M8 16V9"/><path d="M12 16V6"/><path d="M16 16v-5"/><path d="M7 9h2M11 6h2M15 11h2"/></svg></button><span id="chatRankTip" class="chat-rank-tip" role="tooltip"></span></span>
+      <button class="chat-head-btn chat-excel-toggle" id="chatExcelToggle" type="button" aria-label="엑셀식 표 보기" aria-pressed="false" title="엑셀식 표 보기"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="15" rx="1.2"/><path d="M8.25 4.5v15M12 4.5v15M15.75 4.5v15M4.5 8.25h15M4.5 12h15M4.5 15.75h15"/></svg></button>
+      <button class="chat-head-btn chat-dock-toggle" id="chatDockToggle" type="button" aria-label="오른쪽에 붙이기" aria-pressed="false" title="오른쪽에 붙이기" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M14 5v14M16.8 9.2l2.2 2.8-2.2 2.8"/></svg></button>
+      <button class="chat-head-btn chat-popout-toggle" id="chatPopoutToggle" type="button" aria-label="별도 창으로 분리" title="별도 창으로 분리"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6v6M20 4l-9 9"/></svg></button>
+      <button class="chat-close" id="chatClose" type="button" aria-label="채팅 닫기" title="채팅 닫기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+  </header>
+  <div class="chat-note-line" aria-label="채팅 안내" data-xk-area="chat" data-xk-position="chat-title" data-xk-id="sponsor-open" data-xk-label="알림" data-xk-variant-index="0" data-xk-variant-text="이곳에 한줄 광고를 넣어주실 광고주를 모십니다.">
+    <span class="notice-badge" data-xk-label>알림</span>
+    <a class="notice-copy" href="mailto:excelkospi@outlook.com" data-xk-click="1">이곳에 한줄 광고를 넣어주실 광고주를 모십니다.</a>
+  </div>
+  <div class="chat-body" id="chatMessages">
+    <div class="chat-system">채팅 버튼을 누르면 실시간 채팅방을 불러옵니다.</div>
+  </div>
+  <form class="chat-composer" id="chatForm">
+    <input class="chat-nickname" id="chatNickname" type="text" maxlength="18" autocomplete="nickname" name="chatNickname" aria-label="채팅 닉네임" placeholder="월급루팡_123" />
+    <input class="chat-input" id="chatInput" type="text" maxlength="280" autocomplete="off" name="chatMessage" aria-label="채팅 메시지" placeholder="@종목명으로 태그 가능" />
+    <button class="chat-attach" id="chatAttach" type="button" title="이미지 첨부(외부 링크)" aria-label="이미지 첨부"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3 3.5-4.5L19 18H5l3.5-4.5zM8 9.5A1.5 1.5 0 1 1 6.5 8 1.5 1.5 0 0 1 8 9.5z"/></svg></button>
+    <button class="chat-send" id="chatSend" type="submit">전송</button>
+    <div class="chat-footnote" id="chatFootnote" hidden>
+      <div class="chat-donor-marquee chat-donor-marquee-inline" id="chatDonorMarquee" hidden aria-label="최근 후원자">
+        <div class="chat-donor-track" id="chatDonorTrack"></div>
+        <span class="chat-donor-label" id="chatDonorLabel" aria-hidden="true"></span>
+      </div>
+    </div>
+  </form>
+</section>
+<div class="app-bottombar" id="appBottombar">
+<div class="floating-tabs">
+  <span class="sheet-nav" aria-hidden="true">
+    <button class="sheet-nav-btn" type="button" tabindex="-1" aria-hidden="true" title="이전 시트">‹</button>
+    <button class="sheet-nav-btn" type="button" tabindex="-1" aria-hidden="true" title="다음 시트">›</button>
+  </span>
+  <button class="tab active" data-market="AUTO">자동(현재 장)</button>
+  <button class="tab" data-market="KR">국장</button>
+  <button class="tab" data-market="US">미장</button>
+  <button class="tab" data-market="COIN">코인</button>
+  <button class="tab" data-market="ALL">주식 전체</button>
+  <button class="tab" data-market="HOLDINGS">보유</button>
+  <button class="sheet-add" type="button" tabindex="-1" aria-hidden="true" title="새 시트">+</button>
+</div>
+<div class="statusbar">
+  <span class="left-cluster">
+    <span class="tagline-pin" title="일하면서 몰래보는 주식시트">excelkospi<sup class="brand-tm">™</sup></span>
+    <span id="statusLeft">준비</span>
+    <button class="updates-button" id="updatesOpen" type="button">공지사항</button>
+    <button class="updates-button settings-button" id="settingsOpen" type="button">설정/로그인</button>
+    <a class="updates-button policy-button" href="/policy">이용약관</a>
+    <button class="updates-button install-button" id="pwaInstall" type="button" hidden>앱 설치</button>
+    <button class="updates-button bookmark-button" id="bookmarkTip" type="button" title="즐겨찾기 추가 방법" hidden>즐겨찾기</button>
+    <button class="updates-button readability-button" id="readabilityToggle" type="button" aria-pressed="false" hidden>노안 오신 분?</button>
+    <span class="floating-restore" id="floatingRestore" hidden></span>
+  </span>
+  <span class="right-cluster">
+    <span class="presence-count" id="presenceCount">접속 -</span>
+    <span id="zoomLabel">100%</span>
+    <span class="view-label">보통 보기</span>
+  </span>
+</div>
+</div>
+<script>(function(){var bar=document.getElementById("appBottombar"),vv=window.visualViewport;if(!bar||!vv)return;var raf=0;function apply(){raf=0;var gap=Math.max(0,Math.round(window.innerHeight-vv.height-vv.offsetTop));bar.style.transform=gap?"translateY(-"+gap+"px)":""}function schedule(){raf||(raf=requestAnimationFrame(apply))}vv.addEventListener("resize",schedule),vv.addEventListener("scroll",schedule),window.addEventListener("orientationchange",function(){setTimeout(apply,300)}),window.addEventListener("load",apply),apply()})();
+</script>
+<nav class="native-tabbar" id="nativeTabBar" aria-label="앱 메뉴">
+  <button type="button" class="native-tab" data-native-nav="quote" aria-current="true">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l5-5 4 4 7-8"/><path d="M16 8h5v5"/></svg>
+    <span>시세</span>
+  </button>
+  <button type="button" class="native-tab" data-native-nav="community" aria-current="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9h10M7 13h6"/></svg>
+    <span>게시판</span>
+  </button>
+  <button type="button" class="native-tab" data-native-nav="forecast" aria-current="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V10M10 19V5M15 19v-6M20 19v-9"/></svg>
+    <span>예측</span>
+  </button>
+  <button type="button" class="native-tab" data-native-nav="paper" aria-current="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10.5h18"/><circle cx="16.5" cy="14.5" r="1.2"/></svg>
+    <span>모의투자</span>
+  </button>
+  <button type="button" class="native-tab" data-native-nav="chat" aria-current="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+    <span>채팅</span>
+  </button>
+</nav>
+<div class="updates-modal" id="updatesModal" aria-hidden="true">
+  <div class="updates-backdrop" data-updates-close></div>
+  <section class="updates-panel" role="dialog" aria-modal="true" aria-labelledby="updatesTitle">
+    <header class="updates-head">
+      <h2 id="updatesTitle">공지사항</h2>
+      <span class="updates-version-meta" id="updatesVersionMeta"></span>
+      <a class="updates-link" href="/patch-notes.html" target="_blank" rel="noopener">전체 페이지</a>
+      <button class="updates-close" type="button" data-updates-close aria-label="닫기">×</button>
+    </header>
+    <div class="updates-body" id="updatesBody">불러오는 중...</div>
+  </section>
+</div>
+<div class="updates-modal notification-modal" id="notificationModal" aria-hidden="true">
+  <div class="updates-backdrop" data-notification-close></div>
+  <section class="updates-panel" role="dialog" aria-modal="true" aria-labelledby="notificationTitle">
+    <header class="updates-head notification-head">
+      <h2 id="notificationTitle">알림</h2>
+      <span class="notification-scope" id="notificationScopeMeta">이 기기 알림</span>
+      <div class="notification-actions" aria-label="알림 작업">
+        <button class="updates-link notification-mark-all" id="notificationMarkAll" type="button">모두 읽음</button>
+        <button class="updates-link notification-price-alerts" type="button" data-action="open-price-alerts">
+          <svg class="updates-link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9Z" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 21h4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+          </svg>
+          <span>가격 알림</span>
+        </button>
+        <button class="updates-link notification-settings-link" type="button" data-action="open-notification-settings">
+          <svg class="updates-link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Z" stroke="currentColor" stroke-width="1.9"/>
+            <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 0 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6V21a2 2 0 0 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1A2 2 0 0 1 4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H3a2 2 0 0 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1A2 2 0 0 1 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.6V3a2 2 0 0 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1A2 2 0 0 1 19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.1a2 2 0 0 1 0 4H21a1.7 1.7 0 0 0-1.6 1Z" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>알림 설정</span>
+        </button>
+      </div>
+      <button class="updates-close" type="button" data-notification-close aria-label="닫기">×</button>
+    </header>
+    <div class="updates-body notification-body" id="notificationBody">불러오는 중...</div>
+  </section>
+</div>
+<div class="updates-modal price-alert-modal" id="priceAlertModal" aria-hidden="true">
+  <div class="updates-backdrop" data-pa-close></div>
+  <section class="updates-panel" role="dialog" aria-modal="true" aria-labelledby="priceAlertTitle">
+    <header class="updates-head">
+      <h2 id="priceAlertTitle">종목 가격 알림</h2>
+      <button class="updates-close" type="button" data-pa-close aria-label="닫기">×</button>
+    </header>
+    <div class="updates-body" id="priceAlertBody"></div>
+  </section>
+</div>
+<div class="updates-modal settings-modal" id="settingsModal" aria-hidden="true">
+  <div class="updates-backdrop" data-settings-close></div>
+  <section class="updates-panel" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <header class="updates-head">
+      <h2 id="settingsTitle">설정</h2>
+      <button class="updates-close" type="button" data-settings-close aria-label="닫기">×</button>
+    </header>
+    <div class="updates-body settings-body">
+      <div class="settings-group settings-group-account">
+        <div class="settings-group-title">내 계정</div>
+        <div class="settings-profile-slot" data-auth-panel="settings"></div>
+      </div>
+      <div class="settings-group" data-settings-group="disguise">
+        <div class="settings-group-title">위장 모드</div>
+        <label class="settings-row" data-setting="outlook">
+          <span class="settings-row-text">
+            <strong>Ootlook 위장 (베타)</strong>
+            <em>시세 화면을 메일함처럼 바꿔 보여 드립니다. 곁눈질로는 업무 중으로 보입니다. (켜면 새로고침됩니다)</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingOutlook" /><span class="settings-toggle-slider"></span></span>
+        </label>
+        <label class="settings-row" data-setting="bossKey">
+          <span class="settings-row-text">
+            <strong>보스 긴급키</strong>
+            <em>Esc를 빠르게 두 번 누르면 채팅이 사라지고 업무용 검토표로 바뀝니다. 다시 두 번 누르면 원래대로 돌아옵니다.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingBossKey" /><span class="settings-toggle-slider"></span></span>
+        </label>
+      </div>
+      <div class="settings-group">
+        <div class="settings-group-title">화면 표시</div>
+        <label class="settings-row" data-setting="excelTheme">
+          <span class="settings-row-text">
+            <strong>Office 테마</strong>
+            <em>실제 엑셀의 'Office 테마' 구성에 최신 Microsoft 365 룩을 더했습니다. 시트 본문까지 어둡게 하려면 아래 다크모드를 함께 켜 주세요.</em>
+          </span>
+          <select class="settings-select" id="settingExcelTheme" aria-label="Office 테마">
+            <option value="m365">최신 M365 회색</option>
+            <option value="classic">다채로운 색(엑셀 초록색)</option>
+            <option value="silver">흰색 (엑셀 화이트)</option>
+            <option value="graphite">어두운 회색</option>
+            <option value="deep">검정</option>
+          </select>
+        </label>
+        <label class="settings-row" data-setting="darkMode">
+          <span class="settings-row-text">
+            <strong>다크모드</strong>
+            <em>화면 전체를 어둡게 바꿉니다. 늦은 밤이나 어두운 사무실에서 눈이 한결 편안합니다.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingDarkMode" /><span class="settings-toggle-slider"></span></span>
+        </label>
+        <div class="settings-row settings-row-action" data-setting="fontSize">
+          <span class="settings-row-text">
+            <strong>글씨 크기</strong>
+            <em>리본의 글꼴 크기와 연동됩니다. 어느 쪽에서 바꿔도 함께 조정됩니다.</em>
+          </span>
+          <span class="settings-range-control settings-font-size-control">
+            <button class="settings-step-btn" type="button" data-setting-action="font-size-step" data-step="-1" aria-label="글씨 작게">−</button>
+            <input class="settings-range" id="settingFontSize" type="range" min="11" max="20" step="1" />
+            <button class="settings-step-btn" type="button" data-setting-action="font-size-step" data-step="1" aria-label="글씨 크게">+</button>
+            <output id="settingFontSizeValue">11</output>
+          </span>
+        </div>
+        <div class="settings-row settings-row-action settings-row-tone" data-setting="colorTone">
+          <span class="settings-row-text">
+            <strong>색 톤</strong>
+            <em>표준은 기본, 노안 모드는 글자를 더 또렷하게, 루팡 모드는 화면 전체를 살짝 흐리게, 흑백은 색을 모두 뺀 화면입니다.</em>
+          </span>
+          <span class="settings-tone-options" role="group" aria-label="색 톤">
+            <button type="button" data-setting-tone="readability" aria-pressed="false">노안 모드</button>
+            <button type="button" data-setting-tone="standard" aria-pressed="true">표준</button>
+            <button type="button" data-setting-tone="lupang" aria-pressed="false">루팡 모드</button>
+            <button type="button" data-setting-tone="mono" aria-pressed="false">흑백</button>
+          </span>
+        </div>
+        <label class="settings-row" data-setting="wakelock">
+          <span class="settings-row-text">
+            <strong>모바일 화면 자동으로 안 꺼지게</strong>
+            <em>창을 열어 둔 동안 화면이 꺼지지 않습니다. 점심시간 내내 시세를 켜 두기 좋습니다. (모바일 전용)</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingWakeLock" /><span class="settings-toggle-slider"></span></span>
+        </label>
+      </div>
+      <div class="settings-group">
+        <div class="settings-group-title">시세 보기</div>
+        <label class="settings-row" data-setting="usKrwDisplay">
+          <span class="settings-row-text">
+            <strong>미장 현재가를 원화로</strong>
+            <em>미국 종목의 현재가를 환율로 환산해 원화로 함께 보여 드립니다. 손익을 원화로 가늠하기 좋습니다.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingUsKrwDisplay" /><span class="settings-toggle-slider"></span></span>
+        </label>
+        <label class="settings-row" data-setting="quoteFlash">
+          <span class="settings-row-text">
+            <strong>현재가 변동 깜빡임</strong>
+            <em>값이 바뀐 현재가 칸이 잠깐 옅게 물듭니다. 오르면 빨강, 내리면 파랑입니다.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingQuoteFlash" /><span class="settings-toggle-slider"></span></span>
+        </label>
+        <label class="settings-row" data-setting="hlProxy">
+          <span class="settings-row-text">
+            <strong>코스피 24시간 야간 종목 표시</strong>
+            <em>장 마감 후부터 오전 8시 30분까지, 국내·미국·자동·전체 시트 위에 HL 24시간 참고 시세를 함께 보여 드립니다.</em>
+            <span class="settings-runtime-status" id="settingHlProxyStatus" data-state="idle">현재 연결: 대기</span>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingHlProxy" /><span class="settings-toggle-slider"></span></span>
+        </label>
+        <label class="settings-row" data-setting="hoverChart">
+          <span class="settings-row-text">
+            <strong>종목 미니차트</strong>
+            <em>종목명에 마우스를 올리면(모바일은 탭) 작은 차트가 나타납니다. 주변이 신경 쓰일 때는 꺼 두세요.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingHoverChart" /><span class="settings-toggle-slider"></span></span>
+        </label>
+        <label class="settings-row" data-setting="stockDetailTarget">
+          <span class="settings-row-text">
+            <strong>국내 종목 상세 페이지</strong>
+            <em>국내 종목명을 눌렀을 때 열리는 사이트를 고릅니다. (미국·코인 링크는 그대로입니다)</em>
+          </span>
+          <select class="settings-select" id="settingStockDetailTarget" aria-label="국내 종목 상세 페이지">
+            <option value="google">구글 금융</option>
+            <option value="naver" selected>네이버 (신)</option>
+            <option value="naver_old">네이버 (구)</option>
+            <option value="daum">다음 금융</option>
+          </select>
+        </label>
+        <label class="settings-row" data-setting="rememberMarket">
+          <span class="settings-row-text">
+            <strong>마지막에 보던 시장 기억</strong>
+            <em>다음에 열면 직전에 보던 시장(국내·미국·코인)부터 시작합니다.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingRememberMarket" /><span class="settings-toggle-slider"></span></span>
+        </label>
+      </div>
+      <div class="settings-group">
+        <div class="settings-group-title">코인</div>
+        <label class="settings-row" data-setting="coinQuoteSource">
+          <span class="settings-row-text">
+            <strong>코인 시세 출처</strong>
+            <em>화면에 표시할 기준만 고릅니다. 김치프리미엄 계산에는 업비트와 바이낸스를 그대로 함께 사용합니다.</em>
+          </span>
+          <select class="settings-select" id="settingCoinQuoteSource" aria-label="코인 시세 출처">
+            <option value="binance">바이낸스</option>
+            <option value="upbit">업비트</option>
+          </select>
+        </label>
+        <label class="settings-row" data-setting="coinFeedMode">
+          <span class="settings-row-text">
+            <strong>코인 시세 받는 방식</strong>
+            <em>'고속 실시간'은 거래소에 직접 연결해 즉시 반영합니다. 회사망에서 막히면 '안전 모드'로 바꿔 주세요.</em>
+          </span>
+          <select class="settings-select" id="settingCoinFeedMode" aria-label="코인 시세 받는 방식">
+            <option value="realtime">고속 실시간</option>
+            <option value="safe">안전 모드</option>
+          </select>
+        </label>
+      </div>
+      <div class="settings-group">
+        <div class="settings-group-title">채팅</div>
+        <div class="settings-row settings-row-chat-realtime" data-setting="chatRealtime">
+          <span class="settings-row-text">
+            <strong>채팅 받는 방식</strong>
+            <em>'고속 실시간'은 새 채팅이 곧바로 올라옵니다. 연결이 막히면 자동으로 일반 조회로 전환됩니다.</em>
+            <span class="settings-runtime-status" id="settingChatRealtimeStatus" data-state="idle">채팅을 열면 웹소켓으로 연결합니다.</span>
+          </span>
+          <span class="settings-chat-realtime-control">
+            <select class="settings-select" id="settingChatRealtime" aria-label="채팅 받는 방식">
+              <option value="realtime">고속 실시간</option>
+              <option value="safe">안전 모드</option>
+            </select>
+            <button class="settings-mini-action" id="settingChatWsRetry" type="button" data-setting-action="chat-ws-retry" hidden>다시 연결</button>
+          </span>
+        </div>
+        <label class="settings-row" data-setting="chatOpacity">
+          <span class="settings-row-text">
+            <strong>채팅창 투명도</strong>
+            <em>채팅창을 흐리게 조절합니다. 주변 시선이 신경 쓰일 때 낮춰 보세요.</em>
+          </span>
+          <span class="settings-range-control">
+            <input class="settings-range" type="range" id="settingChatOpacity" min="50" max="100" step="5" aria-label="채팅창 투명도" />
+            <output id="settingChatOpacityValue" for="settingChatOpacity">100%</output>
+          </span>
+        </label>
+        <label class="settings-row" data-setting="chatImagePreview">
+          <span class="settings-row-text">
+            <strong>이미지 자동으로 보이기</strong>
+            <em>채팅·게시판 이미지가 바로 펼쳐집니다. 끄면 눌러서 펼쳐 봅니다(주변이 신경 쓰일 때).</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingChatImagePreview" /><span class="settings-toggle-slider"></span></span>
+        </label>
+        <label class="settings-row" data-setting="chatAnim">
+          <span class="settings-row-text">
+            <strong>채팅 올라올 때 애니메이션</strong>
+            <em>새 채팅이 부드럽게 올라옵니다. 끄면 곧바로 표시됩니다.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingChatAnim" /><span class="settings-toggle-slider"></span></span>
+        </label>
+        <div class="settings-row settings-row-action" data-setting="chatBlocks">
+          <span class="settings-row-text">
+            <strong>채팅 차단 목록</strong>
+            <em id="settingChatBlockCount">차단한 사용자가 없습니다.</em>
+          </span>
+          <button class="settings-mini-action" id="settingChatBlockClear" type="button" data-setting-action="clear-chat-blocks">해제</button>
+        </div>
+      </div>
+      <div class="settings-group">
+        <div class="settings-group-title">떠다니는 버튼</div>
+        <label class="settings-row" data-setting="floatingChat">
+          <span class="settings-row-text">
+            <strong>떠다니는 채팅 버튼</strong>
+            <em>화면 어디서나 채팅을 바로 여는 버튼을 띄워 둡니다.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingFloatingChat" /><span class="settings-toggle-slider"></span></span>
+        </label>
+        <label class="settings-row" data-setting="floatingTelegram">
+          <span class="settings-row-text">
+            <strong>떠다니는 시세알림 버튼</strong>
+            <em>시세 알림(텔레그램) 바로가기 버튼을 화면에 띄워 둡니다.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingFloatingTelegram" /><span class="settings-toggle-slider"></span></span>
+        </label>
+      </div>
+      <div class="settings-group settings-group-notify">
+        <div class="settings-group-title">알림</div>
+        <label class="settings-row" data-setting="notifyPaperPerformance">
+          <span class="settings-row-text">
+            <strong>모의투자 알림</strong>
+            <em>수익률 변동, TOP3 진입, 1위 달성처럼 중요한 변화만 알려 드립니다.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingNotifyPaperPerformance" /><span class="settings-toggle-slider"></span></span>
+        </label>
+        <label class="settings-row" data-setting="notifyChatMentions">
+          <span class="settings-row-text">
+            <strong>채팅 멘션 알림</strong>
+            <em>닉네임을 눌러 멘션한 경우에만 알려 드립니다. 직접 입력한 @닉네임은 제외합니다.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingNotifyChatMentions" /><span class="settings-toggle-slider"></span></span>
+        </label>
+        <label class="settings-row" data-setting="notifyMyPostReplies">
+          <span class="settings-row-text">
+            <strong>내 글 댓글 알림</strong>
+            <em>내가 쓴 종목토론 글에 새 댓글이 달리면 알려 드립니다.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingNotifyMyPostReplies" /><span class="settings-toggle-slider"></span></span>
+        </label>
+        <label class="settings-row" data-setting="notifyPriceAlerts">
+          <span class="settings-row-text">
+            <strong>종목 가격 알림</strong>
+            <em>목표가·손절가·등락률(±%) 도달 시 알려 드립니다.</em>
+          </span>
+          <span class="settings-toggle"><input type="checkbox" id="settingNotifyPriceAlerts" /><span class="settings-toggle-slider"></span></span>
+        </label>
+        <button type="button" class="settings-row settings-row-link" data-action="open-price-alerts">
+          <span class="settings-row-text">
+            <strong>🔔 가격 알림 관리</strong>
+            <em>종목별 목표가·손절가·등락률 알림을 추가·삭제합니다.</em>
+          </span>
+          <span class="settings-row-go" aria-hidden="true">›</span>
+        </button>
+        <div class="settings-subhead">게시판별 새 글 알림</div>
+        <p class="settings-note">각 게시판에 새 글이 올라오면 알려 드립니다. 전체 글과 추천글을 따로 켤 수 있습니다.</p>
+        <div class="settings-board">
+          <div class="settings-board-name">국내주식토론</div>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityKr">
+            <span class="settings-row-text"><strong>전체 글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityKr" /><span class="settings-toggle-slider"></span></span>
+          </label>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityKrRecommended">
+            <span class="settings-row-text"><strong>추천글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityKrRecommended" /><span class="settings-toggle-slider"></span></span>
+          </label>
+        </div>
+        <div class="settings-board">
+          <div class="settings-board-name">해외주식토론</div>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityUs">
+            <span class="settings-row-text"><strong>전체 글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityUs" /><span class="settings-toggle-slider"></span></span>
+          </label>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityUsRecommended">
+            <span class="settings-row-text"><strong>추천글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityUsRecommended" /><span class="settings-toggle-slider"></span></span>
+          </label>
+        </div>
+        <div class="settings-board">
+          <div class="settings-board-name">코인토론</div>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityCoin">
+            <span class="settings-row-text"><strong>전체 글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityCoin" /><span class="settings-toggle-slider"></span></span>
+          </label>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityCoinRecommended">
+            <span class="settings-row-text"><strong>추천글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityCoinRecommended" /><span class="settings-toggle-slider"></span></span>
+          </label>
+        </div>
+        <div class="settings-board">
+          <div class="settings-board-name">탕비실</div>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityFree">
+            <span class="settings-row-text"><strong>전체 글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityFree" /><span class="settings-toggle-slider"></span></span>
+          </label>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityFreeRecommended">
+            <span class="settings-row-text"><strong>추천글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityFreeRecommended" /><span class="settings-toggle-slider"></span></span>
+          </label>
+        </div>
+        <div class="settings-board">
+          <div class="settings-board-name">운영게시판</div>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityOps">
+            <span class="settings-row-text"><strong>전체 글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityOps" /><span class="settings-toggle-slider"></span></span>
+          </label>
+          <label class="settings-row settings-row-compact" data-setting="notifyCommunityOpsRecommended">
+            <span class="settings-row-text"><strong>추천글</strong></span>
+            <span class="settings-toggle"><input type="checkbox" id="settingNotifyCommunityOpsRecommended" /><span class="settings-toggle-slider"></span></span>
+          </label>
+        </div>
+      </div>
+      <div class="settings-group">
+        <div class="settings-group-title">데이터 관리</div>
+        <div class="settings-row settings-row-action">
+          <span class="settings-row-text">
+            <strong>이 기기 데이터 초기화</strong>
+            <em>관심 종목, 보유 메모, 캐시, 설정을 모두 지웁니다. 되돌릴 수 없습니다.</em>
+          </span>
+          <button class="settings-danger" type="button" data-setting-action="reset">초기화</button>
+        </div>
+      </div>
+      <div class="settings-group">
+        <div class="settings-group-title">약관 · 정책</div>
+        <button class="settings-row settings-row-link" type="button" data-policy-open="terms">
+          <span class="settings-row-text"><strong>이용약관</strong></span>
+          <span class="settings-row-go" aria-hidden="true">›</span>
+        </button>
+        <button class="settings-row settings-row-link" type="button" data-policy-open="privacy">
+          <span class="settings-row-text"><strong>개인정보처리방침</strong></span>
+          <span class="settings-row-go" aria-hidden="true">›</span>
+        </button>
+      </div>
+      <div class="settings-foot">
+        설정은 이 기기에만 저장됩니다. 다른 기기에서는 따로 설정해 주세요.<br>
+        <a href="/policy" target="_blank" rel="noopener">이용약관 · 개인정보 · 면책</a> — 로그인 없이도 쓸 수 있도록, 개인정보는 최소한으로만 받는 것을 원칙으로 합니다.
+      </div>
+    </div>
+  </section>
+</div>
+<div class="updates-modal policy-modal" id="policyModal" aria-hidden="true">
+  <div class="updates-backdrop" data-policy-close></div>
+  <section class="updates-panel" role="dialog" aria-modal="true" aria-labelledby="policyModalTitle">
+    <header class="updates-head">
+      <h2 id="policyModalTitle">약관 · 정책</h2>
+      <a class="updates-link" href="/policy" target="_blank" rel="noopener">전체 페이지</a>
+      <button class="updates-close" type="button" data-policy-close aria-label="닫기">×</button>
+    </header>
+    <div class="updates-body policy-body">
+      <iframe id="policyFrame" class="policy-frame" title="약관 · 정책" referrerpolicy="no-referrer"></iframe>
+    </div>
+  </section>
+</div>
+<div id="loadingToast" class="loading-toast" role="status" aria-live="polite">
+  <span class="spinner" aria-hidden="true"></span>
+  <span id="loadingText">시장 데이터를 불러오는 중...</span>
+</div>
+  <script src="/assets/app-config.js?v=20260704-3308"></script>
+  <script>(()=>{if(typeof GA_MEASUREMENT_ID!="string"||!GA_MEASUREMENT_ID)return;const gaContextPayload=()=>{try{return typeof gaClientContextPayload=="function"?gaClientContextPayload():{}}catch{return{}}},installEngagementFallback=()=>{const STORAGE_KEY="excelkospi.gaEngagementFallbackAt.v1";let visibleSince=document.visibilityState==="visible"?Date.now():0,timer=0;const lastSentAt=()=>{try{return Number(sessionStorage.getItem(STORAGE_KEY)||0)||0}catch{return 0}},markSent=()=>{try{sessionStorage.setItem(STORAGE_KEY,String(Date.now()))}catch{}},clearTimer=()=>{timer&&clearTimeout(timer),timer=0},sendFallback=reason=>{if(typeof window.gtag!="function")return!1;const now=Date.now(),elapsed=visibleSince?now-visibleSince:0;if(elapsed<1e4||now-lastSentAt()<18e5)return!1;const engagementMs=Math.min(6e4,Math.max(1e4,Math.round(elapsed)));try{return window.gtag("event","site_engagement_ping",{...gaContextPayload(),event_category:"site",engagement_source:"excelkospi_fallback",engagement_reason:reason,engagement_time_msec:engagementMs,transport_type:"beacon"}),markSent(),!0}catch{return!1}},schedule=()=>{if(clearTimer(),document.visibilityState!=="visible")return;visibleSince||(visibleSince=Date.now());const sinceLast=Date.now()-lastSentAt(),untilSessionRefresh=Math.max(0,18e5-sinceLast),untilMinEngagement=Math.max(0,1e4-(Date.now()-visibleSince));timer=setTimeout(()=>{sendFallback("visible_timer"),schedule()},Math.max(untilMinEngagement,untilSessionRefresh))};document.addEventListener("visibilitychange",()=>{document.visibilityState==="visible"?(visibleSince=Date.now(),schedule()):(sendFallback("hidden"),visibleSince=0,clearTimer())}),window.addEventListener("pagehide",()=>sendFallback("pagehide"),{capture:!0}),window.addEventListener("pageshow",()=>{document.visibilityState==="visible"&&(visibleSince=Date.now(),schedule())}),schedule()},s=document.createElement("script");s.async=!0,s.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(GA_MEASUREMENT_ID),document.head.appendChild(s),window.dataLayer=window.dataLayer||[],window.gtag=function(){window.dataLayer.push(arguments)};const gaContext=gaContextPayload();window.gtag("js",new Date),Object.keys(gaContext).length&&window.gtag("set",gaContext),window.gtag("config",GA_MEASUREMENT_ID,{send_page_view:!0,...gaContext}),installEngagementFallback()})();
+</script>
+  <script src="/assets/app-static-data.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-utils.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-watchlist.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-tooltip.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-mentions.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-community-read.js?v=20260704-3308" defer></script>
+  <script src="/assets/community-ui.js?v=20260705-3338" defer></script>
+  <script src="/assets/app-personal-feed.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-outlook-preview.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-watchlist-share.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-cell-selection.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-quote-table.js?v=20260705-3338" defer></script>
+  <script src="/assets/app-quote-drag.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-quote-controls.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-mini-chart.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-tradingview.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-chat-ui.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-first-visit.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-panel-order.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-chat-rank.js?v=20260704-3308" defer></script>
+  <script src="/assets/stock-search-core.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-stock-autocomplete.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-price-alerts.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-mention-autocomplete.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-link-preview.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-paper.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-market-forecast.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-hl-proxy.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-settings.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-holdings.js?v=20260704-3330" defer></script>
+  <script src="/assets/app-auth.js?v=20260704-3336" defer></script>
+  <script src="/assets/app-auth-wizard.js?v=20260704-3326" defer></script>
+  <script src="/assets/app-market-forecast-helpers.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-etf-loader.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-hidden-defaults.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-quote-notes.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-floating-state.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-attendance.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-timeline-tabs.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-native-shell.js?v=20260705-3338" defer></script>
+  <script src="/assets/app.js?v=20260704-3326" defer></script>
+  <script src="/assets/app-chat-notifications.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-notifications.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-chat-ws.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-hl-proxy-ws.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-coin-ws.js?v=20260704-3308" defer></script>
+  <script src="/assets/app-col-resize.js?v=20260704-3308" defer></script>
+</body>
+</html>
