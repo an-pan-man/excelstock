@@ -43,7 +43,7 @@
       <div class="auth-wizard-prog" aria-hidden="true"><i class="on"></i><i class="on"></i></div>
       <div class="auth-wizard-body">
         <div class="auth-wizard-step">
-          <h3>필요한 알림만 받을게요</h3>
+          <h3>진짜 꼭 필요한 알림만 보내드립니다.</h3>
           <p class="auth-wizard-sub">광고에는 사용하지 않습니다. 종목 가격알림과 채팅 멘션, 내 글 댓글 알림에만 사용합니다.</p>
           <div class="auth-wizard-note">언제든 <b>설정 › 알림</b>에서 끄거나 종류를 바꿀 수 있어요.</div>
         </div>
@@ -60,7 +60,7 @@
       </div>
       <div class="auth-wizard-body">
         <div class="auth-wizard-step">
-          <h3>필요한 알림만 받을게요</h3>
+          <h3>진짜 꼭 필요한 알림만 보내드립니다.</h3>
           <p class="auth-wizard-sub">광고에는 사용하지 않습니다. 종목 가격알림과 채팅 멘션, 내 글 댓글 알림에만 사용합니다.</p>
           <div class="auth-wizard-note">언제든 <b>설정 › 알림</b>에서 끄거나 종류를 바꿀 수 있어요.</div>
         </div>
