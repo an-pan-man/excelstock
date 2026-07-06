@@ -6,6 +6,8 @@
     "/guide",
     "/guide/*",
     "/guide.html",
+    "/app",
+    "/app.html",
     "/fear-greed",
     "/fear-greed.html",
     "/ad",
