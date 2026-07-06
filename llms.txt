@@ -6,6 +6,7 @@
 
 - Home: https://excelkospi.pages.dev/
 - Guide: https://excelkospi.pages.dev/guide
+- App download: https://excelkospi.pages.dev/app
 - Sitemap: https://excelkospi.pages.dev/sitemap.xml
 - SEO topic sitemap: https://excelkospi.ai/seo-sitemap.xml
 - Korean market guide: https://excelkospi.ai/kospi
@@ -23,6 +24,7 @@
 - Open TradingView charts for supported US stocks and crypto.
 - Add custom watchlist rows, blank note rows, holdings, quantities, and average prices.
 - Share a watchlist backup URL across desktop and mobile devices.
+- Use the native app landing page to download the mobile app and learn about app notifications.
 - Use discreet office-style modes, including spreadsheet and Outlook-like layouts.
 
 ## Important Korean search phrases
