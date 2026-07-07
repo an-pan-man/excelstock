@@ -3,7 +3,7 @@
         <span class="auth-wizard-bar-ic" aria-hidden="true">${nativeSheetIconSvg()}</span>
         <span class="auth-wizard-bar-title">시작하기</span>
       </div>
-      <div class="auth-wizard-prog" aria-hidden="true"><i class="on"></i><i></i></div>
+      <div class="auth-wizard-prog" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
       <div class="auth-wizard-body">
         <div class="native-app-onboarding-step">
           <h2>엑셀코스피에 오신 걸 환영합니다</h2>
@@ -38,7 +38,7 @@
         <span class="auth-wizard-bar-title">알림 권한</span>
         <button class="auth-wizard-close" type="button" data-native-app-onboarding-act="notify-later" aria-label="나중에"></button>
       </div>
-      <div class="auth-wizard-prog" aria-hidden="true"><i class="on"></i><i class="on"></i></div>
+      <div class="auth-wizard-prog" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></div>
       <div class="auth-wizard-body">
         <div class="auth-wizard-step">
           <h3>진짜 꼭 필요한 알림만 보내드립니다.</h3>
@@ -50,7 +50,26 @@
         <button class="auth-wizard-btn ghost" type="button" data-native-app-onboarding-act="notify-later">나중에</button>
         <button class="auth-wizard-btn primary" type="button" data-native-app-onboarding-act="allow">알림 허용</button>
       </div>
-    </div>`}async function nativeAppCanRequestNotification(){const pn=nativePushPlugin();if(!pn)return!1;const state=await nativePushPermissionState(pn);return state==="granted"?(writeNativePushPermissionPromptState("done"),maybeSyncNativePush(),!1):state==="denied"?nativePlatform()==="android"?readNativePushPermissionPromptState()!=="done":(writeNativePushPermissionPromptState("done"),!1):readNativePushPermissionPromptState()!=="done"}async function advanceNativeAppOnboarding(root){try{if(await nativeAppCanRequestNotification()){root.innerHTML=nativeAppOnboardingNotifyHtml();return}}catch{}writeNativeAppOnboardingState("done"),closeNativeAppOnboarding(root)}function finishNativeAppOnboarding(root,options={}){writeNativeAppOnboardingState("done"),options.skipNotification&&writeNativePushPermissionPromptState("done"),closeNativeAppOnboarding(root)}function showNativeAppOnboarding(){if(document.querySelector(".native-app-onboarding-modal"))return!0;const root=document.createElement("div");return root.className="auth-wizard-modal native-app-onboarding-modal",root.setAttribute("role","dialog"),root.setAttribute("aria-modal","true"),root.setAttribute("aria-label","엑셀코스피 앱 시작 안내"),root.innerHTML=nativeAppOnboardingWelcomeHtml(),root.addEventListener("click",async ev=>{const btn=ev.target?.closest?.("[data-native-app-onboarding-act]");if(!btn)return;ev.preventDefault();const act=btn.getAttribute("data-native-app-onboarding-act");if(act==="next"){btn.disabled=!0,await advanceNativeAppOnboarding(root);return}if(act==="notify-later"){finishNativeAppOnboarding(root,{skipNotification:!0});return}if(act==="allow"){writeNativeAppOnboardingState("done"),root.querySelectorAll("button").forEach(b=>{b.disabled=!0});try{const result=await requestNotificationOptIn({reason:"native-app-onboarding"}),reason=String(result?.reason||"");result?.ok?(writeNativePushPermissionPromptState("done"),toast("알림을 켰습니다.","ok")):reason==="denied"||reason==="push_denied"?(writeNativePushPermissionPromptState("done"),toast("기기 설정에서 알림이 꺼져 있습니다.","warn")):toast("알림은 설정에서 다시 켤 수 있어요.","info")}catch{toast("알림은 설정에서 다시 켤 수 있어요.","info")}finally{closeNativeAppOnboarding(root)}}}),document.body.appendChild(root),!0}function maybeShowNativeAppOnboarding(retry=0){try{return!nativeAppRuntime()||readNativeAppOnboardingState()==="done"?!1:nativePushPrimerBlockedByUi()?(retry<3&&setTimeout(()=>maybeShowNativeAppOnboarding(retry+1),1600),!0):showNativeAppOnboarding()}catch{return!1}}function nativePushPermissionPrimerHtml(){return`<div class="auth-wizard-card native-push-permission-card" role="document">
+    </div>`}function nativeAppOnboardingNicknameHtml(){let nick="";try{typeof preferredUnifiedNickname=="function"&&(nick=String(preferredUnifiedNickname()||""))}catch{}/^월급루팡_/.test(nick)&&(nick="");const val=nick.replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;");return`<div class="auth-wizard-card native-app-onboarding-card native-app-onboarding-nick-card" role="document">
+      <div class="auth-wizard-bar">
+        <span class="auth-wizard-bar-ic" aria-hidden="true">${nativeSheetIconSvg()}</span>
+        <span class="auth-wizard-bar-title">이름 정하기</span>
+        <button class="auth-wizard-close" type="button" data-native-app-onboarding-act="nick-skip" aria-label="건너뛰기"></button>
+      </div>
+      <div class="auth-wizard-prog" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></div>
+      <div class="auth-wizard-body">
+        <div class="auth-wizard-step">
+          <h3>어떤 이름으로 활동할까요?</h3>
+          <p class="auth-wizard-sub">게시판·채팅·모의투자에 표시될 이름이에요. 본명보다 별명을 권해요. 언제든 <b>설정</b>에서 바꿀 수 있어요.</p>
+          <input class="auth-wizard-nick-input" data-native-app-onboarding-nick type="text" maxlength="18" placeholder="예: 직장인투자자" value="${val}" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="done">
+          <p class="auth-wizard-sub native-app-onboarding-nick-hint">비워 두면 나중에 정할 수 있어요.</p>
+        </div>
+      </div>
+      <div class="auth-wizard-foot">
+        <button class="auth-wizard-btn ghost" type="button" data-native-app-onboarding-act="nick-skip">건너뛰기</button>
+        <button class="auth-wizard-btn primary" type="button" data-native-app-onboarding-act="nick-next">다음</button>
+      </div>
+    </div>`}async function nativeAppCanRequestNotification(){const pn=nativePushPlugin();if(!pn)return!1;const state=await nativePushPermissionState(pn);return state==="granted"?(writeNativePushPermissionPromptState("done"),maybeSyncNativePush(),!1):state==="denied"?nativePlatform()==="android"?readNativePushPermissionPromptState()!=="done":(writeNativePushPermissionPromptState("done"),!1):readNativePushPermissionPromptState()!=="done"}async function advanceNativeAppOnboarding(root){try{if(await nativeAppCanRequestNotification()){root.innerHTML=nativeAppOnboardingNotifyHtml();return}}catch{}writeNativeAppOnboardingState("done"),closeNativeAppOnboarding(root)}function finishNativeAppOnboarding(root,options={}){writeNativeAppOnboardingState("done"),options.skipNotification&&writeNativePushPermissionPromptState("done"),closeNativeAppOnboarding(root)}function showNativeAppOnboarding(){if(document.querySelector(".native-app-onboarding-modal"))return!0;const root=document.createElement("div");return root.className="auth-wizard-modal native-app-onboarding-modal",root.setAttribute("role","dialog"),root.setAttribute("aria-modal","true"),root.setAttribute("aria-label","엑셀코스피 앱 시작 안내"),root.innerHTML=nativeAppOnboardingWelcomeHtml(),root.addEventListener("click",async ev=>{const btn=ev.target?.closest?.("[data-native-app-onboarding-act]");if(!btn)return;ev.preventDefault();const act=btn.getAttribute("data-native-app-onboarding-act");if(act==="next"){btn.disabled=!0,root.innerHTML=nativeAppOnboardingNicknameHtml();try{root.querySelector("[data-native-app-onboarding-nick]")?.focus()}catch{}return}if(act==="nick-next"||act==="nick-skip"){if(root.querySelectorAll("button").forEach(b=>{b.disabled=!0}),act==="nick-next")try{const input=root.querySelector("[data-native-app-onboarding-nick]"),value=input?String(input.value||"").trim():"";value&&typeof writeUnifiedNickname=="function"&&writeUnifiedNickname(value)}catch{}await advanceNativeAppOnboarding(root);return}if(act==="notify-later"){finishNativeAppOnboarding(root,{skipNotification:!0});return}if(act==="allow"){writeNativeAppOnboardingState("done"),root.querySelectorAll("button").forEach(b=>{b.disabled=!0});try{const result=await requestNotificationOptIn({reason:"native-app-onboarding"}),reason=String(result?.reason||"");result?.ok?(writeNativePushPermissionPromptState("done"),toast("알림을 켰습니다.","ok")):reason==="denied"||reason==="push_denied"?(writeNativePushPermissionPromptState("done"),toast("기기 설정에서 알림이 꺼져 있습니다.","warn")):toast("알림은 설정에서 다시 켤 수 있어요.","info")}catch{toast("알림은 설정에서 다시 켤 수 있어요.","info")}finally{closeNativeAppOnboarding(root)}}}),root.addEventListener("keydown",ev=>{ev.key==="Enter"&&ev.target?.matches?.("[data-native-app-onboarding-nick]")&&(ev.preventDefault(),root.querySelector('[data-native-app-onboarding-act="nick-next"]')?.click())}),document.body.appendChild(root),!0}function maybeShowNativeAppOnboarding(retry=0){try{return!nativeAppRuntime()||readNativeAppOnboardingState()==="done"?!1:nativePushPrimerBlockedByUi()?(retry<3&&setTimeout(()=>maybeShowNativeAppOnboarding(retry+1),1600),!0):showNativeAppOnboarding()}catch{return!1}}function nativePushPermissionPrimerHtml(){return`<div class="auth-wizard-card native-push-permission-card" role="document">
       <div class="auth-wizard-bar">
         <span class="auth-wizard-bar-ic" aria-hidden="true">${nativeBellIconSvg()}</span>
         <span class="auth-wizard-bar-title">알림 권한</span>
