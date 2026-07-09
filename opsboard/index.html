@@ -599,7 +599,7 @@
               <button type="button" role="tab" data-timeline-tab="community-ops" aria-selected="false"><span class="timeline-tab-label-full">운영게시판</span><span class="timeline-tab-label-tight">운영게시판</span></button>
               <span class="timeline-tab-sep" role="presentation" aria-hidden="true"></span>
               <button type="button" role="tab" data-timeline-tab="paper" aria-selected="false"><span class="timeline-tab-label-full">모의투자<em class="tab-new">N</em></span><span class="timeline-tab-label-tight">모의투자<em class="tab-new">N</em></span></button>
-              <button type="button" role="tab" data-timeline-tab="assets" aria-selected="false" aria-hidden="true" tabindex="-1" hidden><span class="timeline-tab-label-full">내 자산</span><span class="timeline-tab-label-tight">내 자산</span></button>
+              <button type="button" role="tab" data-timeline-tab="assets" aria-selected="false"><span class="timeline-tab-label-full">내 자산</span><span class="timeline-tab-label-tight">내 자산</span></button>
               <button type="button" role="tab" data-timeline-tab="sports" aria-selected="false" hidden><span class="timeline-tab-label-full">스포츠</span><span class="timeline-tab-label-tight">스포츠</span></button>
               <button type="button" role="tab" data-timeline-tab="forecast" aria-selected="false"><span class="timeline-tab-label-full">시장예측</span><span class="timeline-tab-label-tight">시장예측</span></button>
               <button type="button" role="tab" data-timeline-tab="attendance" data-timeline-secondary="1" aria-selected="false"><span class="timeline-tab-label-full">근태보고</span><span class="timeline-tab-label-tight">근태보고</span></button>
@@ -1457,7 +1457,7 @@
   <span class="spinner" aria-hidden="true"></span>
   <span id="loadingText">시장 데이터를 불러오는 중...</span>
 </div>
-  <script src="/assets/app-config.js?v=20260710-3542"></script>
+  <script src="/assets/app-config.js?v=20260709-3528"></script>
   <script>(()=>{if(typeof GA_MEASUREMENT_ID!="string"||!GA_MEASUREMENT_ID)return;const gaContextPayload=()=>{try{return typeof gaClientContextPayload=="function"?gaClientContextPayload():{}}catch{return{}}},installEngagementFallback=()=>{const STORAGE_KEY="excelkospi.gaEngagementFallbackAt.v1";let visibleSince=document.visibilityState==="visible"?Date.now():0,timer=0;const lastSentAt=()=>{try{return Number(sessionStorage.getItem(STORAGE_KEY)||0)||0}catch{return 0}},markSent=()=>{try{sessionStorage.setItem(STORAGE_KEY,String(Date.now()))}catch{}},clearTimer=()=>{timer&&clearTimeout(timer),timer=0},sendFallback=reason=>{if(typeof window.gtag!="function")return!1;const now=Date.now(),elapsed=visibleSince?now-visibleSince:0;if(elapsed<1e4||now-lastSentAt()<18e5)return!1;const engagementMs=Math.min(6e4,Math.max(1e4,Math.round(elapsed)));try{return window.gtag("event","site_engagement_ping",{...gaContextPayload(),event_category:"site",engagement_source:"excelkospi_fallback",engagement_reason:reason,engagement_time_msec:engagementMs,transport_type:"beacon"}),markSent(),!0}catch{return!1}},schedule=()=>{if(clearTimer(),document.visibilityState!=="visible")return;visibleSince||(visibleSince=Date.now());const sinceLast=Date.now()-lastSentAt(),untilSessionRefresh=Math.max(0,18e5-sinceLast),untilMinEngagement=Math.max(0,1e4-(Date.now()-visibleSince));timer=setTimeout(()=>{sendFallback("visible_timer"),schedule()},Math.max(untilMinEngagement,untilSessionRefresh))};document.addEventListener("visibilitychange",()=>{document.visibilityState==="visible"?(visibleSince=Date.now(),schedule()):(sendFallback("hidden"),visibleSince=0,clearTimer())}),window.addEventListener("pagehide",()=>sendFallback("pagehide"),{capture:!0}),window.addEventListener("pageshow",()=>{document.visibilityState==="visible"&&(visibleSince=Date.now(),schedule())}),schedule()},s=document.createElement("script");s.async=!0,s.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(GA_MEASUREMENT_ID),document.head.appendChild(s),window.dataLayer=window.dataLayer||[],window.gtag=function(){window.dataLayer.push(arguments)};const gaContext=gaContextPayload();window.gtag("js",new Date),Object.keys(gaContext).length&&window.gtag("set",gaContext),window.gtag("config",GA_MEASUREMENT_ID,{send_page_view:!0,...gaContext}),installEngagementFallback()})();
 </script>
   <script src="/assets/app-static-data.js?v=20260709-3528" defer></script>
@@ -1466,7 +1466,7 @@
   <script src="/assets/app-tooltip.js?v=20260709-3528" defer></script>
   <script src="/assets/app-mentions.js?v=20260709-3528" defer></script>
   <script src="/assets/app-community-read.js?v=20260709-3528" defer></script>
-  <script src="/assets/community-ui.js?v=20260710-3542" defer></script>
+  <script src="/assets/community-ui.js?v=20260709-3538" defer></script>
   <script src="/assets/app-personal-feed.js?v=20260709-3528" defer></script>
   <script src="/assets/app-outlook-preview.js?v=20260709-3528" defer></script>
   <script src="/assets/app-watchlist-share.js?v=20260709-3528" defer></script>
@@ -1490,7 +1490,7 @@
   <script src="/assets/app-hl-proxy.js?v=20260709-3528" defer></script>
   <script src="/assets/app-settings.js?v=20260709-3534" defer></script>
   <script src="/assets/app-holdings.js?v=20260709-3528" defer></script>
-  <script src="/assets/app-auth.js?v=20260710-3542" defer></script>
+  <script src="/assets/app-auth.js?v=20260709-3529" defer></script>
   <script src="/assets/app-auth-wizard.js?v=20260709-3529" defer></script>
   <script src="/assets/app-market-forecast-helpers.js?v=20260709-3528" defer></script>
   <script src="/assets/app-etf-loader.js?v=20260709-3528" defer></script>
@@ -1498,10 +1498,10 @@
   <script src="/assets/app-quote-notes.js?v=20260709-3528" defer></script>
   <script src="/assets/app-floating-state.js?v=20260709-3528" defer></script>
   <script src="/assets/app-attendance.js?v=20260709-3528" defer></script>
-  <script src="/assets/app-timeline-tabs.js?v=20260710-3542" defer></script>
+  <script src="/assets/app-timeline-tabs.js?v=20260709-3528" defer></script>
   <script src="/assets/app-native-shell.js?v=20260709-3538" defer></script>
-  <script src="/assets/app-my-assets.js?v=20260710-3542" defer></script>
-  <script src="/assets/app.js?v=20260710-3542" defer></script>
+  <script src="/assets/app-my-assets.js?v=20260709-3528" defer></script>
+  <script src="/assets/app.js?v=20260709-3534" defer></script>
   <script src="/assets/app-chat-notifications.js?v=20260709-3528" defer></script>
   <script src="/assets/app-notifications.js?v=20260709-3528" defer></script>
   <script src="/assets/app-chat-ws.js?v=20260709-3528" defer></script>
