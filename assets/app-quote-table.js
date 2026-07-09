@@ -87,17 +87,17 @@ function renderHoldingEditRow(card,rowNo,current={}){const id=holdingId(card),lo
       <td class="left"><div class="metric-cell"><span class="metric-label">${labelHtml}${labelExtra}${live}</span>${tvButton}${outlookPreviewHtml(c,previewChangeValue)}<span class="metric-trail ${removeBtn?"quote-action-trail":""}">${removeBtn}${c._hlProxy?hlProxyBadgeHtml(c):sourcePillHtml(c)}</span></div></td>
       <td class="right quote-price-cell">${priceCell}</td>
       <td class="right ${changeClass} quote-change-cell"${changeTitle?` title="${esc(changeTitle)}"`:""}>${changeCell}</td>
-    </tr>`;return holdingRows.html&&(rowHtml+=holdingRows.html,rowNo+=holdingRows.count),rowHtml}).join("");const summaryRows=renderHoldingSummaryRows(cards,rowNo);rowNo+=summaryRows.count;const summaryAdRows=(()=>{const adBlankRowNo=rowNo++,adContentRowNo=rowNo++;return`
+    </tr>`;return holdingRows.html&&(rowHtml+=holdingRows.html,rowNo+=holdingRows.count),rowHtml}).join("");const summaryRows=renderHoldingSummaryRows(cards,rowNo);rowNo+=summaryRows.count;const summaryAdRows=`
     <tr class="summary-sheet-note-blank-row" aria-hidden="true">
-      <td class="rownum">${adBlankRowNo}</td>
+      <td class="rownum"></td>
       <td class="left"></td>
       <td class="right"></td>
       <td class="right"></td>
     </tr>
     <tr class="summary-sheet-note-row" data-xk-area="summary" data-xk-position="summary-bottom" data-xk-id="sponsor-open" data-xk-label="알림" data-xk-variant-index="0" data-xk-variant-text="이곳에 한줄 광고를 넣어주실 광고주를 모십니다.">
-      <td class="rownum">${adContentRowNo}</td>
+      <td class="rownum"></td>
       <td class="left summary-sheet-note-cell" colspan="3">
         <span class="notice-badge" data-xk-label>알림</span>
         <span class="community-text-note"><a class="notice-copy" href="mailto:excelkospi@outlook.com" data-xk-click="1">이곳에 한줄 광고를 넣어주실 광고주를 모십니다.</a></span>
       </td>
-    </tr>`})(),MIN_VISIBLE_ROWS=80,renderedCount=rowNo-2,usedRowIdx=rowNo,padCount=Math.max(0,MIN_VISIBLE_ROWS-renderedCount),empties=makeEmptyRows(usedRowIdx,padCount,3);return header+rows+summaryRows.html+summaryAdRows+empties}
+    </tr>`,MIN_VISIBLE_ROWS=80,renderedCount=rowNo-2,usedRowIdx=rowNo,padCount=Math.max(0,MIN_VISIBLE_ROWS-renderedCount),empties=makeEmptyRows(usedRowIdx,padCount,3);return header+rows+summaryRows.html+summaryAdRows+empties}
