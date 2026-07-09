@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>try{new URLSearchParams(location.search).has("embed")&&document.documentElement.classList.add("is-embed")}catch{}
+<script>try{var sp=new URLSearchParams(location.search),r=document.documentElement;sp.has("embed")&&r.classList.add("is-embed","xk-screen-only");var nav=String(window.__nativeNav||"").toLowerCase(),native=nav==="ios"||nav==="android"||!!window.__APP_KEY,dark=native&&typeof window.__xkSystemDark=="boolean"?!!window.__xkSystemDark:window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;dark&&r.classList.add("excel-dark-mode","xk-native-system-dark")}catch{}
 </script>
 <meta name="robots" content="index,follow,max-image-preview:large">
 <title>공지사항 · 패치 노트 | 엑셀코스피</title>
@@ -16,11 +16,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260709-3528" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260709-3528" />
 <link rel="stylesheet" href="/assets/guide.css?v=20260709-3528">
-<link rel="stylesheet" href="/assets/app.css.20260709-3534.css">
-<style>.patch-page .updates-body{overflow:visible}html.is-embed .excel-topbar,html.is-embed .guide-footer,html.is-embed footer{display:none!important}html.is-embed body{padding-top:8px}
+<link rel="stylesheet" href="/assets/app.css.20260709-3537.css">
+<style>.patch-page .updates-body{overflow:visible}html.excel-dark-mode,html.excel-dark-mode body{background:#101418;color:#dbe5de;color-scheme:dark}html.excel-dark-mode .patch-page,html.excel-dark-mode .updates-body{background:#101418;color:#dbe5de}html.excel-dark-mode .updates-body a{color:#86d9a5}html.excel-dark-mode .updates-error{color:#c7d2d8}html.is-embed .excel-topbar,html.is-embed .guide-footer,html.is-embed footer{display:none!important}html.is-embed body{padding-top:8px}
 </style>
 </head>
 <body class="patch-notes-page">
+  <script>try{document.documentElement.classList.contains("excel-dark-mode")&&document.body.classList.add("excel-dark-mode","xk-native-system-dark")}catch{}
+</script>
   <header class="excel-topbar">
     <a class="brand" href="/" aria-label="시트로 돌아가기">
       <img src="/assets/excelkospi-logo.png" alt="" />
