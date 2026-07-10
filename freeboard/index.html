@@ -605,6 +605,23 @@
     </section>
     <div class="sheet-splitter sheet-splitter-main" id="mainPaneSplitter" role="separator" aria-orientation="vertical" aria-label="시세창과 피드 영역 너비 조절" title="드래그해서 시세창 너비 조절"></div>
     <section class="col col-timeline" data-panel-id="timeline">
+      <div class="skhy-adr-strip" id="skhyAdrStrip" hidden aria-live="polite">
+        <div class="skhy-adr-main">
+          <span class="skhy-adr-kicker">상장중계</span>
+          <span class="skhy-adr-name">SK hynix ADR</span>
+          <span class="skhy-adr-code" id="skhyAdrCode">SKHYV</span>
+        </div>
+        <div class="skhy-adr-quote">
+          <strong class="skhy-adr-price" id="skhyAdrPrice">--</strong>
+          <span class="skhy-adr-change flat" id="skhyAdrChange">--</span>
+        </div>
+        <div class="skhy-adr-actions">
+          <span class="skhy-adr-status" id="skhyAdrStatus">시세 대기</span>
+          <span class="skhy-adr-countdown" id="skhyAdrCountdown">15초 갱신</span>
+          <button class="skhy-adr-chart" id="skhyAdrChart" type="button">차트</button>
+          <button class="skhy-adr-close" id="skhyAdrClose" type="button" aria-label="SK hynix ADR 중계 닫기">×</button>
+        </div>
+      </div>
       <div class="tv-chart-panel" id="tvChartPanel" hidden aria-live="polite">
         <div class="tv-chart-head">
           <div class="tv-chart-title">
