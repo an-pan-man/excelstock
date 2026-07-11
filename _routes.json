@@ -73,6 +73,14 @@
     "/icon-512.png",
     "/apple-touch-icon.png",
     "/ads.json",
-    "/assets/*"
+    "/assets/*.css",
+    "/assets/*.gif",
+    "/assets/*.js",
+    "/assets/*.mp4",
+    "/assets/*.png",
+    "/assets/*.svg",
+    "/assets/*.txt",
+    "/assets/*.webp",
+    "/assets/*.woff2"
   ]
 }
