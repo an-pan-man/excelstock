@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f5f7f9">
+  <meta name="robots" content="noindex,nofollow">
+  <title>집 모드 UI 샘플 · excelkospi</title>
+  <link rel="stylesheet" href="./home-mode.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="주요 메뉴">
+      <a class="brand" href="../" aria-label="excelkospi 홈">
+        <span class="brand-mark" aria-hidden="true">ek</span>
+        <span class="brand-word">excelkospi</span>
+      </a>
+      <nav class="primary-nav">
+        <a class="nav-item is-active" href="#assets" aria-current="page" data-section="assets">
+          <svg aria-hidden="true"><use href="#icon-home"></use></svg><span>내 자산</span>
+        </a>
+        <a class="nav-item" href="#watchlist" data-section="watchlist">
+          <svg aria-hidden="true"><use href="#icon-star"></use></svg><span>관심종목</span>
+        </a>
+        <a class="nav-item" href="#paper" data-section="paper">
+          <svg aria-hidden="true"><use href="#icon-chart"></use></svg><span>모의투자</span>
+        </a>
+        <a class="nav-item" href="#news" data-section="news">
+          <svg aria-hidden="true"><use href="#icon-news"></use></svg><span>뉴스</span>
+        </a>
+        <a class="nav-item" href="#community" data-section="community">
+          <svg aria-hidden="true"><use href="#icon-users"></use></svg><span>커뮤니티</span>
+        </a>
+        <a class="nav-item" href="#chat" data-section="chat">
+          <svg aria-hidden="true"><use href="#icon-chat"></use></svg><span>채팅</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="nav-item nav-button" type="button" data-action="open-settings">
+          <svg aria-hidden="true"><use href="#icon-settings"></use></svg><span>설정</span>
+        </button>
+        <button class="nav-item nav-button" type="button" data-action="show-concept">
+          <svg aria-hidden="true"><use href="#icon-info"></use></svg><span>이 화면 소개</span>
+        </button>
+      </div>
+    </aside>
+    <main class="workspace" id="mainContent">
+      <header class="topbar">
+        <div class="welcome">
+          <h1>안녕하세요, 투자자님</h1>
+          <p id="todayLabel">오늘의 자산 흐름을 정리했어요</p>
+        </div>
+        <label class="global-search">
+          <svg aria-hidden="true"><use href="#icon-search"></use></svg>
+          <span class="sr-only">검색</span>
+          <input type="search" id="globalSearch" placeholder="종목, 코드, 뉴스 검색" autocomplete="off">
+          <kbd>⌘ K</kbd>
+        </label>
+        <div class="top-actions">
+          <button class="icon-button" type="button" aria-label="알림" data-action="notifications">
+            <svg aria-hidden="true"><use href="#icon-bell"></use></svg><span class="notification-dot"></span>
+          </button>
+          <button class="icon-button" type="button" aria-label="채팅 열기" data-section-trigger="chat">
+            <svg aria-hidden="true"><use href="#icon-chat"></use></svg>
+          </button>
+          <a class="excel-return" href="../" aria-label="엑셀 모드로 돌아가기">
+            <span class="excel-icon" aria-hidden="true">X</span><span>엑셀 모드</span>
+          </a>
+        </div>
+      </header>
+      <section class="portfolio-hero" id="assets" aria-labelledby="portfolioTitle">
+        <div class="portfolio-summary">
+          <div class="section-heading-row">
+            <h2 id="portfolioTitle">전체 자산</h2>
+            <button class="quiet-icon" type="button" data-action="toggle-amounts" aria-pressed="false" aria-label="금액 숨기기">
+              <svg aria-hidden="true"><use href="#icon-eye"></use></svg>
+            </button>
+          </div>
+          <div class="net-worth" data-private-value>125,430,600<span>원</span></div>
+          <div class="today-change"><span>오늘</span><strong>+1,046,500원</strong><strong>+0.84%</strong></div>
+          <dl class="portfolio-facts">
+            <div><dt>총 투자금액</dt><dd data-private-value>113,245,000원</dd></div>
+            <div><dt>총 평가금액</dt><dd data-private-value>125,430,600원</dd></div>
+            <div><dt>평가손익</dt><dd class="positive" data-private-value>+12,185,600원</dd></div>
+            <div><dt>누적 수익률</dt><dd class="positive">+10.76%</dd></div>
+          </dl>
+          <p class="local-data-note" id="localDataNote">샘플 데이터로 표시 중</p>
+        </div>
+        <div class="portfolio-chart-wrap">
+          <div class="chart-toolbar" role="group" aria-label="자산 차트 기간">
+            <button type="button" data-range="1W">1주</button>
+            <button class="is-active" type="button" data-range="1M">1개월</button>
+            <button type="button" data-range="3M">3개월</button>
+            <button type="button" data-range="1Y">1년</button>
+          </div>
+          <div class="portfolio-chart" aria-label="최근 1개월 전체 자산 증가 추이">
+            <svg viewBox="0 0 760 260" role="img" aria-labelledby="chartTitle chartDesc" preserveAspectRatio="none">
+              <title id="chartTitle">전체 자산 추이</title>
+              <desc id="chartDesc">최근 한 달 동안 1억 600만원에서 1억 2543만원으로 증가한 추이</desc>
+              <defs>
+                <linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0" stop-color="#16a36a" stop-opacity=".22"></stop>
+                  <stop offset="1" stop-color="#16a36a" stop-opacity="0"></stop>
+                </linearGradient>
+              </defs>
+              <g class="chart-grid">
+                <line x1="20" y1="32" x2="735" y2="32"></line>
+                <line x1="20" y1="82" x2="735" y2="82"></line>
+                <line x1="20" y1="132" x2="735" y2="132"></line>
+                <line x1="20" y1="182" x2="735" y2="182"></line>
+                <line x1="20" y1="232" x2="735" y2="232"></line>
+              </g>
+              <path class="chart-area" id="chartArea" d="M28 214 L60 205 L91 216 L123 186 L154 177 L186 158 L218 146 L249 152 L281 137 L313 134 L344 108 L376 89 L407 101 L439 78 L471 82 L502 70 L534 110 L565 95 L597 123 L628 112 L660 84 L691 74 L724 58 L724 232 L28 232 Z"></path>
+              <path class="chart-line" id="chartLine" d="M28 214 L60 205 L91 216 L123 186 L154 177 L186 158 L218 146 L249 152 L281 137 L313 134 L344 108 L376 89 L407 101 L439 78 L471 82 L502 70 L534 110 L565 95 L597 123 L628 112 L660 84 L691 74 L724 58"></path>
+              <circle class="chart-point" cx="724" cy="58" r="5"></circle>
+              <g class="chart-labels">
+                <text x="28" y="253">06.12</text><text x="250" y="253">06.22</text><text x="475" y="253">07.02</text><text x="688" y="253">오늘</text>
+              </g>
+            </svg>
+            <div class="chart-value"><span>현재</span><strong data-private-value>125,430,600원</strong></div>
+          </div>
+        </div>
+      </section>
+      <div class="dashboard-grid">
+        <section class="watchlist-panel" id="watchlist" aria-labelledby="watchlistTitle">
+          <div class="panel-heading">
+            <div>
+              <h2 id="watchlistTitle">관심종목</h2>
+              <p>보고 싶은 종목만 빠르게 확인하세요</p>
+            </div>
+            <div class="panel-actions">
+              <button class="text-button" type="button" data-action="edit-watchlist">
+                <svg aria-hidden="true"><use href="#icon-edit"></use></svg>편집
+              </button>
+              <a class="text-link" href="../#watchlist">전체보기<svg aria-hidden="true"><use href="#icon-chevron"></use></svg></a>
+            </div>
+          </div>
+          <div class="watchlist-table-wrap">
+            <table class="watchlist-table">
+              <thead><tr><th scope="col"><span class="sr-only">즐겨찾기</span></th><th scope="col">종목명</th><th scope="col">현재가</th><th scope="col">전일대비</th><th scope="col">등락률</th><th scope="col">거래대금</th><th scope="col"><span class="sr-only">더보기</span></th></tr></thead>
+              <tbody id="watchlistBody"></tbody>
+            </table>
+          </div>
+          <div class="table-footer">
+            <button class="add-stock-button" type="button" data-action="add-stock"><svg aria-hidden="true"><use href="#icon-plus"></use></svg>종목 추가</button>
+            <span id="watchlistCount">8 / 100 종목</span>
+            <button class="table-sort" type="button" data-action="sort-watchlist">관심종목 순<svg aria-hidden="true"><use href="#icon-down"></use></svg></button>
+          </div>
+        </section>
+        <aside class="insight-rail">
+          <section class="allocation-panel" aria-labelledby="allocationTitle">
+            <div class="panel-heading compact"><h2 id="allocationTitle">자산 배분</h2><button class="quiet-link" type="button" data-action="allocation-detail">상세보기<svg aria-hidden="true"><use href="#icon-chevron"></use></svg></button></div>
+            <div class="allocation-content">
+              <div class="donut" role="img" aria-label="국내주식 69.6%, 해외주식 14.2%, 채권 7.3%, 현금 5.7%, 기타 3.2%"><span><strong data-private-value>1.25억</strong><small>전체 자산</small></span></div>
+              <ul class="allocation-list">
+                <li><span><i class="legend domestic"></i>국내주식</span><strong>69.6%</strong></li>
+                <li><span><i class="legend global"></i>해외주식</span><strong>14.2%</strong></li>
+                <li><span><i class="legend bond"></i>채권</span><strong>7.3%</strong></li>
+                <li><span><i class="legend cash"></i>현금</span><strong>5.7%</strong></li>
+                <li><span><i class="legend etc"></i>기타</span><strong>3.2%</strong></li>
+              </ul>
+            </div>
+          </section>
+          <section class="paper-panel" id="paper" aria-labelledby="paperTitle">
+            <div class="panel-heading compact"><h2 id="paperTitle">모의투자</h2><a class="quiet-link" href="../paper">열기<svg aria-hidden="true"><use href="#icon-chevron"></use></svg></a></div>
+            <div class="paper-balance"><span>모의투자 자산</span><strong data-private-value>54,363,200원</strong></div>
+            <div class="paper-metrics"><div><span>누적 수익률</span><strong>+8.73%</strong></div><div><span>누적 손익</span><strong data-private-value>+4,363,200원</strong></div></div>
+            <div class="paper-progress"><div><span>투자 가능 금액</span><strong data-private-value>32,416,800원</strong></div><progress max="100" value="65">65%</progress></div>
+            <div class="paper-footer"><span>이번 시즌 137위</span><span>상위 18%</span></div>
+          </section>
+        </aside>
+      </div>
+      <section class="news-panel" id="news" aria-labelledby="newsTitle">
+        <div class="panel-heading">
+          <div><h2 id="newsTitle">최근 소식</h2><p>시장과 내 종목에 영향을 주는 소식만 모았어요</p></div>
+          <div class="news-tabs" role="tablist" aria-label="뉴스 분류">
+            <button class="is-active" type="button" role="tab" aria-selected="true" data-news-filter="all">전체</button>
+            <button type="button" role="tab" aria-selected="false" data-news-filter="market">시장</button>
+            <button type="button" role="tab" aria-selected="false" data-news-filter="stock">내 종목</button>
+          </div>
+        </div>
+        <div class="news-list" id="newsList">
+          <a href="../#news" data-news-type="market"><span class="news-source">시장</span><strong>코스피, 외국인 순매수에 상승 흐름 이어가</strong><time>1시간 전</time></a>
+          <a href="../#news" data-news-type="stock"><span class="news-source stock">내 종목</span><strong>삼성전자, 차세대 메모리 공급 확대 기대</strong><time>2시간 전</time></a>
+          <a href="../#news" data-news-type="market"><span class="news-source economy">경제</span><strong>원·달러 환율, 장중 1,360원대 안정</strong><time>3시간 전</time></a>
+        </div>
+      </section>
+    </main>
+    <nav class="mobile-tabbar" aria-label="모바일 주요 메뉴">
+      <a class="is-active" href="#assets" data-section="assets"><svg aria-hidden="true"><use href="#icon-home"></use></svg><span>내 자산</span></a>
+      <a href="#watchlist" data-section="watchlist"><svg aria-hidden="true"><use href="#icon-star"></use></svg><span>관심종목</span></a>
+      <a href="#paper" data-section="paper"><svg aria-hidden="true"><use href="#icon-chart"></use></svg><span>모의투자</span></a>
+      <a href="#news" data-section="news"><svg aria-hidden="true"><use href="#icon-news"></use></svg><span>뉴스</span></a>
+      <button type="button" data-action="mobile-more"><svg aria-hidden="true"><use href="#icon-more"></use></svg><span>더보기</span></button>
+    </nav>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="sample-dialog" id="sampleDialog">
+    <form method="dialog">
+      <button class="dialog-close" value="cancel" aria-label="닫기"><svg aria-hidden="true"><use href="#icon-close"></use></svg></button>
+      <div class="dialog-icon"><svg aria-hidden="true"><use href="#icon-spark"></use></svg></div>
+      <h2 id="dialogTitle">집에서 쓰는 종합금융도구</h2>
+      <p id="dialogBody">엑셀 위장은 그대로 남겨두고, 집에서는 자산·관심종목·모의투자를 한눈에 보는 별도 모드로 전환하는 방향입니다.</p>
+      <div class="dialog-points">
+        <span>기존 저장 데이터 재사용</span><span>새 API 호출 없음</span><span>모바일 하단 탭 전환</span>
+      </div>
+      <button class="dialog-primary" value="confirm">확인</button>
+    </form>
+  </dialog>
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"></path></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"></path></symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V10m6 10V4m6 16v-7m5 7H2"></path></symbol>
+    <symbol id="icon-news" viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"></path></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24"><path d="M16 20v-1.6a4.4 4.4 0 0 0-4.4-4.4H7.4A4.4 4.4 0 0 0 3 18.4V20M9.5 10A3.5 3.5 0 1 0 9.5 3a3.5 3.5 0 0 0 0 7Zm7-5.8a3.5 3.5 0 0 1 0 6.6M21 20v-1.6a4.4 4.4 0 0 0-3.3-4.3"></path></symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M20 15a3 3 0 0 1-3 3H9l-5 3v-5.5A3 3 0 0 1 3 13V7a3 3 0 0 1 3-3h11a3 3 0 0 1 3 3Z"></path><path d="M8 10h.01M12 10h.01M16 10h.01"></path></symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3V2.8h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"></path></symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></symbol>
+    <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 7h18s-3 0-3-7ZM10 20h4"></path></symbol>
+    <symbol id="icon-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"></path><circle cx="12" cy="12" r="2.5"></circle></symbol>
+    <symbol id="icon-edit" viewBox="0 0 24 24"><path d="m4 20 4.2-1 10.6-10.6-3.2-3.2L5 15.8ZM14.5 6.3l3.2 3.2"></path></symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"></path></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"></path></symbol>
+    <symbol id="icon-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></symbol>
+    <symbol id="icon-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"></circle><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"></path></symbol>
+    <symbol id="icon-spark" viewBox="0 0 24 24"><path d="M12 2 14 9l7 3-7 3-2 7-2-7-7-3 7-3Z"></path></symbol>
+  </svg>
+  <script src="./home-mode.js"></script>
+</body>
+</html>
