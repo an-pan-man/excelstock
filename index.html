@@ -946,18 +946,16 @@
 </div>
 <div class="floating-actions" aria-label="빠른 액션">
   <span class="float-wrap" data-floating-wrap="app">
-    <a class="mobile-app-cta" id="mobileAppCta" href="/app" aria-label="모바일 앱 설치" aria-controls="mobileAppPopover" aria-expanded="false" aria-haspopup="dialog">
+    <a class="chat-cta mobile-app-cta" id="mobileAppCta" href="/app" aria-label="모바일 앱 설치" aria-controls="mobileAppPopover" aria-expanded="false" aria-haspopup="dialog">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M10 5h4M11 18.5h2"/></svg>
       <span class="lbl">모바일 앱</span>
     </a>
-    <section class="mobile-app-popover" id="mobileAppPopover" role="dialog" aria-labelledby="mobileAppPopoverTitle" aria-describedby="mobileAppPopoverDesc" hidden>
+    <section class="mobile-app-popover" id="mobileAppPopover" role="dialog" aria-labelledby="mobileAppPopoverTitle" hidden>
       <button class="mobile-app-popover-close" type="button" data-mobile-app-popover-close aria-label="앱 설치 안내 닫기">×</button>
       <strong id="mobileAppPopoverTitle">폰에서 엑셀코스피 열기</strong>
-      <span id="mobileAppPopoverDesc">카메라로 QR을 스캔하면 앱 설치 페이지로 이동합니다.</span>
-      <a class="mobile-app-popover-qr" href="/app" target="_blank" rel="noopener" aria-label="앱 다운로드 페이지 새 창에서 열기">
-        <img src="/assets/app/download-qr.svg?v=20260712-3691" alt="엑셀코스피 앱 설치 페이지 QR 코드" width="178" height="178" />
+      <a class="mobile-app-popover-qr" href="/app" target="_blank" rel="noopener">
+        <img src="/assets/app/download-qr.svg?v=20260712-3691" alt="엑셀코스피 앱 설치 페이지 QR 코드" width="164" height="164" />
       </a>
-      <a class="mobile-app-popover-link" href="/app" target="_blank" rel="noopener">앱 다운로드 페이지 열기</a>
     </section>
   </span>
   <span class="float-wrap" data-floating-wrap="telegram">
@@ -1599,7 +1597,6 @@
   <script src="/assets/app-etf-loader.js?v=20260712-3691" defer></script>
   <script src="/assets/app-hidden-defaults.js?v=20260712-3691" defer></script>
   <script src="/assets/app-quote-notes.js?v=20260712-3691" defer></script>
-  <script src="/assets/app-install-cta.js?v=20260712-3691" defer></script>
   <script src="/assets/app-floating-state.js?v=20260712-3691" defer></script>
   <script src="/assets/app-attendance.js?v=20260712-3691" defer></script>
   <script src="/assets/app-timeline-tabs.js?v=20260712-3691" defer></script>
