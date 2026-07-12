@@ -11,12 +11,12 @@
 <link rel="alternate" hreflang="ko-KR" href="https://excelkospi.pages.dev/patch-notes" />
 <meta name="description" content="엑셀코스피 공지사항·패치 노트 — 새 기능, 개선, 버그 수정 등 최신 업데이트 내역. 회사에서 엑셀 보는 척 주식 보기, excelkospi.">
 <meta name="title" content="공지사항 · 패치 노트 | 엑셀코스피">
-<link rel="icon" href="/favicon.ico?v=20260712-3640" sizes="any" />
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=20260712-3640" />
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260712-3640" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260712-3640" />
-<link rel="stylesheet" href="/assets/guide.css?v=20260712-3640">
-<link rel="stylesheet" href="/assets/app.css.20260712-3697.css">
+<link rel="icon" href="/favicon.ico?v=20260712-3698" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=20260712-3698" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260712-3698" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260712-3698" />
+<link rel="stylesheet" href="/assets/guide.css?v=20260712-3698">
+<link rel="stylesheet" href="/assets/app.css.20260712-3698.css">
 <style>.patch-page .updates-body{overflow:visible}html.excel-dark-mode,html.excel-dark-mode body{background:#101418;color:#dbe5de;color-scheme:dark}html.excel-dark-mode .patch-page,html.excel-dark-mode .updates-body{background:#101418;color:#dbe5de}html.excel-dark-mode .updates-body a{color:#86d9a5}html.excel-dark-mode .updates-error{color:#c7d2d8}html.is-embed .excel-topbar,html.is-embed .guide-footer,html.is-embed footer{display:none!important}html.is-embed body{padding-top:8px}
 </style>
 </head>
@@ -24,21 +24,22 @@
   <script>try{document.documentElement.classList.contains("excel-dark-mode")&&document.body.classList.add("excel-dark-mode","xk-native-system-dark")}catch{}
 </script>
   <header class="excel-topbar">
-    <a class="brand" href="/" aria-label="시트로 돌아가기">
+    <a class="brand" href="https://excelkospi.pages.dev/" aria-label="엑셀코스피 시트 열기">
       <img src="/assets/excelkospi-logo.png" alt="" />
       <span>excelkospi</span>
     </a>
-    <nav class="topbar-nav" aria-label="페이지 이동">
-      <a href="/guide">소개</a>
-      <a href="/patch-notes" aria-current="page">공지사항</a>
-      <a href="/policy">이용약관</a>
+    <nav class="topbar-nav" aria-label="주요 페이지">
+      <a href="/kospi">국장</a><a href="/nasdaq">미장</a><a href="/crypto">코인</a><a href="/assets">내 자산</a><a href="/community">커뮤니티</a><a href="/outlook">아웃룩</a>
     </nav>
-    <a class="open-sheet" href="/">시트 열기</a>
+    <a class="open-sheet" href="https://excelkospi.pages.dev/">시트 열기</a>
   </header>
+  <nav class="guide-ribbon" aria-label="사이트 안내">
+    <a href="/guide">소개</a><a href="/app">앱 다운로드</a><a href="/patch-notes" aria-current="page">공지사항</a><a href="/policy">이용약관</a>
+  </nav>
   <div class="patch-page">
     <div class="updates-body" id="patchBody">불러오는 중...</div>
   </div>
-  <script src="/assets/app-utils.js?v=20260712-3640"></script>
+  <script src="/assets/app-utils.js?v=20260712-3698"></script>
   <script>(async function(){const body=document.getElementById("patchBody");try{const res=await fetch("/patch-notes.md?v=20260706-3375",{cache:"no-store"});if(!res.ok)throw new Error("patch-notes "+res.status);body.innerHTML=renderPatchMarkdown(await res.text())}catch{body.innerHTML='<p class="updates-error">공지사항을 불러오지 못했습니다.</p>'}})();
 </script>
 </body>
