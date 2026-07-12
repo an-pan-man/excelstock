@@ -136,13 +136,13 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
     <rect x="23" y="19" width="31" height="31" rx="6.5" fill="#185c37"/>
     <path d="M30.1 42 36.4 34l-5.9-8h5.6l3.1 4.9 3.3-4.9h5.2l-5.9 7.8 6.2 8.2h-5.6L39 36.8 35.3 42z" fill="#fff"/>
     <path d="M47 19h.9A6.1 6.1 0 0 1 54 25.1v18.8a6.1 6.1 0 0 1-6.1 6.1H47z" fill="#21a366"/>
-  </g>`}function myAssetsShareCardSvg(sd,showAmounts){const W=MY_ASSETS_SHARE_WIDTH,H=MY_ASSETS_SHARE_HEIGHT,up="#c6413f",down="#3f6f9f",ink="#16181a",muted="#7a8791",line="#eef2ef",col=v=>v==null?muted:v>0?up:v<0?down:muted,pctTxt=v=>v==null?"-":`${v>=0?"+":""}${v.toFixed(1)}%`,marketLabel=market=>({KR:"국내상장",US:"해외상장",COIN:"코인"})[market]||"보유자산",barX=86,barY=488,barW=908,barH=42;let barAcc=0;const allocationBar=sd.segs.map(s=>{const width=Math.max(0,Math.min(barW-barAcc,s.pct/100*barW)),node=`<rect x="${(barX+barAcc).toFixed(1)}" y="${barY}" width="${width.toFixed(1)}" height="${barH}" fill="${s.color}"/>`;return barAcc+=width,node}).join(""),legend=sd.segs.map((s,i)=>{const x=86+i*227;return`<rect x="${x}" y="557" width="20" height="20" rx="5" fill="${s.color}"/><text x="${x+31}" y="578" font-size="27" font-weight="700" fill="#55606a">${esc(s.label)}</text><text x="${x+202}" y="578" text-anchor="end" font-size="27" font-weight="800" fill="${ink}">${Math.round(s.pct)}%</text>`}).join(""),rows=(Array.isArray(sd.topRows)?sd.topRows:[]).map((row,i)=>{const y=728+i*86;return`<text x="92" y="${y}" font-size="28" font-weight="800" fill="#9aa4ad">${i+1}</text>
+  </g>`}function myAssetsShareCardSvg(sd,showAmounts){const W=MY_ASSETS_SHARE_WIDTH,H=MY_ASSETS_SHARE_HEIGHT,up="#c6413f",down="#3f6f9f",ink="#16181a",muted="#7a8791",line="#eef2ef",col=v=>v==null?muted:v>0?up:v<0?down:muted,pctTxt=v=>v==null?"-":`${v>=0?"+":""}${v.toFixed(1)}%`,marketLabel=market=>({KR:"국내상장",US:"해외상장",COIN:"코인"})[market]||"보유자산",barX=86,barY=488,barW=908,barH=42;let barAcc=0;const allocationBar=sd.segs.map(s=>{const width=Math.max(0,Math.min(barW-barAcc,s.pct/100*barW)),node=`<rect x="${(barX+barAcc).toFixed(1)}" y="${barY}" width="${width.toFixed(1)}" height="${barH}" fill="${s.color}"/>`;return barAcc+=width,node}).join(""),legend=sd.segs.map((s,i)=>{const x=86+i*227;return`<rect x="${x}" y="557" width="20" height="20" rx="5" fill="${s.color}"/><text x="${x+31}" y="578" font-size="27" font-weight="700" fill="#55606a">${esc(s.label)}</text><text x="${x+202}" y="578" text-anchor="end" font-size="27" font-weight="800" fill="${ink}">${Math.round(s.pct)}%</text>`}).join(""),rows=(Array.isArray(sd.topRows)?sd.topRows:[]).map((row,i)=>{const y=716+i*94;return`<text x="92" y="${y}" font-size="28" font-weight="800" fill="#9aa4ad">${i+1}</text>
       <text x="134" y="${y}" font-size="35" font-weight="800" fill="${ink}">${esc(row.name)}</text>
-      <text x="134" y="${y+36}" font-size="25" font-weight="700" fill="${muted}">${esc(marketLabel(row.market))}</text>
+      <text x="134" y="${y+42}" font-size="25" font-weight="700" fill="${muted}">${esc(marketLabel(row.market))}</text>
       <text x="640" y="${y}" text-anchor="end" font-size="34" font-weight="800" fill="#3a4750">${row.weight.toFixed(1)}%</text>
       <text x="820" y="${y}" text-anchor="end" font-size="34" font-weight="800" fill="${col(row.dayPct)}">${pctTxt(row.dayPct)}</text>
       <text x="994" y="${y}" text-anchor="end" font-size="34" font-weight="800" fill="${col(row.pct)}">${pctTxt(row.pct)}</text>
-      ${i<4?`<line x1="86" y1="${y+60}" x2="994" y2="${y+60}" stroke="${line}"/>`:""}`}).join(""),insights=sd.insights||{},bestText=insights.bestName||"집계 중",bestPctText=insights.bestPct==null?"-":pctTxt(insights.bestPct),top3Text=Number.isFinite(Number(insights.top3Weight))?`${Number(insights.top3Weight).toFixed(1)}%`:"-",amountLine=showAmounts&&sd.total>0?`<text x="86" y="376" font-size="31" font-weight="700" fill="${muted}">총자산 <tspan fill="${ink}" font-weight="800">${esc(myAssetsWon(sd.total))}</tspan><tspan fill="${muted}">  ·  손익 </tspan><tspan fill="${col(sd.pnlKrw)}" font-weight="800">${esc(myAssetsSignedWon(sd.pnlKrw))}</tspan></text>`:`<text x="86" y="376" font-size="29" font-weight="700" fill="${muted}">금액을 숨기고 수익률과 포트폴리오만 공유합니다</text>`,todayText=sd.dayPct==null?"-":pctTxt(sd.dayPct),kospiText=sd.dayVsKospi==null?"-":`${pctTxt(sd.dayVsKospi)}p`;return`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
+      ${i<4?`<line x1="86" y1="${y+70}" x2="994" y2="${y+70}" stroke="${line}"/>`:""}`}).join(""),insights=sd.insights||{},bestText=insights.bestName||"집계 중",bestPctText=insights.bestPct==null?"-":pctTxt(insights.bestPct),top3Text=Number.isFinite(Number(insights.top3Weight))?`${Number(insights.top3Weight).toFixed(1)}%`:"-",amountLine=showAmounts&&sd.total>0?`<text x="86" y="376" font-size="31" font-weight="700" fill="${muted}">총자산 <tspan fill="${ink}" font-weight="800">${esc(myAssetsWon(sd.total))}</tspan><tspan fill="${muted}">  ·  손익 </tspan><tspan fill="${col(sd.pnlKrw)}" font-weight="800">${esc(myAssetsSignedWon(sd.pnlKrw))}</tspan></text>`:"",todayText=sd.dayPct==null?"-":pctTxt(sd.dayPct),kospiText=sd.dayVsKospi==null?"-":`${pctTxt(sd.dayVsKospi)}p`;return`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
     <style>text{font-family:'Pretendard',sans-serif;font-variant-numeric:tabular-nums}</style>
     <defs>
       <filter id="maCardShadow" x="-6%" y="-6%" width="112%" height="118%"><feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#1d3b2b" flood-opacity=".16"/></filter>
@@ -176,17 +176,17 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
     <text x="820" y="666" text-anchor="end" font-size="26" font-weight="800" fill="${muted}">오늘</text>
     <text x="994" y="666" text-anchor="end" font-size="26" font-weight="800" fill="${muted}">누적</text>
     ${rows||`<text x="86" y="756" font-size="31" font-weight="700" fill="${muted}">보유 종목 없이 예수금만 기록 중입니다</text>`}
-    <line x1="86" y1="1132" x2="994" y2="1132" stroke="${line}"/>
-    <text x="86" y="1175" font-size="32" font-weight="800" fill="${ink}">포트폴리오 포인트</text>
-    <text x="86" y="1218" font-size="25" font-weight="700" fill="${muted}">수익률 1위</text>
-    <text x="228" y="1218" font-size="30" font-weight="800" fill="${ink}">${esc(bestText)}</text>
-    <text x="500" y="1218" text-anchor="end" font-size="30" font-weight="800" fill="${col(insights.bestPct)}">${bestPctText}</text>
-    <line x1="540" y1="1190" x2="540" y2="1224" stroke="${line}"/>
-    <text x="580" y="1218" font-size="25" font-weight="700" fill="${muted}">상위 3종목 비중</text>
-    <text x="994" y="1218" text-anchor="end" font-size="30" font-weight="800" fill="${ink}">${top3Text}</text>
-    <line x1="86" y1="1260" x2="994" y2="1260" stroke="${line}"/>
-    <text x="86" y="1299" font-size="26" font-weight="700" fill="${muted}">엑셀처럼 조용하게, 내 자산은 한눈에</text>
-    <text x="994" y="1299" text-anchor="end" font-size="28" font-weight="800" fill="#137a43">excelkospi.ai/assets</text>
+    <line x1="86" y1="1156" x2="994" y2="1156" stroke="${line}"/>
+    <text x="86" y="1194" font-size="32" font-weight="800" fill="${ink}">포트폴리오 포인트</text>
+    <text x="86" y="1234" font-size="25" font-weight="700" fill="${muted}">수익률 1위</text>
+    <text x="228" y="1234" font-size="30" font-weight="800" fill="${ink}">${esc(bestText)}</text>
+    <text x="500" y="1234" text-anchor="end" font-size="30" font-weight="800" fill="${col(insights.bestPct)}">${bestPctText}</text>
+    <line x1="540" y1="1206" x2="540" y2="1240" stroke="${line}"/>
+    <text x="580" y="1234" font-size="25" font-weight="700" fill="${muted}">상위 3종목 비중</text>
+    <text x="994" y="1234" text-anchor="end" font-size="30" font-weight="800" fill="${ink}">${top3Text}</text>
+    <line x1="86" y1="1268" x2="994" y2="1268" stroke="${line}"/>
+    <text x="86" y="1301" font-size="26" font-weight="700" fill="${muted}">엑셀처럼 조용하게, 내 자산은 한눈에</text>
+    <text x="994" y="1301" text-anchor="end" font-size="28" font-weight="800" fill="#137a43">excelkospi.ai/assets</text>
   </svg>`}function myAssetsShareOverlayHtml(sd){return`<div class="ma-share-ov" data-ma-share-ov>
     <div class="ma-share-box" role="dialog" aria-modal="true" aria-label="내 자산 공유">
       <div class="ma-share-head"><b>내 자산 공유</b><button type="button" class="ma-share-x" data-ma-share-close aria-label="닫기">×</button></div>
