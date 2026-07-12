@@ -69,9 +69,9 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
     ${myAssetsDividendGrowthLine(d)}
     ${myAssetsDividendCalendarHtml(d)}
     <div class="ma-ret-note">월평균=연간 배당 추정액÷12 · 매월 지급 예정액이 아니에요. 세금은 국내상장 15.4%·미국상장 15%를 단순 가정했으며 계좌·상품별로 달라요.</div>
-  </div>`}function myAssetsCurrentYm(){return myAssetsToday().slice(0,7)}function myAssetsDividendGoalHtml(d,opts={}){const goal=opts.sample?{monthly:5e5}:dividendGoalLoad(),cur=Math.max(0,Number(d.dividendMonthly)||0),form=opts.sample?"":`<form class="ma-goal-form" data-ma-divgoal-form${goal?" hidden":""}>
-    <label class="ma-goal-lb"><span>목표 월 배당(세후)</span><span class="ma-goal-inwrap"><i>₩</i><input class="ma-jf ma-goal-amt" name="goal" type="number" inputmode="numeric" min="0" step="10000" placeholder="예: 300000" value="${goal?esc(goal.monthly):""}" aria-label="목표 월 배당 금액(원)"></span></label>
-    <button type="submit" class="ma-jf-add">목표 저장</button>${goal?'<button type="button" class="ma-tg-cancel" data-ma-divgoal-cancel>취소</button>':""}
+  </div>`}function myAssetsCurrentYm(){return myAssetsToday().slice(0,7)}function myAssetsDividendGoalHtml(d,opts={}){const goal=opts.sample?{monthly:5e5}:dividendGoalLoad(),cur=Math.max(0,Number(d.dividendMonthly)||0),form=opts.sample?"":`<form class="ma-goal-form ma-form" data-ma-divgoal-form${goal?" hidden":""}>
+    <label class="ma-fld ma-c12"><span>목표 월 배당(세후)</span><span class="ma-goal-inwrap"><i>₩</i><input class="ma-jf ma-num ma-goal-amt" name="goal" type="number" inputmode="numeric" min="0" step="10000" placeholder="예: 300000" value="${goal?esc(goal.monthly):""}"></span></label>
+    <div class="ma-form-foot">${goal?'<button type="button" class="ma-jf-cancel" data-ma-divgoal-cancel>취소</button>':""}<button type="submit" class="ma-jf-add">목표 저장</button></div>
   </form>`;let view="";if(goal){const pct=goal.monthly>0?cur/goal.monthly*100:0,done=pct>=100,remain=Math.max(0,goal.monthly-cur),meta=done?'<span class="ma-goal-done">목표 달성 — 세후 월평균이 목표를 넘었어요</span>':`<span>목표까지 월 ${myAssetsAmountHtml(myAssetsWon(remain))}<i> · 연 ${myAssetsAmountHtml(myAssetsWon(remain*12))}</i></span>`;view=`<div class="ma-goal-view">
       <div class="ma-goal-head"><b class="ma-goal-cur">${myAssetsAmountHtml(myAssetsWon(cur))}</b><span class="ma-goal-tgt">/ 목표 ${myAssetsAmountHtml(myAssetsWon(goal.monthly))}</span><b class="ma-goal-pct${done?" is-done":""}">${Math.min(999,Math.round(pct))}%</b></div>
       <div class="ma-goal-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.min(100,Math.round(pct))}" aria-label="월 배당 목표 달성률"><span class="ma-goal-fill${done?" is-done":""}" style="width:${Math.min(100,pct).toFixed(1)}%"></span></div>
@@ -88,12 +88,12 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
       <span class="ma-dl-nm">${esc(e.name)}${e.src==="est"?'<i class="ma-dl-tag">추정확정</i>':""}</span>
       <span class="ma-dl-amt">${myAssetsAmountHtml(myAssetsUnitAmt(e.amount,e.unit,!1))}</span>
       <button type="button" class="ma-jr-del" data-ma-dl-del="${esc(String(e.id||""))}" aria-label="삭제" title="삭제">×</button>
-    </div>`).join(""),listHtml=recent.length?`<div class="ma-dl-list">${rows}${list.length>recent.length?`<div class="ma-dl-more">외 ${list.length-recent.length}건은 월별 합계에 반영돼 있어요.</div>`:""}</div>`:sug.length?"":'<div class="ma-jempty">받은 배당을 기록하면 <b>실제 수령액</b>이 월별로 쌓여요. 위 추정 항목이 뜨면 한 번에 확정할 수도 있어요.</div>',skipped=c.skippedUsd>0?`<div class="ma-ret-note">환율 미확인으로 $ 기록 ${c.skippedUsd}건은 집계에서 잠시 제외했어요.</div>`:"",dataListOpts=myAssetsNameSuggestions().map(n=>`<option value="${esc(n)}"></option>`).join(""),form=`<form class="ma-dl-form" data-ma-dl-form autocomplete="off">
-      <input class="ma-jf ma-jf-date" type="date" name="date" value="${esc(myAssetsToday())}" aria-label="지급일">
-      <input class="ma-jf ma-dl-fname" name="name" placeholder="종목명" aria-label="종목명" maxlength="40" list="maDivLedgerNames" autocomplete="off">
+    </div>`).join(""),listHtml=recent.length?`<div class="ma-dl-list">${rows}${list.length>recent.length?`<div class="ma-dl-more">외 ${list.length-recent.length}건은 월별 합계에 반영돼 있어요.</div>`:""}</div>`:sug.length?"":'<div class="ma-jempty">받은 배당을 기록하면 <b>실제 수령액</b>이 월별로 쌓여요. 위 추정 항목이 뜨면 한 번에 확정할 수도 있어요.</div>',skipped=c.skippedUsd>0?`<div class="ma-ret-note">환율 미확인으로 $ 기록 ${c.skippedUsd}건은 집계에서 잠시 제외했어요.</div>`:"",dataListOpts=myAssetsNameSuggestions().map(n=>`<option value="${esc(n)}"></option>`).join(""),form=`<form class="ma-dl-form ma-form ma-form-sep" data-ma-dl-form autocomplete="off">
+      <label class="ma-fld ma-c4"><span>지급일</span><input class="ma-jf" type="date" name="date" value="${esc(myAssetsToday())}"></label>
+      <label class="ma-fld ma-c4"><span>종목명</span><input class="ma-jf" name="name" placeholder="예: SCHD" maxlength="40" list="maDivLedgerNames" autocomplete="off"></label>
       <datalist id="maDivLedgerNames">${dataListOpts}</datalist>
-      <span class="ma-jf-pricewrap"><select class="ma-jf ma-jf-unit" name="unit" aria-label="통화"><option value="₩">₩</option><option value="$">$</option></select><input class="ma-jf ma-jf-num ma-dl-famt" name="amount" type="number" inputmode="decimal" placeholder="실수령액" min="0" step="any" aria-label="실수령액"></span>
-      <button type="submit" class="ma-jf-add">기록</button>
+      <div class="ma-fld ma-c4"><span>실수령액</span><span class="ma-jf-pricewrap"><select class="ma-jf ma-jf-unit" name="unit" aria-label="통화"><option value="₩">₩</option><option value="$">$</option></select><input class="ma-jf ma-num" name="amount" type="number" inputmode="decimal" placeholder="0" min="0" step="any" aria-label="실수령액"></span></div>
+      <div class="ma-form-foot"><button type="submit" class="ma-jf-add">기록</button></div>
     </form>`;return`<div class="ma-card ma-divledger" data-ma-dl-card>
     <h3 class="ma-h">배당 기록 <span class="ma-hint">실제 받은 배당 · 세후 실수령</span></h3>
     ${sugHtml}
@@ -109,10 +109,10 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
     <h3 class="ma-h">배당 스노우볼 <span class="ma-hint">재투자 시뮬레이션</span></h3>
     <div class="ma-sb-result"><b>${inputs.years}년 뒤 월 배당</b><span class="ma-sb-big">~${myAssetsAmountHtml(myAssetsWon(sim.final.monthlyDivKrw))}</span><i>자산 ~${myAssetsAmountHtml(myAssetsWon(sim.final.valueKrw))}</i></div>
     <div class="ma-div-cal ma-sb-cal" role="img" aria-label="연도별 예상 월 배당">${bars}</div>
-    <div class="ma-sb-inputs">
-      <label><span>월 적립</span><input class="ma-jf ma-sb-monthly" data-ma-sb-monthly type="number" inputmode="numeric" min="0" step="10000" value="${inputs.monthly||""}" placeholder="0" aria-label="월 적립액(원)"></label>
-      <label><span>기간</span><select class="ma-jf" data-ma-sb-years aria-label="시뮬 기간">${yearOpts}</select></label>
-      <label><span>주가 상승 가정</span><select class="ma-jf" data-ma-sb-price aria-label="연 주가 상승 가정">${priceOpts}</select></label>
+    <div class="ma-form ma-form-sep ma-sb-inputs">
+      <label class="ma-fld ma-c5"><span>월 적립(원)</span><input class="ma-jf ma-num" data-ma-sb-monthly type="number" inputmode="numeric" min="0" step="10000" value="${inputs.monthly||""}" placeholder="0"></label>
+      <label class="ma-fld ma-c3"><span>기간</span><select class="ma-jf" data-ma-sb-years>${yearOpts}</select></label>
+      <label class="ma-fld ma-c4"><span>주가 상승 가정</span><select class="ma-jf" data-ma-sb-price>${priceOpts}</select></label>
     </div>
     <div class="ma-ret-note">현재 시가배당률 ${yieldPct.toFixed(2)}%(세후)·배당성장 연 ${divGrowth.toFixed(1)}% 가정, 배당 전액 재투자. 가정 기반 단순 참고치이며 수익 보장이 아니에요.</div>
   </div>`}function myAssetsOtherHtml(d){if(d.scopeSheetId&&d.scopeSheetId!=="all")return"";const list=otherAssetsLoad(),total=otherAssetsTotal(list),rows=list.map(e=>`<div class="ma-dl-row">
@@ -123,10 +123,10 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
     </div>`).join(""),sum=list.length?`<div class="ma-dl-sum"><span>합계 <b>${myAssetsAmountHtml(myAssetsWon(total))}</b></span><span class="ma-dl-sum-total">${list.length}건</span></div>`:"";return`<div class="ma-card ma-other" data-ma-other-card>
     <h3 class="ma-h">기타 자산 <span class="ma-hint">예적금·연금·부동산 등</span></h3>
     ${list.length?`<div class="ma-dl-list">${rows}</div>${sum}`:'<div class="ma-jempty">예적금·연금·부동산처럼 시세가 없는 자산을 적어두면 <b>총자산 요약</b>에 함께 보여드려요.</div>'}
-    <form class="ma-dl-form ma-other-form" data-ma-other-form autocomplete="off">
-      <input class="ma-jf ma-other-fname" name="name" placeholder="이름 (예: 청약저축)" aria-label="자산 이름" maxlength="30">
-      <span class="ma-jf-pricewrap"><input class="ma-jf ma-jf-num ma-other-famt" name="amount" type="number" inputmode="numeric" min="0" step="10000" placeholder="금액(원)" aria-label="금액(원)"></span>
-      <button type="submit" class="ma-jf-add">추가</button>
+    <form class="ma-other-form ma-form ma-form-sep" data-ma-other-form autocomplete="off">
+      <label class="ma-fld ma-c8"><span>이름</span><input class="ma-jf" name="name" placeholder="예: 청약저축" maxlength="30"></label>
+      <label class="ma-fld ma-c4"><span>금액(원)</span><input class="ma-jf ma-num" name="amount" type="number" inputmode="numeric" min="0" step="10000" placeholder="0"></label>
+      <div class="ma-form-foot"><button type="submit" class="ma-jf-add">추가</button></div>
     </form>
     <div class="ma-ret-note">총자산 요약의 <b>기타 자산</b> 줄에 더해져요 · 자산 배분·수익률 계산에는 포함하지 않아요.</div>
   </div>`}function myAssetsAddOtherAsset(form){if(!form)return;const field=n=>form.querySelector(`[name="${n}"]`),name=String(field("name")?.value||"").trim(),amount=Math.round(Number(field("amount")?.value)||0);if(!name||!(amount>0)){[["name",!!name],["amount",amount>0]].forEach(([n,ok])=>{const el=field(n);el&&el.classList.toggle("ma-jf-bad",!ok)});return}const list=otherAssetsLoad();list.push({id:myAssetsUid(),ts:Date.now(),name,amount}),otherAssetsSave(list);try{document.activeElement?.blur?.()}catch{}renderMyAssets()}function myAssetsDeleteOtherAsset(id){id&&(otherAssetsSave(otherAssetsLoad().filter(e=>String(e.id)!==String(id))),renderMyAssets())}function myAssetsRepaintSnowball(){myAssetsRepaintCard('[data-ma-card="snowball"]',myAssetsDraggableCard("snowball",myAssetsSnowballHtml(myAssetsData())))}function myAssetsBenchmarkHtml(d){if(d.dayPct===null||d.dayPct===void 0)return"";const b=d.bench||{},rows=[["내 포트폴리오",d.dayPct,!0]];if(b.kospi!==null&&rows.push(["코스피",b.kospi,!1]),b.snp!==null&&rows.push(["S&P 500",b.snp,!1]),b.nasdaq!==null&&rows.push(["나스닥",b.nasdaq,!1]),rows.length<2)return"";const mkt=b.kospi!==null?b.kospi:b.snp!==null?b.snp:null,mktLabel=b.kospi!==null?"코스피":"S&P",diff=mkt!==null?d.dayPct-mkt:null,verdict=diff===null?"":`<div class="ma-bench-verdict ${myAssetsClass(diff)}">오늘 ${esc(mktLabel)} 대비 ${esc(myAssetsPctText(diff))}p ${diff>=0?"앞섬":"뒤짐"}</div>`,list=rows.map(([nm,pct,me])=>`<div class="ma-bench-r${me?" is-me":""}"><span class="ma-bench-nm">${esc(nm)}</span><span class="ma-bench-pct ${myAssetsClass(pct)}">${esc(myAssetsPctText(pct))}</span></div>`).join("");let cumulative="";if(d.scopeSheetId==="all"){const cum=computeBenchCumulative(d.history);if(cum){const cumRows=[["내 포트폴리오",cum.mine,!0]];if(cum.kospi!==null&&cumRows.push(["코스피",cum.kospi,!1]),cum.snp!==null&&cumRows.push(["S&P 500",cum.snp,!1]),cumRows.length>=2){const fromLabel=String(cum.fromD||"").slice(5).replace("-","/");cumulative=`<div class="ma-bench-grp">추적 누적 <span class="ma-hint">${esc(fromLabel)}~ · 시간가중</span></div>`+cumRows.map(([nm,pct,me])=>`<div class="ma-bench-r${me?" is-me":""}"><span class="ma-bench-nm">${esc(nm)}</span><span class="ma-bench-pct ${myAssetsClass(pct)}">${esc(myAssetsPctText(pct))}</span></div>`).join("")}}}return`<div class="ma-card"><h3 class="ma-h">벤치마크 <span class="ma-hint">오늘 수익률 비교</span></h3><div class="ma-bench">${list}${cumulative}</div>${verdict}</div>`}function myAssetsReturnsHtml(d){if(d.scopeSheetId&&d.scopeSheetId!=="all"){const cum=d.pnlPct===null||d.pnlPct===void 0?"—":esc(myAssetsPctText(d.pnlPct));return`<div class="ma-card ma-returns"><h3 class="ma-h">수익률 추이 <span class="ma-hint">${esc(d.scopeLabel||"선택 시트")}</span></h3>
@@ -201,21 +201,23 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
     </svg>
     <div class="ma-empty-title">내 자산을 한눈에 모아드려요</div>
     <div class="ma-empty-body">왼쪽 시세창에서 종목을 추가하고 <b>평단·수량</b>을 입력하면<br>순자산·자산배분·손익·배당이 <b>이렇게 자동 집계</b>됩니다.<br><span class="ma-empty-sub">예수금은 시세창 더보기 메뉴 · 지금 보이는 화면은 예시 데이터예요.</span></div>
-  </div>`}const MY_ASSETS_STOCK_SOURCES={KR:"/data/kr-stocks.json?v=20260712-3680",US:"/data/us-stocks.json?v=20260712-3680",COIN:"/data/coin-stocks.json?v=20260712-3680"};function myAssetsSampleData(){const rows=[{name:"삼성전자",code:"005930",market:"KR",valueKrw:573e4,pnlKrw:43e4,pct:8.1,divYearKrw:168e3,divPayouts:4,sources:[]},{name:"SK하이닉스",code:"000660",market:"KR",valueKrw:413e4,pnlKrw:128e4,pct:44.9,divYearKrw:96e3,divPayouts:1,sources:[]},{name:"Apple",code:"AAPL",market:"US",valueKrw:47e5,pnlKrw:32e4,pct:7.3,divYearKrw:132e3,divPayouts:4,sources:[]},{name:"엔비디아",code:"NVDA",market:"US",valueKrw:37e5,pnlKrw:89e4,pct:31.7,divYearKrw:96e3,divPayouts:4,sources:[]},{name:"비트코인",code:"BTC",market:"COIN",valueKrw:34e5,pnlKrw:4e4,pct:1.2,divYearKrw:0,divPayouts:null,sources:[]}],valueHeldKrw=2166e4,investedKrw=187e5,cashKrw=32e5,totalKrw=valueHeldKrw+cashKrw,history=[];for(let i=34;i>=0;i-=1){const dt=new Date(Date.now()-i*864e5),dstr=`${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,"0")}-${String(dt.getDate()).padStart(2,"0")}`,t=i===0?totalKrw:Math.round(totalKrw-156e4*(i/34)+Math.sin(i*1.7)*14e4);history.push({d:dstr,t,iv:investedKrw})}const quarterly=(annual,first)=>{const m=Array(12).fill(0);for(let k=0;k<4;k+=1)m[(first+k*3)%12]=annual/4;return m},calRows=[{name:"삼성전자",months:Array(12).fill(0),annualKrw:168e3,estimated:!0},{name:"SK하이닉스",months:Array(12).fill(0),annualKrw:96e3,estimated:!0},{name:"Apple",months:quarterly(132e3,1),annualKrw:132e3,estimated:!1},{name:"엔비디아",months:quarterly(96e3,2),annualKrw:96e3,estimated:!1}],calMonths=Array.from({length:12},(_,m)=>calRows.reduce((a,r)=>a+r.months[m],0)),dividendYearly=492e3;return{hasData:!0,count:rows.length,totalKrw,valueHeldKrw,investedKrw,pnlKrw:296e4,pnlPct:15.8,dayPnlKrw:186e3,dayPct:.76,cashKrw,bucket:{KR:986e4,US:84e5,COIN:34e5,CASH:cashKrw},rows,fx:null,unpriced:0,dividendMonthly:dividendYearly/12,dividendYearly,dividendYoc:dividendYearly/investedKrw*100,dividendCalendar:{months:calMonths,rows:calRows,unallocatedAnnualKrw:264e3},bench:myAssetsBenchmark(),history,scopeSheetId:"all",scopeLabel:"전체 보유",hasPortfolioData:!0}}function myAssetsAddFormHtml(){return`<div class="ma-card ma-addstock" data-ma-addstock-card>
+  </div>`}const MY_ASSETS_STOCK_SOURCES={KR:"/data/kr-stocks.json?v=20260712-3681",US:"/data/us-stocks.json?v=20260712-3681",COIN:"/data/coin-stocks.json?v=20260712-3681"};function myAssetsSampleData(){const rows=[{name:"삼성전자",code:"005930",market:"KR",valueKrw:573e4,pnlKrw:43e4,pct:8.1,divYearKrw:168e3,divPayouts:4,sources:[]},{name:"SK하이닉스",code:"000660",market:"KR",valueKrw:413e4,pnlKrw:128e4,pct:44.9,divYearKrw:96e3,divPayouts:1,sources:[]},{name:"Apple",code:"AAPL",market:"US",valueKrw:47e5,pnlKrw:32e4,pct:7.3,divYearKrw:132e3,divPayouts:4,sources:[]},{name:"엔비디아",code:"NVDA",market:"US",valueKrw:37e5,pnlKrw:89e4,pct:31.7,divYearKrw:96e3,divPayouts:4,sources:[]},{name:"비트코인",code:"BTC",market:"COIN",valueKrw:34e5,pnlKrw:4e4,pct:1.2,divYearKrw:0,divPayouts:null,sources:[]}],valueHeldKrw=2166e4,investedKrw=187e5,cashKrw=32e5,totalKrw=valueHeldKrw+cashKrw,history=[];for(let i=34;i>=0;i-=1){const dt=new Date(Date.now()-i*864e5),dstr=`${dt.getFullYear()}-${String(dt.getMonth()+1).padStart(2,"0")}-${String(dt.getDate()).padStart(2,"0")}`,t=i===0?totalKrw:Math.round(totalKrw-156e4*(i/34)+Math.sin(i*1.7)*14e4);history.push({d:dstr,t,iv:investedKrw})}const quarterly=(annual,first)=>{const m=Array(12).fill(0);for(let k=0;k<4;k+=1)m[(first+k*3)%12]=annual/4;return m},calRows=[{name:"삼성전자",months:Array(12).fill(0),annualKrw:168e3,estimated:!0},{name:"SK하이닉스",months:Array(12).fill(0),annualKrw:96e3,estimated:!0},{name:"Apple",months:quarterly(132e3,1),annualKrw:132e3,estimated:!1},{name:"엔비디아",months:quarterly(96e3,2),annualKrw:96e3,estimated:!1}],calMonths=Array.from({length:12},(_,m)=>calRows.reduce((a,r)=>a+r.months[m],0)),dividendYearly=492e3;return{hasData:!0,count:rows.length,totalKrw,valueHeldKrw,investedKrw,pnlKrw:296e4,pnlPct:15.8,dayPnlKrw:186e3,dayPct:.76,cashKrw,bucket:{KR:986e4,US:84e5,COIN:34e5,CASH:cashKrw},rows,fx:null,unpriced:0,dividendMonthly:dividendYearly/12,dividendYearly,dividendYoc:dividendYearly/investedKrw*100,dividendCalendar:{months:calMonths,rows:calRows,unallocatedAnnualKrw:264e3},bench:myAssetsBenchmark(),history,scopeSheetId:"all",scopeLabel:"전체 보유",hasPortfolioData:!0}}function myAssetsAddFormHtml(){return`<div class="ma-card ma-addstock" data-ma-addstock-card>
     <h3 class="ma-h">보유 추가 <span class="ma-hint">종목 검색 후 평단·수량 입력</span></h3>
-    <form class="ma-add-form" data-ma-add-form>
-      <input class="ma-jf ma-add-sym" data-ma-add-sym type="text" placeholder="종목명·코드 검색 (예: 삼성전자, AAPL)" autocomplete="off" aria-label="종목 검색">
-      <input class="ma-jf ma-add-avg" data-ma-add-avg type="number" step="any" min="0" inputmode="decimal" placeholder="평단가" aria-label="평단가">
-      <input class="ma-jf ma-add-qty" data-ma-add-qty type="number" step="any" min="0" inputmode="decimal" placeholder="수량" aria-label="수량">
-      <button type="submit" class="ma-jf-add">추가</button>
+    <form class="ma-add-form ma-form" data-ma-add-form>
+      <label class="ma-fld ma-c6"><span>종목 검색</span><input class="ma-jf" data-ma-add-sym type="text" placeholder="종목명·코드 (예: 삼성전자, AAPL)" autocomplete="off"></label>
+      <label class="ma-fld ma-c3"><span>평단가</span><input class="ma-jf ma-num" data-ma-add-avg type="number" step="any" min="0" inputmode="decimal" placeholder="0"></label>
+      <label class="ma-fld ma-c3"><span>수량</span><input class="ma-jf ma-num" data-ma-add-qty type="number" step="any" min="0" inputmode="decimal" placeholder="0"></label>
+      <div class="ma-form-foot">
+        <button type="button" class="ma-import-toggle" data-ma-import-toggle aria-expanded="false">여러 종목 한 번에 붙여넣기</button>
+        <button type="submit" class="ma-jf-add">추가</button>
+      </div>
     </form>
     <div class="ma-add-note" data-ma-add-note hidden></div>
-    <button type="button" class="ma-import-toggle" data-ma-import-toggle aria-expanded="false">여러 종목 한 번에 붙여넣기</button>
     <div class="ma-import" data-ma-import hidden>
       <textarea class="ma-import-ta" data-ma-import-ta rows="5" aria-label="일괄 등록 입력" placeholder="한 줄에 하나씩: 종목명(또는 코드)  수량  평단
 예) 삼성전자 50 60,000
 SCHD 200 25.5"></textarea>
-      <div class="ma-import-acts"><button type="button" class="ma-jf-add" data-ma-import-preview>미리보기</button><span class="ma-import-cap">증권앱 보유 내역을 복사해 붙여넣어도 좋아요 · 쉼표·탭·공백 구분 · 최대 40줄</span></div>
+      <div class="ma-form-foot ma-import-acts"><span class="ma-import-cap ma-form-note">증권앱 보유 내역을 복사해 붙여넣어도 좋아요 · 쉼표·탭·공백 구분 · 최대 40줄</span><button type="button" class="ma-jf-add" data-ma-import-preview>미리보기</button></div>
       <div class="ma-import-list" data-ma-import-list hidden></div>
       <button type="button" class="ma-jf-add ma-import-commit" data-ma-import-commit hidden></button>
     </div>
@@ -232,22 +234,24 @@ SCHD 200 25.5"></textarea>
       ${memo}
     </div>`}).join(""),listHtml=computed.length?`<div class="ma-jlist">${rows}</div>`:'<div class="ma-jempty">아직 기록이 없어요. 위에서 매수·매도를 남기면 종목별 <b>실현손익</b>이 자동 계산됩니다.</div>';return`<div class="ma-card ma-journal" data-ma-journal-card>
     <h3 class="ma-h">거래일지 <span class="ma-hint">매수·매도 기록 · 실현손익 자동</span></h3>
-    <form class="ma-jform" data-ma-journal-form autocomplete="off">
-      <input class="ma-jf ma-jf-date" type="date" name="date" value="${esc(today)}" aria-label="날짜">
-      <input class="ma-jf ma-jf-name" name="name" placeholder="종목명" aria-label="종목명" maxlength="40" list="maJournalNames" autocomplete="off">
+    <form class="ma-jform ma-form" data-ma-journal-form autocomplete="off">
+      <label class="ma-fld ma-c3"><span>날짜</span><input class="ma-jf" type="date" name="date" value="${esc(today)}"></label>
+      <label class="ma-fld ma-c4"><span>종목명</span><input class="ma-jf" name="name" placeholder="예: 삼성전자" maxlength="40" list="maJournalNames" autocomplete="off"></label>
       <datalist id="maJournalNames">${dataListOpts}</datalist>
-      <select class="ma-jf ma-jf-side" name="side" aria-label="매매 유형">
+      <label class="ma-fld ma-c2"><span>유형</span><select class="ma-jf" name="side">
         <option value="buy">매수</option>
         <option value="sell">매도</option>
-      </select>
-      <input class="ma-jf ma-jf-num" name="qty" type="number" inputmode="decimal" placeholder="수량" min="0" step="any" aria-label="수량">
-      <span class="ma-jf-pricewrap">
+      </select></label>
+      <label class="ma-fld ma-c3"><span>수량</span><input class="ma-jf ma-num" name="qty" type="number" inputmode="decimal" placeholder="0" min="0" step="any"></label>
+      <div class="ma-fld ma-c4"><span>단가</span><span class="ma-jf-pricewrap">
         <select class="ma-jf ma-jf-unit" name="unit" aria-label="통화"><option value="₩">₩</option><option value="$">$</option></select>
-        <input class="ma-jf ma-jf-num ma-jf-price" name="price" type="number" inputmode="decimal" placeholder="단가" min="0" step="any" aria-label="단가">
-      </span>
-      <input class="ma-jf ma-jf-memo" name="memo" placeholder="메모(선택)" aria-label="메모" maxlength="60">
-      <button type="submit" class="ma-jf-add">기록</button>
-      <button type="button" class="ma-jf-cancel" data-ma-journal-cancel hidden>취소</button>
+        <input class="ma-jf ma-num" name="price" type="number" inputmode="decimal" placeholder="0" min="0" step="any" aria-label="단가">
+      </span></div>
+      <label class="ma-fld ma-c8 ma-n6"><span>메모<i>선택</i></span><input class="ma-jf" name="memo" placeholder="매매 근거 등" maxlength="60"></label>
+      <div class="ma-form-foot">
+        <button type="button" class="ma-jf-cancel" data-ma-journal-cancel hidden>취소</button>
+        <button type="submit" class="ma-jf-add">기록</button>
+      </div>
     </form>
     ${summary}
     ${listHtml}
@@ -256,7 +260,7 @@ SCHD 200 25.5"></textarea>
     <textarea class="ma-notes-ta" data-ma-notes rows="4" aria-label="투자 노트" placeholder="종목 메모·매매 근거·목표가 등을 적어두면 자동 저장됩니다. (이 기기 + 로그인 시 계정 동기화)">${esc(v)}</textarea>
   </div>`}function myAssetsTargetRows(d,targets){const total=Number(d.totalKrw)||0,tsum=targets?["KR","US","COIN","CASH"].reduce((a,k)=>a+(Number(targets[k])||0),0):0;return MY_ASSETS_ALLOC.map(b=>{const cur=Math.max(0,Number(d.bucket[b.key])||0),curPct=total>0?cur/total*100:0,tgtPct=targets&&tsum>0?(Number(targets[b.key])||0)/tsum*100:null,tgtAmt=tgtPct!==null&&total>0?tgtPct/100*total:null,deltaAmt=tgtAmt!==null?tgtAmt-cur:null,driftPct=tgtPct!==null?curPct-tgtPct:null;return{key:b.key,label:b.label,color:b.color,cur,curPct,tgtPct,tgtAmt,deltaAmt,driftPct}})}function myAssetsTargetHtml(d){const targets=assetTargetsLoad(),total=Number(d.totalKrw)||0,rows=myAssetsTargetRows(d,targets),inputs=MY_ASSETS_ALLOC.map(b=>{const curPct=total>0?Math.round(Math.max(0,Number(d.bucket[b.key])||0)/total*100):0,val=targets?Math.round(Number(targets[b.key])||0):curPct;return`<label class="ma-tg-in"><span class="ma-tg-in-nm">${esc(b.label)}</span><input type="number" name="tg_${b.key}" min="0" max="100" step="1" inputmode="numeric" value="${val}" aria-label="${esc(b.label)} 목표 비중"><span class="ma-tg-in-pc">%</span></label>`}).join(""),form=`<form class="ma-tg-form" data-ma-target-form${targets?" hidden":""}>
     <div class="ma-tg-inputs">${inputs}</div>
-    <div class="ma-tg-formfoot"><span class="ma-tg-sumhint">합계 <b data-ma-target-total>0</b>%</span><button type="submit" class="ma-tg-save">목표 저장</button>${targets?'<button type="button" class="ma-tg-cancel" data-ma-target-cancel>취소</button>':""}</div>
+    <div class="ma-form-foot ma-tg-formfoot"><span class="ma-tg-sumhint ma-form-note">합계 <b data-ma-target-total>0</b>%</span>${targets?'<button type="button" class="ma-jf-cancel" data-ma-target-cancel>취소</button>':""}<button type="submit" class="ma-jf-add ma-tg-save">목표 저장</button></div>
     <div class="ma-tg-warn" data-ma-target-warn hidden>합계가 <b>100%</b>가 되어야 저장돼요. <button type="button" class="ma-tg-fix" data-ma-target-fix>비율대로 100% 맞추기</button></div>
   </form>`;let view="";return targets?view=`<div class="ma-tg-view"><div class="ma-tg-cap">현재/목표% · 막대=현재, 눈금=목표</div>${rows.map(r=>{const driftTxt=r.driftPct===null?"":`${r.driftPct>=0?"+":"-"}${Math.abs(r.driftPct).toFixed(0)}%p`;let hint="";return r.deltaAmt!==null&&total>0&&Math.abs(r.deltaAmt)>=total*.01&&(hint=r.deltaAmt>0?`<span class="ma-tg-buy">${myAssetsAmountHtml(myAssetsCompactWon(r.deltaAmt))} ↑</span>`:`<span class="ma-tg-sell">${myAssetsAmountHtml(myAssetsCompactWon(-r.deltaAmt))} ↓</span>`),`<div class="ma-tg-row">
         <span class="ma-tg-nm"><span class="ma-tg-sw" style="background:${r.color}"></span>${esc(r.label)}</span>
