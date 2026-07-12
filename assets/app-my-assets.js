@@ -154,8 +154,8 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
     <rect x="34.5" y="34.5" width="1011" height="1281" rx="25.5" fill="none" stroke="#e2e8e4"/>
     <text x="86" y="122" font-size="52" font-weight="800" fill="${ink}">내 자산</text>
     <text x="86" y="164" font-size="28" font-weight="700" fill="${muted}">보유 ${Number(sd.count)||0}종목 · 전체 포트폴리오</text>
-    <text x="900" y="158" text-anchor="end" font-size="30" font-weight="800" fill="#137a43">엑셀코스피 내 자산</text>
-    ${myAssetsShareLogoSvg(920,70,58)}
+    <text x="925" y="158" text-anchor="end" font-size="30" font-weight="800" fill="#137a43">엑셀코스피 내 자산</text>
+    ${myAssetsShareLogoSvg(945,70,58)}
     <line x1="86" y1="188" x2="994" y2="188" stroke="${line}"/>
     <text x="86" y="242" font-size="30" font-weight="800" fill="#55606a">누적 수익률</text>
     <text x="86" y="340" font-size="96" font-weight="800" fill="${col(sd.pnlPct)}" letter-spacing="-1.5">${pctTxt(sd.pnlPct)}</text>
