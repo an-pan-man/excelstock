@@ -49,11 +49,11 @@ Direct 비중: dimensions=[sessionDefaultChannelGroup] metrics=[sessions,screenP
 
 사이트 지표:
 날짜별 페이지로드: dimensions=[date] metrics=[screenPageViews,sessions,totalUsers,averageSessionDuration,userEngagementDuration]
-날짜별 광고 이벤트: dimensions=[date,eventName] metrics=[eventCount], filter eventName in [ad_view, ad_click]
+날짜별 광고 이벤트: dimensions=[date,eventName] metrics=[eventCount], filter eventName in [ad_view, select_promotion]
 
 광고 위치 RAW:
-dimensions=[itemPromotionCreativeSlot] metrics=[itemsViewedInPromotion,itemsClickedInPromotion,totalUsers],
-filter itemPromotionId == ad_mpneagy5_uxb0t7
+노출 dimensions=[itemPromotionCreativeSlot] metrics=[itemsViewedInPromotion,totalUsers], filter itemPromotionId == ad_mpneagy5_uxb0t7
+클릭 dimensions=[itemPromotionCreativeSlot] metrics=[eventCount], filter eventName == select_promotion AND itemPromotionId == ad_mpneagy5_uxb0t7
 리포트 확인 노출/도달수는 광고주 리포트(KV snapshot) 기준이라 GA RAW와 분리해서 표기.
 -->
 
