@@ -49,11 +49,11 @@ Direct 비중: dimensions=[sessionDefaultChannelGroup] metrics=[sessions,screenP
 
 사이트 지표:
 날짜별 페이지로드: dimensions=[date] metrics=[screenPageViews,sessions,totalUsers,averageSessionDuration,userEngagementDuration]
-날짜별 광고 이벤트: dimensions=[date,eventName] metrics=[eventCount], filter eventName in [ad_view, select_promotion]
+날짜별 광고 이벤트: dimensions=[date,eventName] metrics=[eventCount], filter eventName in [ad_view, ad_click]
 
 광고 위치 RAW:
-노출 dimensions=[itemPromotionCreativeSlot] metrics=[itemsViewedInPromotion,totalUsers], filter itemPromotionId == ad_mpneagy5_uxb0t7
-클릭 dimensions=[itemPromotionCreativeSlot] metrics=[eventCount], filter eventName == select_promotion AND itemPromotionId == ad_mpneagy5_uxb0t7
+dimensions=[itemPromotionCreativeSlot] metrics=[itemsViewedInPromotion,itemsClickedInPromotion,totalUsers],
+filter itemPromotionId == ad_mpneagy5_uxb0t7
 리포트 확인 노출/도달수는 광고주 리포트(KV snapshot) 기준이라 GA RAW와 분리해서 표기.
 -->
 
@@ -189,7 +189,7 @@ tagline: "엑셀 보는 척 주식 보기" — 회사 PC에서 매일 켜두는 
 
 ### 광고 성과 — 실제 캠페인 실측
 
-| 캠페인 | 집계 기간 | 도달수 | 클릭 사용자 | 도달 클릭률 |
+| 캠페인 | 집계 기간 | 도달수 | 클릭 사용자 | 클릭 사용자율 |
 | --- | --- | --- | --- | --- |
 | *브랜드 협찬 — 1개월 집행 | 5/27 ~ 6/26 (30일) | **134,126명** | 3,440명 | **2.56%** |
 | *식품 브랜드 — 2주 집행 (종료) | 6/22 ~ 7/6 (15일) | 45,339명 | 2,001명 | **4.41%** |
@@ -197,7 +197,7 @@ tagline: "엑셀 보는 척 주식 보기" — 회사 PC에서 매일 켜두는 
 | 영상 콘텐츠 — 4일 집행 (종료) | 6/15 ~ 6/18 (4일) | 20,808명 | 330명 | **1.59%** |
 | 화장품 브랜드 — 단기 테스트 (종료) | 5/26 ~ 5/27 (2일) | 8,724명 | 85명 | **0.97%** |
 
-> 핵심 지표는 **도달 클릭률 = 클릭한 사람 ÷ 광고를 본 사람**입니다. 지금까지 집행된 **모든 캠페인이 도달 클릭률 1~4.4%** — 업종(식품·화장품·콘텐츠·브랜드 협찬)과 집행 기간(2일~1개월)이 달라도 **광고를 본 사람 100명 중 최소 1명, 많게는 4명 이상이 클릭**했습니다. 한 달 집행 캠페인은 **13만 명 이상에게 도달**했고, 이틀짜리 테스트로도 8,700명에게 닿았습니다. 분자·분모 모두 '사람' 단위로 세는, 부풀림이 불가능한 지표입니다. excelkospi는 한 사용자가 하루 44분을 머무는 반복 노출 매체라, "몇 명에게 닿았고 그중 몇 %가 반응했나"가 성과의 실체를 보여줍니다.
+> 이 표의 핵심 지표는 **클릭 사용자율 = 클릭한 사람 ÷ 광고를 본 사람**입니다. 지금까지 집행된 **모든 캠페인의 클릭 사용자율이 1~4.4%** — 업종(식품·화장품·콘텐츠·브랜드 협찬)과 집행 기간(2일~1개월)이 달라도 **광고를 본 사람 100명 중 최소 1명, 많게는 4명 이상이 클릭**했습니다. 한 달 집행 캠페인은 **13만 명 이상에게 도달**했고, 이틀짜리 테스트로도 8,700명에게 닿았습니다. 이 과거 사례 표는 분자·분모를 모두 사람 단위로 계산합니다. 현재 광고주 리포트의 `도달 클릭률`은 전체 클릭수 ÷ 도달수로 표시해 위 `클릭` 카드와 같은 분자를 사용합니다. excelkospi는 한 사용자가 하루 44분을 머무는 반복 노출 매체라, "몇 명에게 닿았고 그중 몇 %가 반응했나"가 성과의 실체를 보여줍니다.
 
 ※ 도달수·클릭 사용자는 GA 고유 사용자(사람 단위) 실측입니다. 광고주명은 비공개 처리했습니다. 노출은 화면에 50% 이상·1초 이상 실제로 보인 경우만 세고, 광고차단·iOS 추적 제한 사용자는 집계에서 빠지므로 실제 성과는 이 수치보다 많으면 많았지 적지 않습니다(하한 보고).
 
