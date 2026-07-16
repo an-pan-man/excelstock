@@ -41,6 +41,8 @@
     "/status/*",
     "/paper",
     "/assets",
+    "/portfolio",
+    "/portfolio/*",
     "/paper/*",
     "/lupang",
     "/lupang/*",
