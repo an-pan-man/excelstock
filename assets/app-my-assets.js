@@ -230,7 +230,7 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
     <div class="ma-empty-title">내 자산을 한눈에 모아드려요</div>
     <div class="ma-empty-body">왼쪽 시세창에서 종목을 추가하고 <b>평단·수량</b>을 입력하면<br>순자산·자산배분·손익·배당이 <b>이렇게 자동 집계</b>됩니다.<br><span class="ma-empty-sub">예수금은 아래 자산 추가에서 바로 등록 · 지금 보이는 화면은 예시 데이터예요.</span></div>
     <div class="ma-empty-actions"><button type="button" class="ma-share-btn ma-sample-tour-btn" data-ma-sample-tour>둘러보기</button></div>
-  </div>`}const MY_ASSETS_STOCK_SOURCES={KR:"/data/kr-stocks.json?v=20260717-4033",US:"/data/us-stocks.json?v=20260717-4033",COIN:"/data/coin-stocks.json?v=20260717-4033"};function myAssetsStockAddDialogHtml(){return`<div class="native-stock-add-modal" id="nativeStockAddModal" aria-hidden="true">
+  </div>`}const MY_ASSETS_STOCK_SOURCES={KR:"/data/kr-stocks.json?v=20260717-4034",US:"/data/us-stocks.json?v=20260717-4034",COIN:"/data/coin-stocks.json?v=20260717-4034"};function myAssetsStockAddDialogHtml(){return`<div class="native-stock-add-modal" id="nativeStockAddModal" aria-hidden="true">
     <div class="native-stock-add-backdrop" data-native-stock-add-close></div>
     <section class="native-stock-add-sheet" role="dialog" aria-modal="true" aria-labelledby="nativeStockAddTitle">
       <header class="native-stock-add-head">
