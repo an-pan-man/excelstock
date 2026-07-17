@@ -4,7 +4,31 @@
     "details": [
       {
         "appID": "626Q8WJ93C.ai.excelkospi.app",
-        "paths": ["NOT /portfolio", "NOT /portfolio/*", "*"]
+        "paths": [
+          "/",
+          "/index.html",
+          "/sheet",
+          "/sheet/",
+          "/news",
+          "/news/",
+          "/krboard",
+          "/krboard/",
+          "/usboard",
+          "/usboard/",
+          "/coinboard",
+          "/coinboard/",
+          "/freeboard",
+          "/freeboard/",
+          "/opsboard",
+          "/opsboard/",
+          "/paper",
+          "/paper/",
+          "/assets",
+          "/assets/",
+          "/forecast",
+          "/forecast/",
+          "/s/*"
+        ]
       }
     ]
   }

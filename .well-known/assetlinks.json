@@ -7,6 +7,36 @@
       "sha256_cert_fingerprints": [
         "55:3D:EE:5D:E4:2D:10:06:4E:60:1E:CC:3E:7C:7F:9E:25:16:E6:E5:A6:B6:76:2D:CE:AD:BB:60:9F:D2:C2:10"
       ]
+    },
+    "relation_extensions": {
+      "delegate_permission/common.handle_all_urls": {
+        "dynamic_app_link_components": [
+          {"/": "/"},
+          {"/": "/index.html"},
+          {"/": "/sheet"},
+          {"/": "/sheet/"},
+          {"/": "/news"},
+          {"/": "/news/"},
+          {"/": "/krboard"},
+          {"/": "/krboard/"},
+          {"/": "/usboard"},
+          {"/": "/usboard/"},
+          {"/": "/coinboard"},
+          {"/": "/coinboard/"},
+          {"/": "/freeboard"},
+          {"/": "/freeboard/"},
+          {"/": "/opsboard"},
+          {"/": "/opsboard/"},
+          {"/": "/paper"},
+          {"/": "/paper/"},
+          {"/": "/assets"},
+          {"/": "/assets/"},
+          {"/": "/forecast"},
+          {"/": "/forecast/"},
+          {"/": "/s/*"},
+          {"/": "*", "exclude": true}
+        ]
+      }
     }
   }
 ]
