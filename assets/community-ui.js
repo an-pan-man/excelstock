@@ -77,7 +77,7 @@ ${post?.body||""}`)}function communityFeedPreviewFallbackText(post){if(!communit
   </tr>`}function newsTextNoticeRow(rowNum,compact=!1,newsCount=NEWS_NOTICE_ITEM_INTERVAL){const isTop=Number(newsCount)===0,count=isTop?0:Math.max(NEWS_NOTICE_ITEM_INTERVAL,Math.floor(Number(newsCount)||NEWS_NOTICE_ITEM_INTERVAL)),slotIndex=isTop?0:Math.max(0,Math.floor(count/NEWS_NOTICE_ITEM_INTERVAL)-1),position=isTop?"news-line-top":`news-line-${count}`,ad=textAdForPlacementSlot("news",position,{excludeHouseWhenReal:!0});if(!ad)return"";const creative=textAdCreative(ad,"news",slotIndex),attrs=textAdDataAttrs(ad,creative),adId=esc(ad.id||""),badge=`<span class="notice-badge">${esc(ad.label||"알림")}</span>`,note=renderCommunityTextAd(ad,"news",creative),shared=`data-xk-area="news" data-xk-position="${esc(position)}" data-xk-id="${adId}" data-xk-label="${esc(attrs.adLabel)}" data-xk-variant-index="${esc(attrs.creativeIndex)}" data-xk-variant-text="${esc(attrs.creativeText)}" title="${esc(textAdTitle(ad,creative))}"`;return compact?`<tr class="news-note-row" ${shared}>
       <td class="rownum">${rowNum}</td>
       <td class="center time news-note-time-cell">광고</td>
-      <td class="left news-note-copy-cell"><div class="community-note-merged-inner">${badge}${note}</div></td>
+      <td class="left news-note-copy-cell"><div class="community-note-merged-inner">${note}</div></td>
     </tr>`:`<tr class="news-note-row" ${shared}>
     <td class="rownum">${rowNum}</td>
     <td class="center news-note-badge-cell">${badge}</td>
