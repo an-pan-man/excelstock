@@ -136,18 +136,18 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
     <rect x="23" y="19" width="31" height="31" rx="6.5" fill="#185c37"/>
     <path d="M30.1 42 36.4 34l-5.9-8h5.6l3.1 4.9 3.3-4.9h5.2l-5.9 7.8 6.2 8.2h-5.6L39 36.8 35.3 42z" fill="#fff"/>
     <path d="M47 19h.9A6.1 6.1 0 0 1 54 25.1v18.8a6.1 6.1 0 0 1-6.1 6.1H47z" fill="#21a366"/>
-  </g>`}function myAssetsShareDimensions(sd,showAmounts=!1){const count=Array.isArray(sd?.holdingRows)?sd.holdingRows.length:0,rowStep=showAmounts?95:110;return{width:MY_ASSETS_SHARE_WIDTH,height:MY_ASSETS_SHARE_MIN_HEIGHT+Math.max(0,count-5)*rowStep}}function myAssetsShareCardSvg(sd,showAmounts,showQuantities=!1){const{width:W,height:H}=myAssetsShareDimensions(sd,showAmounts),up="#c6413f",down="#3f6f9f",ink="#16181a",muted="#7a8791",line="#eef2ef",col=v=>v==null?muted:v>0?up:v<0?down:muted,pctTxt=v=>v==null?"-":`${v>=0?"+":""}${v.toFixed(1)}%`,marketLabel=market=>({KR:"국내상장",US:"해외상장",COIN:"코인"})[market]||"보유자산",amountsShown=!!(showAmounts&&sd.total>0),summaryRuleY=amountsShown?448:380,allocationTitleY=summaryRuleY+44,barX=86,barY=summaryRuleY+66,barW=908,barH=38,legendY=barY+78,allocationRuleY=summaryRuleY+162,holdingsTitleY=allocationRuleY+50,holdingsRuleY=holdingsTitleY+38,rowStep=amountsShown?95:110,rowStartY=1128-rowStep*4,rowRuleOffset=Math.round((rowStep+14)/2),footerOffset=H-MY_ASSETS_SHARE_MIN_HEIGHT,quantityTxt=row=>{const qty=Number(row?.qty)||0;if(!(qty>0))return"";const value=qty.toLocaleString("ko-KR",{maximumFractionDigits:qty<1?8:4});if(row?.market==="COIN"){const symbol=String(row?.code||"").toUpperCase().replace(/USDT$/,"")||"코인";return`${value} ${symbol}`}return`${value}주`};let barAcc=0;const allocationBar=sd.segs.map(s=>{const width=Math.max(0,Math.min(barW-barAcc,s.pct/100*barW)),node=`<rect x="${(barX+barAcc).toFixed(1)}" y="${barY}" width="${width.toFixed(1)}" height="${barH}" fill="${s.color}"/>`;return barAcc+=width,node}).join(""),legend=sd.segs.map((s,i)=>{const x=86+i*227;return`<rect x="${x}" y="${legendY-21}" width="20" height="20" rx="5" fill="${s.color}"/><text x="${x+31}" y="${legendY}" font-size="27" font-weight="700" fill="#55606a">${esc(s.label)}</text><text x="${x+202}" y="${legendY}" text-anchor="end" font-size="27" font-weight="750" fill="${ink}">${Math.round(s.pct)}%</text>`}).join(""),holdingRows=Array.isArray(sd.holdingRows)?sd.holdingRows:[],rows=holdingRows.map((row,i)=>{const y=rowStartY+i*rowStep,quantity=showQuantities?quantityTxt(row):"",rowMeta=quantity?`${marketLabel(row.market)} · ${quantity}`:marketLabel(row.market);return`<text x="92" y="${y}" font-size="28" font-weight="750" fill="#9aa4ad">${i+1}</text>
+  </g>`}function myAssetsShareDimensions(sd,showAmounts=!1){const count=Array.isArray(sd?.holdingRows)?sd.holdingRows.length:0,rowStep=showAmounts?95:110;return{width:MY_ASSETS_SHARE_WIDTH,height:MY_ASSETS_SHARE_MIN_HEIGHT+Math.max(0,count-3)*rowStep}}function myAssetsShareCardSvg(sd,showAmounts,showQuantities=!1){const{width:W,height:H}=myAssetsShareDimensions(sd,showAmounts),up="#c6413f",down="#3f6f9f",ink="#16181a",muted="#7a8791",line="#eef2ef",col=v=>v==null?muted:v>0?up:v<0?down:muted,pctTxt=v=>v==null?"-":`${v>=0?"+":""}${v.toFixed(1)}%`,marketLabel=market=>({KR:"국내상장",US:"해외상장",COIN:"코인"})[market]||"보유자산",amountsShown=!!(showAmounts&&sd.total>0),holdingRows=Array.isArray(sd.holdingRows)?sd.holdingRows:[],summaryRuleY=amountsShown?480:412,allocationTitleY=summaryRuleY+52,barX=86,barY=allocationTitleY+24,barW=908,barH=38,legendY=barY+82,allocationRuleY=legendY+28,holdingsTitleY=allocationRuleY+54,holdingsRuleY=holdingsTitleY+44,rowStep=amountsShown?95:110,shortCardOffset=Math.max(0,3-Math.min(holdingRows.length,3))*Math.round(rowStep*.72),rowStartY=holdingsRuleY+64+shortCardOffset,rowRuleOffset=Math.round((rowStep+14)/2),footerOffset=H-MY_ASSETS_SHARE_MIN_HEIGHT,quantityTxt=row=>{const qty=Number(row?.qty)||0;if(!(qty>0))return"";const value=qty.toLocaleString("ko-KR",{maximumFractionDigits:qty<1?8:4});if(row?.market==="COIN"){const symbol=String(row?.code||"").toUpperCase().replace(/USDT$/,"")||"코인";return`${value} ${symbol}`}return`${value}주`};let barAcc=0;const allocationBar=sd.segs.map(s=>{const width=Math.max(0,Math.min(barW-barAcc,s.pct/100*barW)),node=`<rect x="${(barX+barAcc).toFixed(1)}" y="${barY}" width="${width.toFixed(1)}" height="${barH}" fill="${s.color}"/>`;return barAcc+=width,node}).join(""),legend=sd.segs.map((s,i)=>{const x=86+i*227;return`<rect x="${x}" y="${legendY-21}" width="20" height="20" rx="5" fill="${s.color}"/><text x="${x+31}" y="${legendY}" font-size="27" font-weight="700" fill="#55606a">${esc(s.label)}</text><text x="${x+202}" y="${legendY}" text-anchor="end" font-size="27" font-weight="750" fill="${ink}">${Math.round(s.pct)}%</text>`}).join(""),rows=holdingRows.map((row,i)=>{const y=rowStartY+i*rowStep,quantity=showQuantities?quantityTxt(row):"",rowMeta=quantity?`${marketLabel(row.market)} · ${quantity}`:marketLabel(row.market);return`<text x="92" y="${y}" font-size="28" font-weight="750" fill="#9aa4ad">${i+1}</text>
       <text x="134" y="${y}" font-size="35" font-weight="750" fill="${ink}">${esc(row.name)}</text>
       <text x="134" y="${y+42}" font-size="25" font-weight="700" fill="${muted}">${esc(rowMeta)}</text>
       <text x="640" y="${y}" text-anchor="end" font-size="34" font-weight="750" fill="#3a4750">${row.weight.toFixed(1)}%</text>
       <text x="820" y="${y}" text-anchor="end" font-size="34" font-weight="750" fill="${col(row.dayPct)}">${pctTxt(row.dayPct)}</text>
       <text x="994" y="${y}" text-anchor="end" font-size="34" font-weight="750" fill="${col(row.pct)}">${pctTxt(row.pct)}</text>
-      ${i<holdingRows.length-1?`<line x1="86" y1="${y+rowRuleOffset}" x2="994" y2="${y+rowRuleOffset}" stroke="${line}"/>`:""}`}).join(""),insights=sd.insights||{},bestText=insights.bestName||"집계 중",bestPctText=insights.bestPct==null?"-":pctTxt(insights.bestPct),top3Text=Number.isFinite(Number(insights.top3Weight))?`${Number(insights.top3Weight).toFixed(1)}%`:"-",amountPanel=amountsShown?`<rect x="86" y="364" width="908" height="70" rx="12" fill="#f6f8f6" stroke="#e4eae6"/>
-      <text x="110" y="386" font-size="22" font-weight="700" fill="${muted}">총자산</text>
-      <text x="110" y="420" font-size="30" font-weight="750" fill="${ink}">${esc(myAssetsWon(sd.total))}</text>
-      <line x1="540" y1="376" x2="540" y2="422" stroke="#dfe6e1"/>
-      <text x="570" y="386" font-size="22" font-weight="700" fill="${muted}">누적 수익금</text>
-      <text x="570" y="420" font-size="30" font-weight="750" fill="${col(sd.pnlKrw)}">${esc(myAssetsSignedWon(sd.pnlKrw))}</text>`:"",dividendText=amountsShown&&Number(sd.dividendMonthly)>0?myAssetsWon(sd.dividendMonthly):"-",todayText=sd.dayPct==null?"-":pctTxt(sd.dayPct),kospiText=sd.dayVsKospi==null?"-":`${pctTxt(sd.dayVsKospi)}p`,todaySize=todayText.length>6?46:50,kospiSize=kospiText.length>7?42:48;return`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
+      ${i<holdingRows.length-1?`<line x1="86" y1="${y+rowRuleOffset}" x2="994" y2="${y+rowRuleOffset}" stroke="${line}"/>`:""}`}).join(""),insights=sd.insights||{},bestText=insights.bestName||"집계 중",bestPctText=insights.bestPct==null?"-":pctTxt(insights.bestPct),top3Text=Number.isFinite(Number(insights.top3Weight))?`${Number(insights.top3Weight).toFixed(1)}%`:"-",amountPanel=amountsShown?`<rect x="86" y="366" width="908" height="88" rx="14" fill="#f6f8f6" stroke="#e4eae6"/>
+      <text x="116" y="397" font-size="22" font-weight="700" fill="${muted}">총자산</text>
+      <text x="116" y="438" font-size="30" font-weight="750" fill="${ink}">${esc(myAssetsWon(sd.total))}</text>
+      <line x1="540" y1="382" x2="540" y2="440" stroke="#dfe6e1"/>
+      <text x="570" y="397" font-size="22" font-weight="700" fill="${muted}">누적 수익금</text>
+      <text x="570" y="438" font-size="30" font-weight="750" fill="${col(sd.pnlKrw)}">${esc(myAssetsSignedWon(sd.pnlKrw))}</text>`:"",dividendText=amountsShown&&Number(sd.dividendMonthly)>0?myAssetsWon(sd.dividendMonthly):"-",todayText=sd.dayPct==null?"-":pctTxt(sd.dayPct),kospiText=sd.dayVsKospi==null?"-":`${pctTxt(sd.dayVsKospi)}p`,todaySize=todayText.length>6?46:50,kospiSize=kospiText.length>7?42:48;return`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
     <style>text{font-family:'Pretendard',sans-serif;font-variant-numeric:tabular-nums}</style>
     <defs>
       <filter id="maCardShadow" x="-6%" y="-6%" width="112%" height="118%"><feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#1d3b2b" flood-opacity=".16"/></filter>
@@ -164,11 +164,12 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
     <line x1="86" y1="188" x2="994" y2="188" stroke="${line}"/>
     <text x="86" y="242" font-size="30" font-weight="750" fill="#55606a">누적 수익률</text>
     <text x="86" y="334" font-size="96" font-weight="750" fill="${col(sd.pnlPct)}" letter-spacing="-1.5">${pctTxt(sd.pnlPct)}</text>
-    <line x1="800" y1="220" x2="800" y2="322" stroke="${line}"/>
-    <text x="690" y="242" text-anchor="middle" font-size="27" font-weight="750" fill="#55606a">오늘</text>
-    <text x="690" y="304" text-anchor="middle" font-size="${todaySize}" font-weight="750" fill="${col(sd.dayPct)}">${todayText}</text>
-    <text x="905" y="242" text-anchor="middle" font-size="27" font-weight="750" fill="#55606a">코스피 대비</text>
-    <text x="905" y="304" text-anchor="middle" font-size="${kospiSize}" font-weight="750" fill="${col(sd.dayVsKospi)}">${kospiText}</text>
+    <line x1="550" y1="218" x2="550" y2="338" stroke="${line}"/>
+    <line x1="778" y1="218" x2="778" y2="338" stroke="${line}"/>
+    <text x="664" y="244" text-anchor="middle" font-size="27" font-weight="750" fill="#55606a">오늘</text>
+    <text x="664" y="314" text-anchor="middle" font-size="${todaySize}" font-weight="750" fill="${col(sd.dayPct)}">${todayText}</text>
+    <text x="886" y="244" text-anchor="middle" font-size="27" font-weight="750" fill="#55606a">코스피 대비</text>
+    <text x="886" y="314" text-anchor="middle" font-size="${kospiSize}" font-weight="750" fill="${col(sd.dayVsKospi)}">${kospiText}</text>
     ${amountPanel}
     <line x1="86" y1="${summaryRuleY}" x2="994" y2="${summaryRuleY}" stroke="${line}"/>
     <text x="86" y="${allocationTitleY}" font-size="36" font-weight="750" fill="${ink}">자산 배분</text>
@@ -183,17 +184,18 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
     <text x="994" y="${holdingsTitleY}" text-anchor="end" font-size="26" font-weight="750" fill="${muted}">누적</text>
     <line x1="86" y1="${holdingsRuleY}" x2="994" y2="${holdingsRuleY}" stroke="${line}"/>
     ${rows||`<text x="86" y="${rowStartY+42}" font-size="31" font-weight="700" fill="${muted}">보유 종목 없이 예수금만 기록 중입니다</text>`}
-    <text x="86" y="${1210+footerOffset}" font-size="22" font-weight="700" fill="${muted}">최고 수익률 · ${esc(bestText)}</text>
-    <text x="86" y="${1248+footerOffset}" font-size="32" font-weight="750" fill="${col(insights.bestPct)}">${bestPctText}</text>
-    <line x1="372" y1="${1202+footerOffset}" x2="372" y2="${1252+footerOffset}" stroke="${line}"/>
-    <text x="406" y="${1210+footerOffset}" font-size="22" font-weight="700" fill="${muted}">상위 3종목 비중</text>
-    <text x="406" y="${1248+footerOffset}" font-size="32" font-weight="750" fill="${ink}">${top3Text}</text>
-    <line x1="686" y1="${1202+footerOffset}" x2="686" y2="${1252+footerOffset}" stroke="${line}"/>
-    <text x="720" y="${1210+footerOffset}" font-size="22" font-weight="700" fill="${muted}">월평균 배당</text>
-    <text x="994" y="${1248+footerOffset}" text-anchor="end" font-size="32" font-weight="750" fill="${ink}">${esc(dividendText)}</text>
-    <line x1="86" y1="${1276+footerOffset}" x2="994" y2="${1276+footerOffset}" stroke="${line}"/>
-    <text x="86" y="${1307+footerOffset}" font-size="26" font-weight="700" fill="${muted}">엑셀처럼 조용하게, 내 자산은 한눈에</text>
-    <text x="994" y="${1307+footerOffset}" text-anchor="end" font-size="28" font-weight="750" fill="#137a43">excelkospi.ai/assets</text>
+    <line x1="86" y1="${1148+footerOffset}" x2="994" y2="${1148+footerOffset}" stroke="${line}"/>
+    <text x="86" y="${1184+footerOffset}" font-size="22" font-weight="700" fill="${muted}">최고 수익률 · ${esc(bestText)}</text>
+    <text x="86" y="${1226+footerOffset}" font-size="32" font-weight="750" fill="${col(insights.bestPct)}">${bestPctText}</text>
+    <line x1="372" y1="${1168+footerOffset}" x2="372" y2="${1232+footerOffset}" stroke="${line}"/>
+    <text x="406" y="${1184+footerOffset}" font-size="22" font-weight="700" fill="${muted}">상위 3종목 비중</text>
+    <text x="406" y="${1226+footerOffset}" font-size="32" font-weight="750" fill="${ink}">${top3Text}</text>
+    <line x1="686" y1="${1168+footerOffset}" x2="686" y2="${1232+footerOffset}" stroke="${line}"/>
+    <text x="720" y="${1184+footerOffset}" font-size="22" font-weight="700" fill="${muted}">월평균 배당</text>
+    <text x="994" y="${1226+footerOffset}" text-anchor="end" font-size="32" font-weight="750" fill="${ink}">${esc(dividendText)}</text>
+    <line x1="86" y1="${1258+footerOffset}" x2="994" y2="${1258+footerOffset}" stroke="${line}"/>
+    <text x="86" y="${1296+footerOffset}" font-size="26" font-weight="700" fill="${muted}">엑셀처럼 조용하게, 내 자산은 한눈에</text>
+    <text x="994" y="${1296+footerOffset}" text-anchor="end" font-size="28" font-weight="750" fill="#137a43">excelkospi.ai/assets</text>
   </svg>`}function myAssetsShareOverlayHtml(sd){return`<div class="ma-share-ov" data-ma-share-ov>
     <div class="ma-share-box" role="dialog" aria-modal="true" aria-label="내 자산 공유">
       <div class="ma-share-head"><b>내 자산 공유</b><button type="button" class="ma-share-x" data-ma-share-close aria-label="닫기">×</button></div>
@@ -230,7 +232,7 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
     <div class="ma-empty-title">내 자산을 한눈에 모아드려요</div>
     <div class="ma-empty-body">왼쪽 시세창에서 종목을 추가하고 <b>평단·수량</b>을 입력하면<br>순자산·자산배분·손익·배당이 <b>이렇게 자동 집계</b>됩니다.<br><span class="ma-empty-sub">예수금은 아래 자산 추가에서 바로 등록 · 지금 보이는 화면은 예시 데이터예요.</span></div>
     <div class="ma-empty-actions"><button type="button" class="ma-share-btn ma-sample-tour-btn" data-ma-sample-tour>둘러보기</button></div>
-  </div>`}const MY_ASSETS_STOCK_SOURCES={KR:"/data/kr-stocks.json?v=20260718-4062",US:"/data/us-stocks.json?v=20260718-4062",COIN:"/data/coin-stocks.json?v=20260718-4062"};function myAssetsStockAddDialogHtml(){return`<div class="native-stock-add-modal" id="nativeStockAddModal" aria-hidden="true">
+  </div>`}const MY_ASSETS_STOCK_SOURCES={KR:"/data/kr-stocks.json?v=20260717-4034",US:"/data/us-stocks.json?v=20260717-4034",COIN:"/data/coin-stocks.json?v=20260717-4034"};function myAssetsStockAddDialogHtml(){return`<div class="native-stock-add-modal" id="nativeStockAddModal" aria-hidden="true">
     <div class="native-stock-add-backdrop" data-native-stock-add-close></div>
     <section class="native-stock-add-sheet" role="dialog" aria-modal="true" aria-labelledby="nativeStockAddTitle">
       <header class="native-stock-add-head">
