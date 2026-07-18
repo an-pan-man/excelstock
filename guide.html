@@ -305,6 +305,6 @@
   </footer>
   <script>(()=>{const root=document.querySelector("[data-hero-carousel]");if(!root)return;const slides=Array.from(root.querySelectorAll("[data-hero-slide]")),controls=Array.from(root.querySelectorAll("[data-hero-target]")),captions=Array.from(root.querySelectorAll("[data-hero-caption]")),reduced=window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;let active=0,timer=0;const show=index=>{active=(index+slides.length)%slides.length,slides.forEach((slide,i)=>{const selected=i===active;slide.classList.toggle("is-active",selected),slide.setAttribute("aria-hidden",selected?"false":"true")}),controls.forEach((control,i)=>control.setAttribute("aria-pressed",i===active?"true":"false")),captions.forEach((caption,i)=>{caption.hidden=i!==active})},stop=()=>{timer&&window.clearInterval(timer),timer=0},start=()=>{stop(),!(reduced||document.hidden)&&(timer=window.setInterval(()=>show(active+1),6500))};controls.forEach((control,index)=>control.addEventListener("click",()=>{show(index),start()})),root.addEventListener("mouseenter",stop),root.addEventListener("mouseleave",start),root.addEventListener("focusin",stop),root.addEventListener("focusout",event=>{root.contains(event.relatedTarget)||start()}),document.addEventListener("visibilitychange",()=>{document.hidden?stop():start()}),show(0),start()})();
 </script>
-  <script src="/assets/landing-analytics.js?v=20260718-4057" defer></script>
+  <script src="/assets/landing-analytics.js?v=20260718-4058" defer></script>
 </body>
 </html>
