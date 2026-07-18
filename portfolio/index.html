@@ -23,7 +23,7 @@
   <meta name="twitter:image" content="https://excelkospi.pages.dev/assets/og-my-assets-v2.png?v=20260712-1" />
   <meta name="twitter:image:alt" content="엑셀코스피 내 자산 포트폴리오" />
   <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/assets/portfolio-share.css?v=20260717-4034" />
+  <link rel="stylesheet" href="/assets/portfolio-share.css?v=20260718-4040" />
 </head>
 <body>
   <header class="ps-nav">
@@ -40,7 +40,6 @@
     <section class="ps-loading" data-ps-loading aria-live="polite">
       <span class="ps-loading-mark" aria-hidden="true">X</span>
       <strong>포트폴리오를 불러오는 중입니다</strong>
-      <p>공유 시점의 자산 기록을 정리하고 있어요.</p>
     </section>
     <section class="ps-error" data-ps-error hidden>
       <span class="ps-error-code">LINK EXPIRED</span>
@@ -51,14 +50,12 @@
     <div data-ps-content hidden>
       <section class="ps-hero">
         <div class="ps-hero-top">
-          <span class="ps-snapshot-label"><i aria-hidden="true"></i> PUBLIC PORTFOLIO</span>
+          <span class="ps-snapshot-label"><i aria-hidden="true"></i> 공개 포트폴리오</span>
           <div class="ps-date"><span>공유 기준</span><time data-ps-date>-</time></div>
         </div>
         <div class="ps-hero-body">
           <div class="ps-hero-copy">
-            <p class="ps-eyebrow">MY INVESTMENT PROFILE</p>
             <h1>내 포트폴리오</h1>
-            <p class="ps-profile"><strong data-ps-profile>나의 기준으로 쌓아가는</strong><span data-ps-profile-copy>보유 구성과 성과를 바탕으로 포트폴리오를 정리합니다.</span></p>
             <div class="ps-main-return">
               <span>보유 평단 대비 누적 수익률</span>
               <strong data-ps-pnl>-</strong>
@@ -73,7 +70,6 @@
           </div>
           <section class="ps-allocation-stage" aria-labelledby="allocationTitle">
             <div class="ps-allocation-head">
-              <span>PORTFOLIO ALLOCATION</span>
               <h2 id="allocationTitle">자산배분</h2>
             </div>
             <div class="ps-donut-wrap">
@@ -84,7 +80,6 @@
           </section>
         </div>
         <div class="ps-hero-footer">
-          <p>금액·수량은 공유자가 공개한 항목만 표시됩니다.</p>
           <div class="ps-share-actions">
             <button type="button" data-ps-share>포트폴리오 공유</button>
             <button type="button" data-ps-copy>링크 복사</button>
@@ -93,16 +88,14 @@
         </div>
       </section>
       <section class="ps-facts" aria-label="포트폴리오 핵심 지표">
-        <article><span>수익 중인 종목</span><strong data-ps-win-rate>-</strong><small data-ps-win-copy>집계 중</small></article>
-        <article><span>상위 3종목 비중</span><strong data-ps-top3>-</strong><small data-ps-concentration-copy>집계 중</small></article>
-        <article><span>가장 빛난 종목</span><strong data-ps-best-name>-</strong><small data-ps-best-pct>-</small></article>
-        <article><span>포트폴리오 분산도</span><strong><b data-ps-diversity>-</b><em>/ 100</em></strong><small data-ps-diversity-copy>집계 중</small></article>
+        <article><span>수익 중인 종목</span><strong data-ps-win-rate>-</strong></article>
+        <article><span>상위 3종목 비중</span><strong data-ps-top3>-</strong></article>
+        <article><span>최고 수익 종목</span><strong data-ps-best-name>-</strong><small data-ps-best-pct>-</small></article>
+        <article><span>분산도</span><strong><b data-ps-diversity>-</b><em>/ 100</em></strong></article>
       </section>
       <section class="ps-panel ps-performance-panel">
         <div class="ps-section-intro">
-          <span>PERFORMANCE</span>
           <h2>성과 흐름</h2>
-          <p>공유 시점까지 내 포트폴리오가 시장과 비교해 어떻게 움직였는지 보여줍니다.</p>
           <div class="ps-chart-legend" data-ps-performance-legend></div>
         </div>
         <div class="ps-chart-shell">
@@ -116,23 +109,20 @@
       </section>
       <section class="ps-holdings">
         <div class="ps-section-heading">
-          <div><span>POSITIONS</span><h2>보유 포지션</h2><p>각 자산이 포트폴리오에서 맡고 있는 비중과 성과입니다.</p></div>
+          <div><h2>보유 포지션</h2></div>
           <strong data-ps-holdings-count>보유 -종목</strong>
         </div>
         <div class="ps-position-grid" data-ps-holdings aria-label="포트폴리오 전체 보유 종목"></div>
       </section>
       <section class="ps-disclosure">
-        <div><span class="ps-lock" aria-hidden="true"></span><strong>공유 범위 안내</strong></div>
-        <p>금액과 수량은 공유자가 공개한 경우에만 표시됩니다. 성과 곡선은 순자산 금액이 아니라 추적 기간의 수익률만 보여주며, 이 페이지는 공유 시점 이후 바뀌지 않습니다.</p>
+        <div><span class="ps-lock" aria-hidden="true"></span><strong>공유 범위</strong></div>
+        <p>공유 시점의 기록 · 금액·수량 선택 공개 · 7일 후 만료</p>
       </section>
       <section class="ps-cta">
         <div class="ps-cta-copy">
-          <span>EXCELKOSPI · MY ASSETS</span>
-          <h2>내 투자 기록도<br />이렇게 보여주세요.</h2>
-          <p>흩어진 국내주식·미국주식·코인을 한 화면에서 관리하고, 공개 범위는 직접 정한 뒤 링크 하나로 내 포트폴리오를 공유할 수 있습니다.</p>
-          <div class="ps-cta-points"><span>로그인 없이 시작</span><span>실시간 시세 연동</span><span>공유 범위 직접 선택</span></div>
+          <h2>내 포트폴리오도<br />한눈에.</h2>
           <div class="ps-cta-actions">
-            <a class="ps-cta-primary" href="/assets">엑셀코스피 내 자산 기능 둘러보기 <span aria-hidden="true">→</span></a>
+            <a class="ps-cta-primary" href="/assets">내 자산 시작하기 <span aria-hidden="true">→</span></a>
             <a class="ps-cta-secondary" href="/app">앱 다운로드</a>
           </div>
         </div>
@@ -153,7 +143,7 @@
       </section>
     </div>
   </main>
-  <footer><span>엑셀 보는 척 주식 보기</span><a href="/">excelkospi</a><span>공유 링크는 7일 후 만료됩니다</span></footer>
+  <footer><span>엑셀 보는 척 주식 보기</span><a href="/">excelkospi</a></footer>
   <script src="/assets/portfolio-share.js?v=20260717-4034" defer></script>
 </body>
 </html>
