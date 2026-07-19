@@ -86,7 +86,7 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
       <span class="ma-dl-amt">${myAssetsAmountHtml(myAssetsUnitAmt(b.amount,b.unit,!1))}</span>
       <button type="button" class="ma-jr-del" data-ma-dl-del="${esc(String(b.id||""))}" aria-label="삭제" title="삭제">×</button>
     </div>`).join(""),h=m.length?`<div class="ma-dl-list">${u}${a.length>m.length?`<div class="ma-dl-more">외 ${a.length-m.length}건은 월별 합계에 반영돼 있어요.</div>`:""}</div>`:i.length?"":'<div class="ma-jempty">받은 배당을 기록하면 <b>실제 수령액</b>이 월별로 쌓여요. 위 추정 항목이 뜨면 한 번에 확정할 수도 있어요.</div>',f=r.skippedUsd>0?`<div class="ma-ret-note">환율 미확인으로 $ 기록 ${r.skippedUsd}건은 집계에서 잠시 제외했어요.</div>`:"",y=myAssetsNameSuggestions().map(b=>`<option value="${esc(b)}"></option>`).join(""),g=e.sample?"":`<form class="ma-dl-form ma-form ma-form-sep" data-ma-dl-form autocomplete="off">
-      <label class="ma-fld ma-c4"><span>지급일</span><input class="ma-jf" type="date" name="date" value="${esc(myAssetsToday())}"></label>
+      <label class="ma-fld ma-c4"><span>지급일</span><input class="ma-jf ma-date-input" type="date" name="date" value="${esc(myAssetsToday())}"></label>
       <label class="ma-fld ma-c4"><span>종목명</span><input class="ma-jf" name="name" placeholder="예: SCHD" maxlength="40" list="maDivLedgerNames" autocomplete="off"></label>
       <datalist id="maDivLedgerNames">${y}</datalist>
       <div class="ma-fld ma-c4"><span>실수령액</span><span class="ma-jf-pricewrap"><select class="ma-jf ma-jf-unit" name="unit" aria-label="통화"><option value="₩">₩</option><option value="$">$</option></select><input class="ma-jf ma-num" name="amount" type="number" inputmode="decimal" placeholder="0" min="0" step="any" aria-label="실수령액"></span></div>
@@ -240,7 +240,7 @@ const MY_ASSETS_AMOUNT_HIDDEN_KEY="kg_my_assets_amount_hidden_v1",MY_ASSETS_CARD
     <div class="ma-empty-title">내 자산을 한눈에 모아드려요</div>
     <div class="ma-empty-body">왼쪽 시세창에서 종목을 추가하고 <b>평단·수량</b>을 입력하면<br>순자산·자산배분·손익·배당이 <b>이렇게 자동 집계</b>됩니다.<br><span class="ma-empty-sub">예수금은 아래 자산 추가에서 바로 등록 · 지금 보이는 화면은 예시 데이터예요.</span></div>
     <div class="ma-empty-actions"><button type="button" class="ma-share-btn ma-sample-tour-btn" data-ma-sample-tour>둘러보기</button></div>
-  </div>`}const MY_ASSETS_STOCK_SOURCES={KR:"/data/kr-stocks.json?v=20260720-4144",US:"/data/us-stocks.json?v=20260720-4144",COIN:"/data/coin-stocks.json?v=20260720-4144"};function myAssetsStockAddDialogHtml(){return`<div class="native-stock-add-modal" id="nativeStockAddModal" aria-hidden="true">
+  </div>`}const MY_ASSETS_STOCK_SOURCES={KR:"/data/kr-stocks.json?v=20260720-4145",US:"/data/us-stocks.json?v=20260720-4145",COIN:"/data/coin-stocks.json?v=20260720-4145"};function myAssetsStockAddDialogHtml(){return`<div class="native-stock-add-modal" id="nativeStockAddModal" aria-hidden="true">
     <div class="native-stock-add-backdrop" data-native-stock-add-close></div>
     <section class="native-stock-add-sheet" role="dialog" aria-modal="true" aria-labelledby="nativeStockAddTitle">
       <header class="native-stock-add-head">
@@ -326,7 +326,7 @@ SCHD 200 25.5"></textarea>
     </div>`}).join(""),c=e.length?`<div class="ma-jlist">${l}</div>`:'<div class="ma-jempty">아직 기록이 없어요. 위에서 매수·매도를 남기면 종목별 <b>실현손익</b>이 자동 계산됩니다.</div>';return`<div class="ma-card ma-journal" data-ma-journal-card>
     <h3 class="ma-h">거래일지 <span class="ma-hint">매수·매도 기록 · 실현손익 자동</span></h3>
     <form class="ma-jform ma-form" data-ma-journal-form autocomplete="off">
-      <label class="ma-fld ma-c3"><span>날짜</span><input class="ma-jf" type="date" name="date" value="${esc(a)}"></label>
+      <label class="ma-fld ma-c3"><span>날짜</span><input class="ma-jf ma-date-input" type="date" name="date" value="${esc(a)}"></label>
       <label class="ma-fld ma-c4"><span>종목명</span><input class="ma-jf" name="name" placeholder="예: 삼성전자" maxlength="40" list="maJournalNames" autocomplete="off"></label>
       <datalist id="maJournalNames">${s}</datalist>
       <label class="ma-fld ma-c2"><span>유형</span><select class="ma-jf" name="side">
