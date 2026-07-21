@@ -60,6 +60,7 @@
     "/robots.txt",
     "/sitemap.xml",
     "/seo-sitemap.xml",
+    "/sitemap-posts.xml",
     "/s/*",
     "/404.html",
     "/patch-notes.md",

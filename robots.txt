@@ -48,6 +48,7 @@ Allow: /robots.txt
 Allow: /llms.txt
 Allow: /sitemap.xml
 Allow: /seo-sitemap.xml
+Allow: /sitemap-posts.xml
 Disallow: /
 
 User-agent: *
@@ -58,4 +59,5 @@ Disallow: /docs/
 Disallow: /s/
 
 Sitemap: https://excelkospi.pages.dev/sitemap.xml
+Sitemap: https://excelkospi.pages.dev/sitemap-posts.xml
 Sitemap: https://excelkospi.ai/seo-sitemap.xml
